@@ -16,5 +16,17 @@ namespace WinForm.Frm
         {
             InitializeComponent();
         }
+
+        private void timerFrmSplash_Tick(object sender, EventArgs e)
+        {
+            if (pbFrmSplash.Value < pbFrmSplash.Maximum)
+            {
+                pbFrmSplash.Value += 1000;
+            }
+            else
+            {
+                Close();
+            }
+        }
     }
 }

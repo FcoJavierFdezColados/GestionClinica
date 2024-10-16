@@ -13,7 +13,7 @@ namespace WinForm.Frm
     public partial class FrmPpal : Form
     {
         public FrmPpal()
-        {
+        {            
             InitializeComponent();
         }
     }
