@@ -21,7 +21,7 @@ namespace WinForm.Frm
         {
             if (pbFrmSplash.Value < pbFrmSplash.Maximum)
             {
-                pbFrmSplash.Value += 1000;
+                pbFrmSplash.Value += pbFrmSplash.Step;
             }
             else
             {

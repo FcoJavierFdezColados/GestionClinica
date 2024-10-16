@@ -69,6 +69,7 @@
             pbFrmSplash.Maximum = 3000;
             pbFrmSplash.Name = "pbFrmSplash";
             pbFrmSplash.Size = new Size(800, 63);
+            pbFrmSplash.Step = 1000;
             pbFrmSplash.TabIndex = 2;
             // 
             // FrmSplash
