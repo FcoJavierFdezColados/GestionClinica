@@ -113,6 +113,7 @@
             tsbFrmCitasCancelar.Name = "tsbFrmCitasCancelar";
             tsbFrmCitasCancelar.Size = new Size(23, 22);
             tsbFrmCitasCancelar.Text = "Cancelar";
+            tsbFrmCitasCancelar.Click += tsbFrmCitasCancelar_Click;
             // 
             // toolStripTextBox1
             // 

@@ -19,7 +19,32 @@ namespace WinForm.Frm.Citas
 
         private void tsbFrmCitasAgregar_Click(object sender, EventArgs e)
         {
+            FrmCitaCreate frmCitaCreate = new FrmCitaCreate();
+            DialogResult dialogResult = frmCitaCreate.ShowDialog();
 
+            if (dialogResult == DialogResult.OK)
+            {
+
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                frmCitaCreate.Close();
+            }
+        }
+
+        private void tsbFrmCitasCancelar_Click(object sender, EventArgs e)
+        {
+            FrmCitaUpdate frmCitaUpdate = new FrmCitaUpdate();
+            DialogResult dialogResult = frmCitaUpdate.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                frmCitaUpdate.Close();
+            }
         }
     }
 }
