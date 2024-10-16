@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm.Frm.Citas;
 
 namespace WinForm.Frm
 {
@@ -20,11 +21,17 @@ namespace WinForm.Frm
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
-            
-            if(DialogResult.OK == frmAcercaDe.ShowDialog(this))
+
+            if (DialogResult.OK == frmAcercaDe.ShowDialog(this))
             {
                 frmAcercaDe.Close();
             }
+        }
+
+        private void citasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmCitasRead frmCitasRead = new FrmCitasRead();
+            frmCitasRead.Show();
         }
     }
 }

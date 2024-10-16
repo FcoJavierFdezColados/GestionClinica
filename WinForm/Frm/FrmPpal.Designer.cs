@@ -103,6 +103,7 @@
             citasToolStripMenuItem1.ShortcutKeys = Keys.Alt | Keys.Shift | Keys.C;
             citasToolStripMenuItem1.Size = new Size(208, 22);
             citasToolStripMenuItem1.Text = "Ci&tas";
+            citasToolStripMenuItem1.Click += citasToolStripMenuItem1_Click;
             // 
             // ventanaToolStripMenuItem
             // 
@@ -142,7 +143,7 @@
             // acercaDeToolStripMenuItem
             // 
             acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            acercaDeToolStripMenuItem.Size = new Size(180, 22);
+            acercaDeToolStripMenuItem.Size = new Size(126, 22);
             acercaDeToolStripMenuItem.Text = "Acerca &de";
             acercaDeToolStripMenuItem.Click += acercaDeToolStripMenuItem_Click;
             // 
