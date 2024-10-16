@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Frm\Citas\" />
+    <Folder Include="Frm\Doctores\" />
+    <Folder Include="Frm\Pacientes\" />
+  </ItemGroup>
+
 </Project>
