@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Frm\Doctores\" />
-    <Folder Include="Frm\Pacientes\" />
   </ItemGroup>
 
   <ItemGroup>
