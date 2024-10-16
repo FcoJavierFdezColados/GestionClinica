@@ -111,19 +111,22 @@
             // cascadaToolStripMenuItem
             // 
             cascadaToolStripMenuItem.Name = "cascadaToolStripMenuItem";
-            cascadaToolStripMenuItem.Size = new Size(180, 22);
+            cascadaToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.C;
+            cascadaToolStripMenuItem.Size = new Size(242, 22);
             cascadaToolStripMenuItem.Text = "&Cascada";
             // 
             // horizontalToolStripMenuItem
             // 
             horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            horizontalToolStripMenuItem.Size = new Size(180, 22);
+            horizontalToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.H;
+            horizontalToolStripMenuItem.Size = new Size(242, 22);
             horizontalToolStripMenuItem.Text = "&Horizontal";
             // 
             // verticalToolStripMenuItem
             // 
             verticalToolStripMenuItem.Name = "verticalToolStripMenuItem";
-            verticalToolStripMenuItem.Size = new Size(180, 22);
+            verticalToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.V;
+            verticalToolStripMenuItem.Size = new Size(242, 22);
             verticalToolStripMenuItem.Text = "&Vertical";
             // 
             // ayudaToolStripMenuItem
