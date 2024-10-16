@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuFrmPpalArchivos = new MenuStrip();
+            menuFrmPpal = new MenuStrip();
             archivosToolStripMenuItem = new ToolStripMenuItem();
             pacientesToolStripMenuItem = new ToolStripMenuItem();
             doctoresToolStripMenuItem = new ToolStripMenuItem();
@@ -42,17 +42,20 @@
             verticalToolStripMenuItem = new ToolStripMenuItem();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
             acercaDeToolStripMenuItem = new ToolStripMenuItem();
-            menuFrmPpalArchivos.SuspendLayout();
+            statussFrmPpal = new StatusStrip();
+            tsslStatusFrmPpal = new ToolStripStatusLabel();
+            menuFrmPpal.SuspendLayout();
+            statussFrmPpal.SuspendLayout();
             SuspendLayout();
             // 
-            // menuFrmPpalArchivos
+            // menuFrmPpal
             // 
-            menuFrmPpalArchivos.Items.AddRange(new ToolStripItem[] { archivosToolStripMenuItem, citasToolStripMenuItem, ventanaToolStripMenuItem, ayudaToolStripMenuItem });
-            menuFrmPpalArchivos.Location = new Point(0, 0);
-            menuFrmPpalArchivos.Name = "menuFrmPpalArchivos";
-            menuFrmPpalArchivos.Size = new Size(800, 24);
-            menuFrmPpalArchivos.TabIndex = 1;
-            menuFrmPpalArchivos.Text = "Archivos";
+            menuFrmPpal.Items.AddRange(new ToolStripItem[] { archivosToolStripMenuItem, citasToolStripMenuItem, ventanaToolStripMenuItem, ayudaToolStripMenuItem });
+            menuFrmPpal.Location = new Point(0, 0);
+            menuFrmPpal.Name = "menuFrmPpal";
+            menuFrmPpal.Size = new Size(800, 24);
+            menuFrmPpal.TabIndex = 1;
+            menuFrmPpal.Text = "Archivos";
             // 
             // archivosToolStripMenuItem
             // 
@@ -134,33 +137,53 @@
             ayudaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { acercaDeToolStripMenuItem });
             ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             ayudaToolStripMenuItem.Size = new Size(53, 20);
-            ayudaToolStripMenuItem.Text = "&Ayuda";
+            ayudaToolStripMenuItem.Text = "A&yuda";
             // 
             // acercaDeToolStripMenuItem
             // 
             acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             acercaDeToolStripMenuItem.Size = new Size(180, 22);
             acercaDeToolStripMenuItem.Text = "Acerca &de";
+            acercaDeToolStripMenuItem.Click += acercaDeToolStripMenuItem_Click;
+            // 
+            // statussFrmPpal
+            // 
+            statussFrmPpal.Items.AddRange(new ToolStripItem[] { tsslStatusFrmPpal });
+            statussFrmPpal.Location = new Point(0, 428);
+            statussFrmPpal.Name = "statussFrmPpal";
+            statussFrmPpal.Size = new Size(800, 22);
+            statussFrmPpal.TabIndex = 3;
+            statussFrmPpal.Text = "statusStrip1";
+            // 
+            // tsslStatusFrmPpal
+            // 
+            tsslStatusFrmPpal.Name = "tsslStatusFrmPpal";
+            tsslStatusFrmPpal.Size = new Size(118, 17);
+            tsslStatusFrmPpal.Text = "toolStripStatusLabel1";
             // 
             // FrmPpal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(menuFrmPpalArchivos);
+            Controls.Add(statussFrmPpal);
+            Controls.Add(menuFrmPpal);
             IsMdiContainer = true;
-            MainMenuStrip = menuFrmPpalArchivos;
+            MainMenuStrip = menuFrmPpal;
             Name = "FrmPpal";
             Text = "FrmPpal";
-            menuFrmPpalArchivos.ResumeLayout(false);
-            menuFrmPpalArchivos.PerformLayout();
+            WindowState = FormWindowState.Maximized;
+            menuFrmPpal.ResumeLayout(false);
+            menuFrmPpal.PerformLayout();
+            statussFrmPpal.ResumeLayout(false);
+            statussFrmPpal.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuFrmPpalArchivos;
+        private MenuStrip menuFrmPpal;
         private ToolStripMenuItem archivosToolStripMenuItem;
         private ToolStripMenuItem pacientesToolStripMenuItem;
         private ToolStripMenuItem doctoresToolStripMenuItem;
@@ -174,5 +197,7 @@
         private ToolStripMenuItem verticalToolStripMenuItem;
         private ToolStripMenuItem ayudaToolStripMenuItem;
         private ToolStripMenuItem acercaDeToolStripMenuItem;
+        private StatusStrip statussFrmPpal;
+        private ToolStripStatusLabel tsslStatusFrmPpal;
     }
 }

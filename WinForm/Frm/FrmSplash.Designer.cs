@@ -84,6 +84,7 @@
             ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmSplash";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmSplash";
             ResumeLayout(false);
             PerformLayout();

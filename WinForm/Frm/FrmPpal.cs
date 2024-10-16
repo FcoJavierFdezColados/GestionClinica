@@ -13,8 +13,18 @@ namespace WinForm.Frm
     public partial class FrmPpal : Form
     {
         public FrmPpal()
-        {            
+        {
             InitializeComponent();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
+            
+            if(DialogResult.OK == frmAcercaDe.ShowDialog(this))
+            {
+                frmAcercaDe.Close();
+            }
         }
     }
 }
