@@ -32,7 +32,7 @@ namespace WinForm.Frm.Citas
             }
         }
 
-        private void tsbFrmCitasCancelar_Click(object sender, EventArgs e)
+        private void tsbFrmCitasEditar_Click(object sender, EventArgs e)
         {
             FrmCitaUpdate frmCitaUpdate = new FrmCitaUpdate();
             DialogResult dialogResult = frmCitaUpdate.ShowDialog();
@@ -45,6 +45,36 @@ namespace WinForm.Frm.Citas
             {
                 frmCitaUpdate.Close();
             }
+        }
+
+        private void tsbFrmCitasAgregar_MouseHover(object sender, EventArgs e)
+        {
+            tsslFrmCitasRead.Text = ((ToolStripButton)sender).Tag.ToString();
+        }
+
+        private void tsbFrmCitasAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            tsslFrmCitasRead.Text = "";
+        }
+
+        private void tsbFrmCitasEditar_MouseHover(object sender, EventArgs e)
+        {
+            tsslFrmCitasRead.Text = ((ToolStripButton)sender).Tag.ToString();
+        }
+
+        private void tsbFrmCitasEditar_MouseLeave(object sender, EventArgs e)
+        {
+            tsslFrmCitasRead.Text = "";
+        }
+
+        private void tsbFrmCitasEliminar_MouseHover(object sender, EventArgs e)
+        {
+            tsslFrmCitasRead.Text = ((ToolStripButton)sender).Tag.ToString();
+        }
+
+        private void tsbFrmCitasEliminar_MouseLeave(object sender, EventArgs e)
+        {
+            tsslFrmCitasRead.Text = "";
         }
     }
 }

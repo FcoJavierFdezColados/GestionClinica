@@ -34,17 +34,18 @@
             dataGridView1 = new DataGridView();
             toolStripFrmCitas = new ToolStrip();
             tsbFrmCitasAgregar = new ToolStripButton();
-            tsbFrmCitasCancelar = new ToolStripButton();
+            tsbFrmCitasEditar = new ToolStripButton();
             toolStripTextBox1 = new ToolStripTextBox();
-            statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            tsbFrmCitasEliminar = new ToolStripButton();
+            statusStripFrmCitasRead = new StatusStrip();
+            tsslFrmCitasRead = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             toolStripFrmCitas.SuspendLayout();
-            statusStrip1.SuspendLayout();
+            statusStripFrmCitasRead.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -63,7 +64,7 @@
             // 
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Controls.Add(toolStripFrmCitas);
-            splitContainer1.Panel2.Controls.Add(statusStrip1);
+            splitContainer1.Panel2.Controls.Add(statusStripFrmCitasRead);
             splitContainer1.Size = new Size(800, 450);
             splitContainer1.SplitterDistance = 29;
             splitContainer1.TabIndex = 0;
@@ -87,7 +88,7 @@
             // 
             // toolStripFrmCitas
             // 
-            toolStripFrmCitas.Items.AddRange(new ToolStripItem[] { tsbFrmCitasAgregar, tsbFrmCitasCancelar, toolStripTextBox1 });
+            toolStripFrmCitas.Items.AddRange(new ToolStripItem[] { tsbFrmCitasAgregar, tsbFrmCitasEditar, toolStripTextBox1, tsbFrmCitasEliminar });
             toolStripFrmCitas.Location = new Point(0, 0);
             toolStripFrmCitas.Name = "toolStripFrmCitas";
             toolStripFrmCitas.Size = new Size(800, 25);
@@ -102,20 +103,26 @@
             tsbFrmCitasAgregar.ImageTransparentColor = Color.Magenta;
             tsbFrmCitasAgregar.Name = "tsbFrmCitasAgregar";
             tsbFrmCitasAgregar.Size = new Size(23, 22);
-            tsbFrmCitasAgregar.Text = "toolStripButton1";
+            tsbFrmCitasAgregar.Tag = "Reservar cita";
+            tsbFrmCitasAgregar.Text = "Crear cita";
             tsbFrmCitasAgregar.ToolTipText = "Añadir";
             tsbFrmCitasAgregar.Click += tsbFrmCitasAgregar_Click;
+            tsbFrmCitasAgregar.MouseLeave += tsbFrmCitasAgregar_MouseLeave;
+            tsbFrmCitasAgregar.MouseHover += tsbFrmCitasAgregar_MouseHover;
             // 
-            // tsbFrmCitasCancelar
+            // tsbFrmCitasEditar
             // 
-            tsbFrmCitasCancelar.AccessibleRole = AccessibleRole.Dialog;
-            tsbFrmCitasCancelar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbFrmCitasCancelar.Image = (Image)resources.GetObject("tsbFrmCitasCancelar.Image");
-            tsbFrmCitasCancelar.ImageTransparentColor = Color.Magenta;
-            tsbFrmCitasCancelar.Name = "tsbFrmCitasCancelar";
-            tsbFrmCitasCancelar.Size = new Size(23, 22);
-            tsbFrmCitasCancelar.Text = "Cancelar";
-            tsbFrmCitasCancelar.Click += tsbFrmCitasCancelar_Click;
+            tsbFrmCitasEditar.AccessibleRole = AccessibleRole.Dialog;
+            tsbFrmCitasEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbFrmCitasEditar.Image = (Image)resources.GetObject("tsbFrmCitasEditar.Image");
+            tsbFrmCitasEditar.ImageTransparentColor = Color.Magenta;
+            tsbFrmCitasEditar.Name = "tsbFrmCitasEditar";
+            tsbFrmCitasEditar.Size = new Size(23, 22);
+            tsbFrmCitasEditar.Tag = "Editar cita";
+            tsbFrmCitasEditar.Text = "Editar";
+            tsbFrmCitasEditar.Click += tsbFrmCitasEditar_Click;
+            tsbFrmCitasEditar.MouseLeave += tsbFrmCitasEditar_MouseLeave;
+            tsbFrmCitasEditar.MouseHover += tsbFrmCitasEditar_MouseHover;
             // 
             // toolStripTextBox1
             // 
@@ -124,20 +131,33 @@
             toolStripTextBox1.Name = "toolStripTextBox1";
             toolStripTextBox1.Size = new Size(100, 25);
             // 
-            // statusStrip1
+            // tsbFrmCitasEliminar
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 395);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(800, 22);
-            statusStrip1.TabIndex = 1;
-            statusStrip1.Text = "statusStrip1";
+            tsbFrmCitasEliminar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbFrmCitasEliminar.Image = (Image)resources.GetObject("tsbFrmCitasEliminar.Image");
+            tsbFrmCitasEliminar.ImageTransparentColor = Color.Magenta;
+            tsbFrmCitasEliminar.Name = "tsbFrmCitasEliminar";
+            tsbFrmCitasEliminar.Size = new Size(23, 22);
+            tsbFrmCitasEliminar.Tag = "Eliminar cita";
+            tsbFrmCitasEliminar.Text = "Eliminar";
+            tsbFrmCitasEliminar.MouseLeave += tsbFrmCitasEliminar_MouseLeave;
+            tsbFrmCitasEliminar.MouseHover += tsbFrmCitasEliminar_MouseHover;
             // 
-            // toolStripStatusLabel1
+            // statusStripFrmCitasRead
             // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            statusStripFrmCitasRead.Items.AddRange(new ToolStripItem[] { tsslFrmCitasRead });
+            statusStripFrmCitasRead.Location = new Point(0, 395);
+            statusStripFrmCitasRead.Name = "statusStripFrmCitasRead";
+            statusStripFrmCitasRead.Size = new Size(800, 22);
+            statusStripFrmCitasRead.TabIndex = 1;
+            statusStripFrmCitasRead.Text = "statusStrip1";
+            // 
+            // tsslFrmCitasRead
+            // 
+            tsslFrmCitasRead.Name = "tsslFrmCitasRead";
+            tsslFrmCitasRead.Size = new Size(118, 17);
+            tsslFrmCitasRead.Tag = "Editar cita";
+            tsslFrmCitasRead.Text = "toolStripStatusLabel1";
             // 
             // FrmCitasRead
             // 
@@ -155,8 +175,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             toolStripFrmCitas.ResumeLayout(false);
             toolStripFrmCitas.PerformLayout();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
+            statusStripFrmCitasRead.ResumeLayout(false);
+            statusStripFrmCitasRead.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -166,10 +186,11 @@
         private DateTimePicker dateTimePicker1;
         private ToolStrip toolStripFrmCitas;
         private ToolStripButton tsbFrmCitasAgregar;
-        private StatusStrip statusStrip1;
-        private ToolStripButton tsbFrmCitasCancelar;
+        private StatusStrip statusStripFrmCitasRead;
+        private ToolStripButton tsbFrmCitasEditar;
         private ToolStripTextBox toolStripTextBox1;
         private DataGridView dataGridView1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel tsslFrmCitasRead;
+        private ToolStripButton tsbFrmCitasEliminar;
     }
 }
