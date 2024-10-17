@@ -34,6 +34,7 @@
             // 
             // btnFrmPacientesCreateAceptar
             // 
+            btnFrmPacientesCreateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnFrmPacientesCreateAceptar.DialogResult = DialogResult.OK;
             btnFrmPacientesCreateAceptar.Location = new Point(255, 358);
             btnFrmPacientesCreateAceptar.Name = "btnFrmPacientesCreateAceptar";
@@ -44,6 +45,7 @@
             // 
             // btnPacientesCreateCancelar
             // 
+            btnPacientesCreateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnPacientesCreateCancelar.DialogResult = DialogResult.Cancel;
             btnPacientesCreateCancelar.Location = new Point(470, 358);
             btnPacientesCreateCancelar.Name = "btnPacientesCreateCancelar";
@@ -54,8 +56,10 @@
             // 
             // FrmPacientesCreate
             // 
+            AcceptButton = btnFrmPacientesCreateAceptar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnPacientesCreateCancelar;
             ClientSize = new Size(800, 450);
             Controls.Add(btnPacientesCreateCancelar);
             Controls.Add(btnFrmPacientesCreateAceptar);

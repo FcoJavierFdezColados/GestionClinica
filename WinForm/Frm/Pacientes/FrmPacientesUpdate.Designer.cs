@@ -34,6 +34,7 @@
             // 
             // btnFrmPacientesUpdateAceptar
             // 
+            btnFrmPacientesUpdateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnFrmPacientesUpdateAceptar.DialogResult = DialogResult.OK;
             btnFrmPacientesUpdateAceptar.Location = new Point(234, 380);
             btnFrmPacientesUpdateAceptar.Name = "btnFrmPacientesUpdateAceptar";
@@ -44,6 +45,7 @@
             // 
             // btnPacientesUpdateCancelar
             // 
+            btnPacientesUpdateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnPacientesUpdateCancelar.DialogResult = DialogResult.Cancel;
             btnPacientesUpdateCancelar.Location = new Point(483, 381);
             btnPacientesUpdateCancelar.Name = "btnPacientesUpdateCancelar";
@@ -54,8 +56,10 @@
             // 
             // FrmPacientesUpdate
             // 
+            AcceptButton = btnFrmPacientesUpdateAceptar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnPacientesUpdateCancelar;
             ClientSize = new Size(800, 450);
             Controls.Add(btnPacientesUpdateCancelar);
             Controls.Add(btnFrmPacientesUpdateAceptar);

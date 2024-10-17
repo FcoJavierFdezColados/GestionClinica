@@ -34,6 +34,7 @@
             // 
             // btnFrmCitaUpdateAceptar
             // 
+            btnFrmCitaUpdateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnFrmCitaUpdateAceptar.DialogResult = DialogResult.OK;
             btnFrmCitaUpdateAceptar.Location = new Point(242, 366);
             btnFrmCitaUpdateAceptar.Name = "btnFrmCitaUpdateAceptar";
@@ -44,6 +45,7 @@
             // 
             // btnFrmCitaUpdateCancelar
             // 
+            btnFrmCitaUpdateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnFrmCitaUpdateCancelar.DialogResult = DialogResult.Cancel;
             btnFrmCitaUpdateCancelar.Location = new Point(463, 366);
             btnFrmCitaUpdateCancelar.Name = "btnFrmCitaUpdateCancelar";
@@ -54,8 +56,10 @@
             // 
             // FrmCitaUpdate
             // 
+            AcceptButton = btnFrmCitaUpdateAceptar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnFrmCitaUpdateCancelar;
             ClientSize = new Size(800, 450);
             Controls.Add(btnFrmCitaUpdateCancelar);
             Controls.Add(btnFrmCitaUpdateAceptar);
