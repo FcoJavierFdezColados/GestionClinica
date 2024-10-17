@@ -70,6 +70,7 @@
             pacientesToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Shift | Keys.P;
             pacientesToolStripMenuItem.Size = new Size(231, 22);
             pacientesToolStripMenuItem.Text = "&Pacientes";
+            pacientesToolStripMenuItem.Click += pacientesToolStripMenuItem_Click;
             // 
             // doctoresToolStripMenuItem
             // 
@@ -77,6 +78,7 @@
             doctoresToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Shift | Keys.D;
             doctoresToolStripMenuItem.Size = new Size(231, 22);
             doctoresToolStripMenuItem.Text = "&Doctores";
+            doctoresToolStripMenuItem.Click += doctoresToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -89,6 +91,7 @@
             salirToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
             salirToolStripMenuItem.Size = new Size(231, 22);
             salirToolStripMenuItem.Text = "&Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // citasToolStripMenuItem
             // 

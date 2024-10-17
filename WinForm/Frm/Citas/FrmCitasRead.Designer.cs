@@ -37,12 +37,14 @@
             tsbFrmCitasCancelar = new ToolStripButton();
             toolStripTextBox1 = new ToolStripTextBox();
             statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             toolStripFrmCitas.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -124,11 +126,18 @@
             // 
             // statusStrip1
             // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
             statusStrip1.Location = new Point(0, 395);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(800, 22);
             statusStrip1.TabIndex = 1;
             statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(118, 17);
+            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // FrmCitasRead
             // 
@@ -146,6 +155,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             toolStripFrmCitas.ResumeLayout(false);
             toolStripFrmCitas.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -159,5 +170,6 @@
         private ToolStripButton tsbFrmCitasCancelar;
         private ToolStripTextBox toolStripTextBox1;
         private DataGridView dataGridView1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

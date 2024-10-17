@@ -55,6 +55,7 @@
             tsbFrmPacientesCrear.Name = "tsbFrmPacientesCrear";
             tsbFrmPacientesCrear.Size = new Size(23, 22);
             tsbFrmPacientesCrear.Text = "Añadir";
+            tsbFrmPacientesCrear.Click += tsbFrmPacientesCrear_Click;
             // 
             // tsbFrmPacientesEditar
             // 
@@ -64,6 +65,7 @@
             tsbFrmPacientesEditar.Name = "tsbFrmPacientesEditar";
             tsbFrmPacientesEditar.Size = new Size(23, 22);
             tsbFrmPacientesEditar.Text = "Editar";
+            tsbFrmPacientesEditar.Click += tsbFrmPacientesEditar_Click;
             // 
             // tsbFrmPacientesEliminar
             // 

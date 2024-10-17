@@ -30,10 +30,14 @@
         {
             label1 = new Label();
             btnFrmAcercaDeAceptar = new Button();
+            lblDevelopedBy = new Label();
+            lblIconsUrl = new Label();
+            llbUrlIcons = new LinkLabel();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 50F);
             label1.Location = new Point(8, 9);
@@ -53,11 +57,46 @@
             btnFrmAcercaDeAceptar.Text = "Aceptar";
             btnFrmAcercaDeAceptar.UseVisualStyleBackColor = true;
             // 
+            // lblDevelopedBy
+            // 
+            lblDevelopedBy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblDevelopedBy.AutoSize = true;
+            lblDevelopedBy.Font = new Font("Segoe UI", 20F);
+            lblDevelopedBy.Location = new Point(114, 114);
+            lblDevelopedBy.Name = "lblDevelopedBy";
+            lblDevelopedBy.Size = new Size(489, 37);
+            lblDevelopedBy.TabIndex = 2;
+            lblDevelopedBy.Text = "Developed by Fco. Javier Fdez. Collados";
+            // 
+            // lblIconsUrl
+            // 
+            lblIconsUrl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblIconsUrl.AutoSize = true;
+            lblIconsUrl.Location = new Point(204, 211);
+            lblIconsUrl.Name = "lblIconsUrl";
+            lblIconsUrl.Size = new Size(118, 15);
+            lblIconsUrl.TabIndex = 3;
+            lblIconsUrl.Text = "Fuente de los iconos:";
+            // 
+            // llbUrlIcons
+            // 
+            llbUrlIcons.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            llbUrlIcons.AutoSize = true;
+            llbUrlIcons.Location = new Point(353, 211);
+            llbUrlIcons.Name = "llbUrlIcons";
+            llbUrlIcons.Size = new Size(144, 15);
+            llbUrlIcons.TabIndex = 4;
+            llbUrlIcons.TabStop = true;
+            llbUrlIcons.Text = "https://www.flaticon.com";
+            // 
             // FrmAcercaDe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(llbUrlIcons);
+            Controls.Add(lblIconsUrl);
+            Controls.Add(lblDevelopedBy);
             Controls.Add(btnFrmAcercaDeAceptar);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -74,5 +113,8 @@
 
         private Label label1;
         private Button btnFrmAcercaDeAceptar;
+        private Label lblDevelopedBy;
+        private Label lblIconsUrl;
+        private LinkLabel llbUrlIcons;
     }
 }
