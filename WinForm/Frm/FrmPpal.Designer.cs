@@ -174,8 +174,7 @@
             // tsslStatusFrmPpal
             // 
             tsslStatusFrmPpal.Name = "tsslStatusFrmPpal";
-            tsslStatusFrmPpal.Size = new Size(118, 17);
-            tsslStatusFrmPpal.Text = "toolStripStatusLabel1";
+            tsslStatusFrmPpal.Size = new Size(0, 17);
             // 
             // FrmPpal
             // 

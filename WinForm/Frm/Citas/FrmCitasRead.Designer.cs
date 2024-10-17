@@ -155,9 +155,8 @@
             // tsslFrmCitasRead
             // 
             tsslFrmCitasRead.Name = "tsslFrmCitasRead";
-            tsslFrmCitasRead.Size = new Size(118, 17);
+            tsslFrmCitasRead.Size = new Size(0, 17);
             tsslFrmCitasRead.Tag = "Editar cita";
-            tsslFrmCitasRead.Text = "toolStripStatusLabel1";
             // 
             // FrmCitasRead
             // 
