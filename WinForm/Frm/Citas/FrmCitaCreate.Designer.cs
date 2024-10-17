@@ -34,7 +34,7 @@
             // 
             // btnFrmCitaCreateAceptar
             // 
-            btnFrmCitaCreateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnFrmCitaCreateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnFrmCitaCreateAceptar.DialogResult = DialogResult.OK;
             btnFrmCitaCreateAceptar.Location = new Point(243, 352);
             btnFrmCitaCreateAceptar.Name = "btnFrmCitaCreateAceptar";
