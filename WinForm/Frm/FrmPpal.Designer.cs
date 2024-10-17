@@ -69,16 +69,22 @@
             pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
             pacientesToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Shift | Keys.P;
             pacientesToolStripMenuItem.Size = new Size(231, 22);
+            pacientesToolStripMenuItem.Tag = "Abre la lista de pacientes";
             pacientesToolStripMenuItem.Text = "&Pacientes";
             pacientesToolStripMenuItem.Click += pacientesToolStripMenuItem_Click;
+            pacientesToolStripMenuItem.MouseLeave += pacientesToolStripMenuItem_MouseLeave;
+            pacientesToolStripMenuItem.MouseHover += pacientesToolStripMenuItem_MouseHover;
             // 
             // doctoresToolStripMenuItem
             // 
             doctoresToolStripMenuItem.Name = "doctoresToolStripMenuItem";
             doctoresToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Shift | Keys.D;
             doctoresToolStripMenuItem.Size = new Size(231, 22);
+            doctoresToolStripMenuItem.Tag = "Abrir la lista de Doctores";
             doctoresToolStripMenuItem.Text = "&Doctores";
             doctoresToolStripMenuItem.Click += doctoresToolStripMenuItem_Click;
+            doctoresToolStripMenuItem.MouseLeave += doctoresToolStripMenuItem_MouseLeave;
+            doctoresToolStripMenuItem.MouseHover += doctoresToolStripMenuItem_MouseHover;
             // 
             // toolStripSeparator1
             // 
@@ -105,8 +111,11 @@
             citasToolStripMenuItem1.Name = "citasToolStripMenuItem1";
             citasToolStripMenuItem1.ShortcutKeys = Keys.Alt | Keys.Shift | Keys.C;
             citasToolStripMenuItem1.Size = new Size(208, 22);
+            citasToolStripMenuItem1.Tag = "Abrir la lista de citas";
             citasToolStripMenuItem1.Text = "Ci&tas";
             citasToolStripMenuItem1.Click += citasToolStripMenuItem1_Click;
+            citasToolStripMenuItem1.MouseLeave += citasToolStripMenuItem1_MouseLeave;
+            citasToolStripMenuItem1.MouseHover += citasToolStripMenuItem1_MouseHover;
             // 
             // ventanaToolStripMenuItem
             // 
@@ -180,6 +189,7 @@
             Name = "FrmPpal";
             Text = "FrmPpal";
             WindowState = FormWindowState.Maximized;
+            FormClosing += FrmPpal_FormClosing;
             menuFrmPpal.ResumeLayout(false);
             menuFrmPpal.PerformLayout();
             statussFrmPpal.ResumeLayout(false);

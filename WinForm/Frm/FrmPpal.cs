@@ -70,5 +70,50 @@ namespace WinForm.Frm
         {
             this.LayoutMdi(MdiLayout.TileVertical);
         }
+
+        private void tsslStatusFrmPpal_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmPpal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MdiChildren.Length > 0)
+            {
+                MessageBox.Show("Tiene formularios abiertos. Guarde y Cierrelos antes de cerrar la aplicación");
+                e.Cancel = true;
+
+            }
+        }
+
+        private void pacientesToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            tsslStatusFrmPpal.Text = ((ToolStripMenuItem)sender).Tag.ToString();
+        }
+
+        private void pacientesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            tsslStatusFrmPpal.Text = "";
+        }
+
+        private void doctoresToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            tsslStatusFrmPpal.Text = ((ToolStripMenuItem)sender).Tag.ToString();
+        }
+
+        private void doctoresToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            tsslStatusFrmPpal.Text = "";
+        }
+
+        private void citasToolStripMenuItem1_MouseHover(object sender, EventArgs e)
+        {
+            tsslStatusFrmPpal.Text = ((ToolStripMenuItem)sender).Tag.ToString();
+        }
+
+        private void citasToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
+        {
+            tsslStatusFrmPpal.Text = "";
+        }
     }
 }
