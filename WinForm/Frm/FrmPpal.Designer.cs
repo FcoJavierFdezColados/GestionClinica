@@ -121,6 +121,7 @@
             cascadaToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.C;
             cascadaToolStripMenuItem.Size = new Size(242, 22);
             cascadaToolStripMenuItem.Text = "&Cascada";
+            cascadaToolStripMenuItem.Click += cascadaToolStripMenuItem_Click;
             // 
             // horizontalToolStripMenuItem
             // 
@@ -128,6 +129,7 @@
             horizontalToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.H;
             horizontalToolStripMenuItem.Size = new Size(242, 22);
             horizontalToolStripMenuItem.Text = "&Horizontal";
+            horizontalToolStripMenuItem.Click += horizontalToolStripMenuItem_Click;
             // 
             // verticalToolStripMenuItem
             // 
@@ -135,6 +137,7 @@
             verticalToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.V;
             verticalToolStripMenuItem.Size = new Size(242, 22);
             verticalToolStripMenuItem.Text = "&Vertical";
+            verticalToolStripMenuItem.Click += verticalToolStripMenuItem_Click;
             // 
             // ayudaToolStripMenuItem
             // 

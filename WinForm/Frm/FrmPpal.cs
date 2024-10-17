@@ -33,24 +33,42 @@ namespace WinForm.Frm
         private void citasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmCitasRead frmCitasRead = new FrmCitasRead();
+            frmCitasRead.MdiParent = this;
             frmCitasRead.Show();
         }
 
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmPacientesRead frmPacientesRead = new FrmPacientesRead();
+            frmPacientesRead.MdiParent = this;
             frmPacientesRead.Show();
         }
 
         private void doctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmDoctoresRead frmDoctoresRead = new FrmDoctoresRead();
+            frmDoctoresRead.MdiParent = this;
             frmDoctoresRead.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cascadaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void horizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void verticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileVertical);
         }
     }
 }
