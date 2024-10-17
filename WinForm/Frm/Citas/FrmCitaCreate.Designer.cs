@@ -34,6 +34,7 @@
             // 
             // btnFrmCitaCreateAceptar
             // 
+            btnFrmCitaCreateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnFrmCitaCreateAceptar.DialogResult = DialogResult.OK;
             btnFrmCitaCreateAceptar.Location = new Point(243, 352);
             btnFrmCitaCreateAceptar.Name = "btnFrmCitaCreateAceptar";
@@ -44,6 +45,7 @@
             // 
             // btnFrmCitaCreateCancelar
             // 
+            btnFrmCitaCreateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnFrmCitaCreateCancelar.DialogResult = DialogResult.Cancel;
             btnFrmCitaCreateCancelar.Location = new Point(476, 352);
             btnFrmCitaCreateCancelar.Name = "btnFrmCitaCreateCancelar";
