@@ -186,7 +186,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuFrmPpal;
             Name = "FrmPpal";
-            Text = "FrmPpal";
+            Text = "Gestión Clínica";
             WindowState = FormWindowState.Maximized;
             FormClosing += FrmPpal_FormClosing;
             menuFrmPpal.ResumeLayout(false);
