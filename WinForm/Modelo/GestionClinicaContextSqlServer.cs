@@ -9,9 +9,14 @@ namespace WinForm.Modelo
 {
     public class GestionClinicaContextSqlServer: DbContext
     {
+        public DbSet<Cita> Citas { get; set; }
+        public DbSet<Doctor> Doctores { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"(localdb)\MSSQLLocalDB;Database=GestionClinicaDb");
+        {            
+
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=GestionClinicaDb");
         }
     }
 }
