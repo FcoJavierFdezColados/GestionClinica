@@ -12,6 +12,5 @@ namespace WinForm.Modelo
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string NumColegiado { get; set; }
-
     }
 }
