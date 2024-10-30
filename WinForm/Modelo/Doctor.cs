@@ -13,6 +13,6 @@ namespace WinForm.Modelo
         public string Apellidos { get; set; }
         public string NumColegiado { get; set; }
 
-        public List<Cita> Citas { get; set; }
+        public List<Cita>? Citas { get; set; }
     }
 }

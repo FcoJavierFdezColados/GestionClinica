@@ -17,6 +17,6 @@ namespace WinForm.Modelo
         public string Telefono1 { get; set; }
         public string? Telefono2 { get; set; }
 
-        public List<Cita> Citas { get; set; }
+        public List<Cita>? Citas { get; set; }
     }
 }
