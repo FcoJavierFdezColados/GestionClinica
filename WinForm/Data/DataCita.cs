@@ -41,7 +41,7 @@ namespace WinForm.Data
             {
                 var citaData = context.Citas.FirstOrDefault( x => x.CitaId == citaId );
 
-                if (citaData == null)
+                if (citaData != null)
                 {
                     context.Entry(citaData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     context.Entry(citaData).CurrentValues.SetValues(cita);
