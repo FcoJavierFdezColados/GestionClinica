@@ -11,9 +11,9 @@ namespace WinForm.Modelo
         public int CitaId { get; set; }
         public DateTime FechaCita { get; set; }
         public string Motivo { get; set; }
-        public bool EstaCancelada { get; set; }
-        public DateTime FechaCancelacion { get; set; }
-        public string MotivoCancelacion { get; set; }
+        public bool EstaCancelada { get; set; } = false;
+        public DateTime? FechaCancelacion { get; set; }
+        public string? MotivoCancelacion { get; set; }
 
         public int PacienteId { get; set; }
         public Paciente Paciente { get; set; }
