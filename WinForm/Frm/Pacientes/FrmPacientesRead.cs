@@ -23,18 +23,31 @@ namespace WinForm.Frm.Pacientes
 
             if (frmPacientesCreate.ShowDialog() == DialogResult.OK)
             {
-
+                
             }
         }
 
         private void tsbFrmPacientesEditar_Click(object sender, EventArgs e)
         {
-            FrmPacientesUpdate frmPacientesUpdate = new FrmPacientesUpdate();
-
-            if(frmPacientesUpdate.ShowDialog() == DialogResult.OK)
+            if (dgwPacientesRead.SelectedRows.Count > 0)
             {
-                
+                int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                FrmPacientesUpdate frmPacientesUpdate = new FrmPacientesUpdate(pacienteId);
+
+                if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
+                {
+
+                }
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar toda la fila.");
+            }
+        }
+
+        private void FrmPacientesRead_Load(object sender, EventArgs e)
+        {            
+            dgwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
         }
     }
 }

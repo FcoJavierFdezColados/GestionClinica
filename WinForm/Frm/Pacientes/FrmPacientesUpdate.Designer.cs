@@ -30,13 +30,13 @@
         {
             btnFrmPacientesUpdateAceptar = new Button();
             btnPacientesUpdateCancelar = new Button();
-            textBox1 = new TextBox();
+            tbNombreFrmPacientesUpdate = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            tbApellidosFrmPacientesUpdate = new TextBox();
             textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            tbDireccionFrmPacientesUpdate = new TextBox();
             textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            tbPoblacionFrmPacientesUpdate = new TextBox();
             textBox8 = new TextBox();
             lblPacientesNameFrmUpdate = new Label();
             lblPacientesApellidosFrmUpdate = new Label();
@@ -58,6 +58,7 @@
             btnFrmPacientesUpdateAceptar.TabIndex = 0;
             btnFrmPacientesUpdateAceptar.Text = "Aceptar";
             btnFrmPacientesUpdateAceptar.UseVisualStyleBackColor = true;
+            btnFrmPacientesUpdateAceptar.Click += btnFrmPacientesUpdateAceptar_Click;
             // 
             // btnPacientesUpdateCancelar
             // 
@@ -70,12 +71,12 @@
             btnPacientesUpdateCancelar.Text = "Cancelar";
             btnPacientesUpdateCancelar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbNombreFrmPacientesUpdate
             // 
-            textBox1.Location = new Point(69, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 23);
-            textBox1.TabIndex = 2;
+            tbNombreFrmPacientesUpdate.Location = new Point(69, 25);
+            tbNombreFrmPacientesUpdate.Name = "tbNombreFrmPacientesUpdate";
+            tbNombreFrmPacientesUpdate.Size = new Size(240, 23);
+            tbNombreFrmPacientesUpdate.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -84,12 +85,12 @@
             textBox2.Size = new Size(292, 23);
             textBox2.TabIndex = 3;
             // 
-            // textBox3
+            // tbApellidosFrmPacientesUpdate
             // 
-            textBox3.Location = new Point(69, 88);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(240, 23);
-            textBox3.TabIndex = 4;
+            tbApellidosFrmPacientesUpdate.Location = new Point(69, 88);
+            tbApellidosFrmPacientesUpdate.Name = "tbApellidosFrmPacientesUpdate";
+            tbApellidosFrmPacientesUpdate.Size = new Size(240, 23);
+            tbApellidosFrmPacientesUpdate.TabIndex = 4;
             // 
             // textBox4
             // 
@@ -98,12 +99,12 @@
             textBox4.Size = new Size(292, 23);
             textBox4.TabIndex = 5;
             // 
-            // textBox5
+            // tbDireccionFrmPacientesUpdate
             // 
-            textBox5.Location = new Point(70, 141);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(239, 23);
-            textBox5.TabIndex = 6;
+            tbDireccionFrmPacientesUpdate.Location = new Point(70, 141);
+            tbDireccionFrmPacientesUpdate.Name = "tbDireccionFrmPacientesUpdate";
+            tbDireccionFrmPacientesUpdate.Size = new Size(239, 23);
+            tbDireccionFrmPacientesUpdate.TabIndex = 6;
             // 
             // textBox6
             // 
@@ -112,12 +113,12 @@
             textBox6.Size = new Size(292, 23);
             textBox6.TabIndex = 7;
             // 
-            // textBox7
+            // tbPoblacionFrmPacientesUpdate
             // 
-            textBox7.Location = new Point(69, 202);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(240, 23);
-            textBox7.TabIndex = 8;
+            tbPoblacionFrmPacientesUpdate.Location = new Point(69, 202);
+            tbPoblacionFrmPacientesUpdate.Name = "tbPoblacionFrmPacientesUpdate";
+            tbPoblacionFrmPacientesUpdate.Size = new Size(240, 23);
+            tbPoblacionFrmPacientesUpdate.TabIndex = 8;
             // 
             // textBox8
             // 
@@ -214,13 +215,13 @@
             Controls.Add(lblPacientesApellidosFrmUpdate);
             Controls.Add(lblPacientesNameFrmUpdate);
             Controls.Add(textBox8);
-            Controls.Add(textBox7);
+            Controls.Add(tbPoblacionFrmPacientesUpdate);
             Controls.Add(textBox6);
-            Controls.Add(textBox5);
+            Controls.Add(tbDireccionFrmPacientesUpdate);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(tbApellidosFrmPacientesUpdate);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbNombreFrmPacientesUpdate);
             Controls.Add(btnPacientesUpdateCancelar);
             Controls.Add(btnFrmPacientesUpdateAceptar);
             Name = "FrmPacientesUpdate";
@@ -233,13 +234,13 @@
 
         private Button btnFrmPacientesUpdateAceptar;
         private Button btnPacientesUpdateCancelar;
-        private TextBox textBox1;
+        private TextBox tbNombreFrmPacientesUpdate;
         private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox tbApellidosFrmPacientesUpdate;
         private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox tbDireccionFrmPacientesUpdate;
         private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox tbPoblacionFrmPacientesUpdate;
         private TextBox textBox8;
         private Label lblPacientesNameFrmUpdate;
         private Label lblPacientesApellidosFrmUpdate;

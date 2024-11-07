@@ -33,9 +33,9 @@
             tsbFrmPacientesCrear = new ToolStripButton();
             tsbFrmPacientesEditar = new ToolStripButton();
             tsbFrmPacientesEliminar = new ToolStripButton();
-            dataGridView1 = new DataGridView();
+            dgwPacientesRead = new DataGridView();
             toolStripFrmPacientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgwPacientesRead).BeginInit();
             SuspendLayout();
             // 
             // toolStripFrmPacientes
@@ -76,27 +76,28 @@
             tsbFrmPacientesEliminar.Size = new Size(23, 22);
             tsbFrmPacientesEliminar.Text = "Eliminar";
             // 
-            // dataGridView1
+            // dgwPacientesRead
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 25);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(800, 425);
-            dataGridView1.TabIndex = 1;
+            dgwPacientesRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwPacientesRead.Dock = DockStyle.Fill;
+            dgwPacientesRead.Location = new Point(0, 25);
+            dgwPacientesRead.Name = "dgwPacientesRead";
+            dgwPacientesRead.Size = new Size(800, 425);
+            dgwPacientesRead.TabIndex = 1;
             // 
             // FrmPacientesRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgwPacientesRead);
             Controls.Add(toolStripFrmPacientes);
             Name = "FrmPacientesRead";
             Text = "FrmPacientesRead";
+            Load += FrmPacientesRead_Load;
             toolStripFrmPacientes.ResumeLayout(false);
             toolStripFrmPacientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgwPacientesRead).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -107,6 +108,6 @@
         private ToolStripButton tsbFrmPacientesCrear;
         private ToolStripButton tsbFrmPacientesEditar;
         private ToolStripButton tsbFrmPacientesEliminar;
-        private DataGridView dataGridView1;
+        private DataGridView dgwPacientesRead;
     }
 }

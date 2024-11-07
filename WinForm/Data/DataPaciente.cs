@@ -16,7 +16,7 @@ namespace WinForm.Data
                 instance = new DataPaciente();
 
             return instance;
-        }
+        }        
 
         public List<Modelo.Paciente> ListarPacientes()
         {

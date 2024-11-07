@@ -12,9 +12,21 @@ namespace WinForm.Frm.Pacientes
 {
     public partial class FrmPacientesUpdate : Form
     {
-        public FrmPacientesUpdate()
+        private int _pacienteId; 
+        public FrmPacientesUpdate(int pacienteId)
         {
             InitializeComponent();
+
+            _pacienteId = pacienteId;
+        }
+
+        private void btnFrmPacientesUpdateAceptar_Click(object sender, EventArgs e)
+        {
+            Modelo.Paciente paciente = new Modelo.Paciente();
+
+           
+
+            
         }
     }
 }
