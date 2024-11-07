@@ -16,5 +16,23 @@ namespace WinForm.Frm.Pacientes
         {
             InitializeComponent();
         }
+
+        private void btnFrmPacientesCreateAceptar_Click(object sender, EventArgs e)
+        {
+            Modelo.Paciente paciente = new Modelo.Paciente();
+
+            paciente.Nombre = tbPacientesNombreFrmCreate.Text;
+            paciente.Apellidos = tbPacientesApellidosFrmCreate.Text;
+            paciente.Direccion = tbPacientesDireccionFrmCreate.Text;
+            paciente.Poblacion = tbPacientesPoblacionFrmCreate.Text;
+            paciente.CodigoPostal = tbPacientesCódigoPostalFrmCreate.Text;
+            paciente.Provincia = tbPacientesProvinciaFrmCreate.Text;
+            paciente.Telefono1 = tbPacientesTelefono1FrmCreate.Text;
+            paciente.Telefono2 = tbPacientesTelefono2FrmCreate.Text;
+
+            Data.DataPaciente.GetInstance().InsertarPacinte(paciente);
+
+            MessageBox.Show("Paciente añadido correctamente");
+        }
     }
 }

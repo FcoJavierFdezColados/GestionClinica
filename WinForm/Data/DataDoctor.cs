@@ -31,6 +31,7 @@ namespace WinForm.Data
             using(var context = new Modelo.GestionClinicaContextSqlServer())
             {
                 context.Doctores.Add(doctor);
+                context.SaveChanges();
             }
         }
 

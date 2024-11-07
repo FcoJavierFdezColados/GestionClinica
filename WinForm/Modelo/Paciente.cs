@@ -13,6 +13,7 @@ namespace WinForm.Modelo
         public string Apellidos { get; set; }
         public string Direccion {  get; set; }
         public string CodigoPostal { get; set; }
+        public string Poblacion { get; set; } 
         public string Provincia { get; set; }
         public string Telefono1 { get; set; }
         public string? Telefono2 { get; set; }

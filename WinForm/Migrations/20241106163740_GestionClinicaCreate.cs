@@ -36,6 +36,7 @@ namespace WinForm.Migrations
                     Apellidos = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CodigoPostal = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Poblacion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Provincia = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefono1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefono2 = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -54,8 +55,8 @@ namespace WinForm.Migrations
                     FechaCita = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Motivo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstaCancelada = table.Column<bool>(type: "bit", nullable: false),
-                    FechaCancelacion = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MotivoCancelacion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FechaCancelacion = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MotivoCancelacion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PacienteId = table.Column<int>(type: "int", nullable: false),
                     DoctorId = table.Column<int>(type: "int", nullable: false)
                 },

@@ -12,7 +12,7 @@ using WinForm.Modelo;
 namespace WinForm.Migrations
 {
     [DbContext(typeof(GestionClinicaContextSqlServer))]
-    [Migration("20241025115106_GestionClinicaCreate")]
+    [Migration("20241106163740_GestionClinicaCreate")]
     partial class GestionClinicaCreate
     {
         /// <inheritdoc />
@@ -39,7 +39,7 @@ namespace WinForm.Migrations
                     b.Property<bool>("EstaCancelada")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("FechaCancelacion")
+                    b.Property<DateTime?>("FechaCancelacion")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("FechaCita")
@@ -50,7 +50,6 @@ namespace WinForm.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MotivoCancelacion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PacienteId")
@@ -111,6 +110,10 @@ namespace WinForm.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Poblacion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
