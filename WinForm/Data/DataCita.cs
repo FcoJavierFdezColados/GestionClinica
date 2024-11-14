@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace WinForm.Data
         {
             using(var context = new Modelo.GestionClinicaContextSqlServer())
             {
-                return context.Citas.ToList();
+                return context.Citas.Include("Paciente").Include("Doctor").ToList();
             }
         }
 

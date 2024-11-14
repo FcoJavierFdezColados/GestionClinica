@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCitasRead));
             splitContainer1 = new SplitContainer();
             dateTimePicker1 = new DateTimePicker();
-            dataGridView1 = new DataGridView();
+            dgwCitasRead = new DataGridView();
             toolStripFrmCitas = new ToolStrip();
             tsbFrmCitasAgregar = new ToolStripButton();
             tsbFrmCitasEditar = new ToolStripButton();
@@ -43,7 +43,7 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgwCitasRead).BeginInit();
             toolStripFrmCitas.SuspendLayout();
             statusStripFrmCitasRead.SuspendLayout();
             SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Panel2.Controls.Add(dgwCitasRead);
             splitContainer1.Panel2.Controls.Add(toolStripFrmCitas);
             splitContainer1.Panel2.Controls.Add(statusStripFrmCitasRead);
             splitContainer1.Size = new Size(800, 450);
@@ -78,14 +78,14 @@
             dateTimePicker1.Size = new Size(220, 23);
             dateTimePicker1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgwCitasRead
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 25);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(800, 370);
-            dataGridView1.TabIndex = 3;
+            dgwCitasRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwCitasRead.Dock = DockStyle.Fill;
+            dgwCitasRead.Location = new Point(0, 25);
+            dgwCitasRead.Name = "dgwCitasRead";
+            dgwCitasRead.Size = new Size(800, 370);
+            dgwCitasRead.TabIndex = 3;
             // 
             // toolStripFrmCitas
             // 
@@ -167,12 +167,13 @@
             Controls.Add(splitContainer1);
             Name = "FrmCitasRead";
             Text = "FrmCitasRead";
+            Load += FrmCitasRead_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgwCitasRead).EndInit();
             toolStripFrmCitas.ResumeLayout(false);
             toolStripFrmCitas.PerformLayout();
             statusStripFrmCitasRead.ResumeLayout(false);
@@ -189,7 +190,7 @@
         private StatusStrip statusStripFrmCitasRead;
         private ToolStripButton tsbFrmCitasEditar;
         private ToolStripTextBox toolStripTextBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgwCitasRead;
         private ToolStripStatusLabel tsslFrmCitasRead;
         private ToolStripButton tsbFrmCitasEliminar;
     }

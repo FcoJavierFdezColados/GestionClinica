@@ -76,5 +76,15 @@ namespace WinForm.Frm.Citas
         {
             tsslFrmCitasRead.Text = "";
         }
+
+        private void FrmCitasRead_Load(object sender, EventArgs e)
+        {
+            cargarDatos();
+        }
+
+        private void cargarDatos()
+        {
+            dgwCitasRead.DataSource = Data.DataCita.GetInstance().ListarCitas();
+        }
     }
 }

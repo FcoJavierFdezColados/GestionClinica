@@ -46,7 +46,12 @@ namespace WinForm.Frm.Pacientes
         }
 
         private void FrmPacientesRead_Load(object sender, EventArgs e)
-        {            
+        {
+            cargarDatos();
+        }
+
+        private void cargarDatos()
+        {
             dgwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
         }
     }
