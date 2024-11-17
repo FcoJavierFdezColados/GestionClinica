@@ -38,7 +38,7 @@
             tbPacientesDireccionFrmCreate = new TextBox();
             tbPacientesProvinciaFrmCreate = new TextBox();
             tbPacientesPoblacionFrmCreate = new TextBox();
-            tbPacientesCódigoPostalFrmCreate = new TextBox();
+            tbPacientesCodigoPostalFrmCreate = new TextBox();
             lblPacientesApellidosFrmCreate = new Label();
             lblPacientesDireccionFrmCreate = new Label();
             lblPoblacionPacientesFrmCreate = new Label();
@@ -129,12 +129,12 @@
             tbPacientesPoblacionFrmCreate.Size = new Size(258, 23);
             tbPacientesPoblacionFrmCreate.TabIndex = 9;
             // 
-            // tbPacientesCódigoPostalFrmCreate
+            // tbPacientesCodigoPostalFrmCreate
             // 
-            tbPacientesCódigoPostalFrmCreate.Location = new Point(497, 214);
-            tbPacientesCódigoPostalFrmCreate.Name = "tbPacientesCódigoPostalFrmCreate";
-            tbPacientesCódigoPostalFrmCreate.Size = new Size(291, 23);
-            tbPacientesCódigoPostalFrmCreate.TabIndex = 10;
+            tbPacientesCodigoPostalFrmCreate.Location = new Point(497, 214);
+            tbPacientesCodigoPostalFrmCreate.Name = "tbPacientesCodigoPostalFrmCreate";
+            tbPacientesCodigoPostalFrmCreate.Size = new Size(291, 23);
+            tbPacientesCodigoPostalFrmCreate.TabIndex = 10;
             // 
             // lblPacientesApellidosFrmCreate
             // 
@@ -213,7 +213,7 @@
             Controls.Add(lblPoblacionPacientesFrmCreate);
             Controls.Add(lblPacientesDireccionFrmCreate);
             Controls.Add(lblPacientesApellidosFrmCreate);
-            Controls.Add(tbPacientesCódigoPostalFrmCreate);
+            Controls.Add(tbPacientesCodigoPostalFrmCreate);
             Controls.Add(tbPacientesPoblacionFrmCreate);
             Controls.Add(tbPacientesProvinciaFrmCreate);
             Controls.Add(tbPacientesDireccionFrmCreate);
@@ -242,7 +242,7 @@
         private TextBox tbPacientesDireccionFrmCreate;
         private TextBox tbPacientesProvinciaFrmCreate;
         private TextBox tbPacientesPoblacionFrmCreate;
-        private TextBox tbPacientesCódigoPostalFrmCreate;
+        private TextBox tbPacientesCodigoPostalFrmCreate;
         private Label lblPacientesApellidosFrmCreate;
         private Label lblPacientesDireccionFrmCreate;
         private Label lblPoblacionPacientesFrmCreate;

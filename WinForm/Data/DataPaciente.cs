@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace WinForm.Data
                 instance = new DataPaciente();
 
             return instance;
-        }        
+        }
 
         public List<Modelo.Paciente> ListarPacientes()
         {
@@ -24,43 +25,85 @@ namespace WinForm.Data
             {
                 return context.Pacientes.ToList();
             }
+
         }
 
         public void InsertarPacinte(Modelo.Paciente paciente)
         {
-            using(var context = new Modelo.GestionClinicaContextSqlServer())
+            try
             {
-                context.Pacientes.Add(paciente);
-                context.SaveChanges();
+                using (var context = new Modelo.GestionClinicaContextSqlServer())
+                {
+                    context.Pacientes.Add(paciente);
+                    context.SaveChanges();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
+            }
+            catch (Exception ex)
+            {
+                Console.Error.Write($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
             }
         }
 
         public void ActualizarPaciente(int pacienteId, Modelo.Paciente paciente)
         {
-            using (var context = new Modelo.GestionClinicaContextSqlServer())
+            try
             {
-                var pacienteData = context.Pacientes.FirstOrDefault( x => x.PacienteId == pacienteId ); 
 
-                if (pacienteData != null)
+                using (var context = new Modelo.GestionClinicaContextSqlServer())
                 {
-                    context.Entry(pacienteData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                    context.Entry(pacienteData).CurrentValues.SetValues(paciente);
-                    context.SaveChanges();
+                    var pacienteData = context.Pacientes.FirstOrDefault(x => x.PacienteId == pacienteId);
+
+                    if (pacienteData != null)
+                    {
+                        context.Entry(pacienteData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        context.Entry(pacienteData).CurrentValues.SetValues(paciente);
+                        context.SaveChanges();
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
+            }
+            catch (Exception ex)
+            {
+                Console.Error.Write($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
             }
         }
 
         public void BorrarPaciente(int pacienteId)
         {
-            using(var context = new Modelo.GestionClinicaContextSqlServer())
+            try
             {
-                var pacienteData = context.Pacientes.FirstOrDefault( x => x.PacienteId == pacienteId );
 
-                if(pacienteData != null)
+                using (var context = new Modelo.GestionClinicaContextSqlServer())
                 {
-                    context.Entry(pacienteData).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-                    context.SaveChanges();
+                    var pacienteData = context.Pacientes.FirstOrDefault(x => x.PacienteId == pacienteId);
+
+                    if (pacienteData != null)
+                    {
+                        context.Entry(pacienteData).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                        context.SaveChanges();
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                Console.Error.WriteLine($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
+            }
+            catch (Exception ex)
+            {
+                Console.Error.Write($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
             }
         }
     }

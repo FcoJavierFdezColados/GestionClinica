@@ -12,7 +12,7 @@ using WinForm.Modelo;
 namespace WinForm.Migrations
 {
     [DbContext(typeof(GestionClinicaContextSqlServer))]
-    [Migration("20241106163740_GestionClinicaCreate")]
+    [Migration("20241117213538_GestionClinicaCreate")]
     partial class GestionClinicaCreate
     {
         /// <inheritdoc />

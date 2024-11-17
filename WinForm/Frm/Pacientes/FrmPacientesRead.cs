@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace WinForm.Frm.Pacientes
 
             if (frmPacientesCreate.ShowDialog() == DialogResult.OK)
             {
-                
+                cargarDatos();
             }
         }
 
@@ -36,7 +37,7 @@ namespace WinForm.Frm.Pacientes
 
                 if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
                 {
-
+                    cargarDatos();
                 }
             }
             else
@@ -52,7 +53,19 @@ namespace WinForm.Frm.Pacientes
 
         private void cargarDatos()
         {
-            dgwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
+            try
+            {
+                dgwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
+            }
+
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
