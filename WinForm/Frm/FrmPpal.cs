@@ -80,8 +80,13 @@ namespace WinForm.Frm
         {
             if (MdiChildren.Length > 0)
             {
-                MessageBox.Show("Tiene formularios abiertos. Guarde y Cierrelos antes de cerrar la aplicación");
-                e.Cancel = true;
+                string message = "Tiene formularios abiertos. Le recomendamos que guarde los datos y cierre los formularios antes de cerrar la aplicación. ¿Desea cerrar la aplicación pese a ello?";
+                var result = MessageBox.Show(message, "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                
+                if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
 
             }
         }
