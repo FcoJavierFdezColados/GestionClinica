@@ -29,23 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoctoresRead));
-            toolStrip1 = new ToolStrip();
+            toolStripFrmDocRead = new ToolStrip();
             tsbFrmDoctoresCrear = new ToolStripButton();
             tsbFrmDoctoresEditar = new ToolStripButton();
             tsbFrmDoctoresEliminar = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            toolStripLabel1 = new ToolStripLabel();
+            tstbBuscarFrmDocRead = new ToolStripTextBox();
             dataGridView1 = new DataGridView();
-            toolStrip1.SuspendLayout();
+            toolStripFrmDocRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // toolStrip1
+            // toolStripFrmDocRead
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar });
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 25);
-            toolStrip1.TabIndex = 0;
-            toolStrip1.Text = "toolStrip1";
+            toolStripFrmDocRead.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar, toolStripSeparator1, toolStripLabel1, tstbBuscarFrmDocRead });
+            toolStripFrmDocRead.Location = new Point(0, 0);
+            toolStripFrmDocRead.Name = "toolStripFrmDocRead";
+            toolStripFrmDocRead.Size = new Size(800, 25);
+            toolStripFrmDocRead.TabIndex = 0;
+            toolStripFrmDocRead.Text = "toolStrip1";
             // 
             // tsbFrmDoctoresCrear
             // 
@@ -76,11 +79,32 @@
             tsbFrmDoctoresEliminar.Size = new Size(23, 22);
             tsbFrmDoctoresEliminar.Text = "Eliminar";
             // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
+            toolStripLabel1.Image = (Image)resources.GetObject("toolStripLabel1.Image");
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new Size(16, 22);
+            // 
+            // tstbBuscarFrmDocRead
+            // 
+            tstbBuscarFrmDocRead.Alignment = ToolStripItemAlignment.Right;
+            tstbBuscarFrmDocRead.BorderStyle = BorderStyle.FixedSingle;
+            tstbBuscarFrmDocRead.Name = "tstbBuscarFrmDocRead";
+            tstbBuscarFrmDocRead.Size = new Size(100, 25);
+            tstbBuscarFrmDocRead.ToolTipText = "Buscar Doctor";
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 25);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(800, 425);
             dataGridView1.TabIndex = 1;
@@ -91,11 +115,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
-            Controls.Add(toolStrip1);
+            Controls.Add(toolStripFrmDocRead);
             Name = "FrmDoctoresRead";
-            Text = "FrmDoctoresRead";
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
+            Text = "Lista de Doctores";
+            toolStripFrmDocRead.ResumeLayout(false);
+            toolStripFrmDocRead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -103,10 +127,13 @@
 
         #endregion
 
-        private ToolStrip toolStrip1;
+        private ToolStrip toolStripFrmDocRead;
         private ToolStripButton tsbFrmDoctoresCrear;
         private ToolStripButton tsbFrmDoctoresEditar;
         private ToolStripButton tsbFrmDoctoresEliminar;
         private DataGridView dataGridView1;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripLabel toolStripLabel1;
+        private ToolStripTextBox tstbBuscarFrmDocRead;
     }
 }

@@ -95,7 +95,7 @@
             Controls.Add(dgwPacientesRead);
             Controls.Add(toolStripFrmPacientes);
             Name = "FrmPacientesRead";
-            Text = "FrmPacientesRead";
+            Text = "Lista de Pacientes";
             Load += FrmPacientesRead_Load;
             toolStripFrmPacientes.ResumeLayout(false);
             toolStripFrmPacientes.PerformLayout();

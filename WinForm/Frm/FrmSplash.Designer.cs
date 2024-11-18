@@ -33,6 +33,10 @@
             lblGestionClinica = new Label();
             label1 = new Label();
             pbFrmSplash = new ProgressBar();
+            lblIconsSource = new Label();
+            lklSourceIcons = new LinkLabel();
+            lblAuthorIcons = new Label();
+            lklAuthorIcons = new LinkLabel();
             SuspendLayout();
             // 
             // timerFrmSplash
@@ -72,12 +76,54 @@
             pbFrmSplash.Step = 1000;
             pbFrmSplash.TabIndex = 2;
             // 
+            // lblIconsSource
+            // 
+            lblIconsSource.AutoSize = true;
+            lblIconsSource.Location = new Point(22, 303);
+            lblIconsSource.Name = "lblIconsSource";
+            lblIconsSource.Size = new Size(117, 15);
+            lblIconsSource.TabIndex = 3;
+            lblIconsSource.Text = "Iconos obtenidos de:";
+            // 
+            // lklSourceIcons
+            // 
+            lklSourceIcons.AutoSize = true;
+            lklSourceIcons.Location = new Point(145, 303);
+            lklSourceIcons.Name = "lklSourceIcons";
+            lklSourceIcons.Size = new Size(144, 15);
+            lklSourceIcons.TabIndex = 4;
+            lklSourceIcons.TabStop = true;
+            lklSourceIcons.Text = "https://www.flaticon.com";
+            // 
+            // lblAuthorIcons
+            // 
+            lblAuthorIcons.AutoSize = true;
+            lblAuthorIcons.Location = new Point(338, 305);
+            lblAuthorIcons.Name = "lblAuthorIcons";
+            lblAuthorIcons.Size = new Size(108, 15);
+            lblAuthorIcons.TabIndex = 5;
+            lblAuthorIcons.Text = "Derechos de Autor:";
+            // 
+            // lklAuthorIcons
+            // 
+            lklAuthorIcons.AutoSize = true;
+            lklAuthorIcons.Location = new Point(452, 305);
+            lklAuthorIcons.Name = "lklAuthorIcons";
+            lklAuthorIcons.Size = new Size(261, 15);
+            lklAuthorIcons.TabIndex = 6;
+            lklAuthorIcons.TabStop = true;
+            lklAuthorIcons.Text = "https://www.flaticon.com/authors/pixel-perfect";
+            // 
             // FrmSplash
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(lklAuthorIcons);
+            Controls.Add(lblAuthorIcons);
+            Controls.Add(lklSourceIcons);
+            Controls.Add(lblIconsSource);
             Controls.Add(pbFrmSplash);
             Controls.Add(label1);
             Controls.Add(lblGestionClinica);
@@ -96,5 +142,9 @@
         private Label lblGestionClinica;
         private Label label1;
         private ProgressBar pbFrmSplash;
+        private Label lblIconsSource;
+        private LinkLabel lklSourceIcons;
+        private Label lblAuthorIcons;
+        private LinkLabel lklAuthorIcons;
     }
 }

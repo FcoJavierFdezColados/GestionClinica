@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnDoctoresCreateAceptar = new Button();
-            btnDoctoresCreateCancel = new Button();
+            btnAceptarFrmDoctoresCreate = new Button();
+            btnCancelFrmDoctoresCreate = new Button();
             lblNombrefrmDocCreate = new Label();
             lblApellidosFrmDocCreate = new Label();
             lblNumColegiadoFrmDocCreate = new Label();
@@ -38,27 +38,28 @@
             tbNumColegiadoFrmDocCreate = new TextBox();
             SuspendLayout();
             // 
-            // btnDoctoresCreateAceptar
+            // btnAceptarFrmDoctoresCreate
             // 
-            btnDoctoresCreateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnDoctoresCreateAceptar.DialogResult = DialogResult.OK;
-            btnDoctoresCreateAceptar.Location = new Point(207, 353);
-            btnDoctoresCreateAceptar.Name = "btnDoctoresCreateAceptar";
-            btnDoctoresCreateAceptar.Size = new Size(75, 23);
-            btnDoctoresCreateAceptar.TabIndex = 0;
-            btnDoctoresCreateAceptar.Text = "Aceptar";
-            btnDoctoresCreateAceptar.UseVisualStyleBackColor = true;
+            btnAceptarFrmDoctoresCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAceptarFrmDoctoresCreate.DialogResult = DialogResult.OK;
+            btnAceptarFrmDoctoresCreate.Location = new Point(207, 353);
+            btnAceptarFrmDoctoresCreate.Name = "btnAceptarFrmDoctoresCreate";
+            btnAceptarFrmDoctoresCreate.Size = new Size(75, 23);
+            btnAceptarFrmDoctoresCreate.TabIndex = 0;
+            btnAceptarFrmDoctoresCreate.Text = "Aceptar";
+            btnAceptarFrmDoctoresCreate.UseVisualStyleBackColor = true;
+            btnAceptarFrmDoctoresCreate.Click += btnAceptarFrmDoctoresCreate_Click;
             // 
-            // btnDoctoresCreateCancel
+            // btnCancelFrmDoctoresCreate
             // 
-            btnDoctoresCreateCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDoctoresCreateCancel.DialogResult = DialogResult.Cancel;
-            btnDoctoresCreateCancel.Location = new Point(435, 353);
-            btnDoctoresCreateCancel.Name = "btnDoctoresCreateCancel";
-            btnDoctoresCreateCancel.Size = new Size(75, 23);
-            btnDoctoresCreateCancel.TabIndex = 1;
-            btnDoctoresCreateCancel.Text = "Cancelar";
-            btnDoctoresCreateCancel.UseVisualStyleBackColor = true;
+            btnCancelFrmDoctoresCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelFrmDoctoresCreate.DialogResult = DialogResult.Cancel;
+            btnCancelFrmDoctoresCreate.Location = new Point(435, 353);
+            btnCancelFrmDoctoresCreate.Name = "btnCancelFrmDoctoresCreate";
+            btnCancelFrmDoctoresCreate.Size = new Size(75, 23);
+            btnCancelFrmDoctoresCreate.TabIndex = 1;
+            btnCancelFrmDoctoresCreate.Text = "Cancelar";
+            btnCancelFrmDoctoresCreate.UseVisualStyleBackColor = true;
             // 
             // lblNombrefrmDocCreate
             // 
@@ -110,10 +111,10 @@
             // 
             // FrmDoctoresCreate
             // 
-            AcceptButton = btnDoctoresCreateAceptar;
+            AcceptButton = btnAceptarFrmDoctoresCreate;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnDoctoresCreateCancel;
+            CancelButton = btnCancelFrmDoctoresCreate;
             ClientSize = new Size(800, 450);
             Controls.Add(tbNumColegiadoFrmDocCreate);
             Controls.Add(tbApellidosFrmDocCreate);
@@ -121,18 +122,18 @@
             Controls.Add(lblNumColegiadoFrmDocCreate);
             Controls.Add(lblApellidosFrmDocCreate);
             Controls.Add(lblNombrefrmDocCreate);
-            Controls.Add(btnDoctoresCreateCancel);
-            Controls.Add(btnDoctoresCreateAceptar);
+            Controls.Add(btnCancelFrmDoctoresCreate);
+            Controls.Add(btnAceptarFrmDoctoresCreate);
             Name = "FrmDoctoresCreate";
-            Text = "FrmDoctoresCreate";
+            Text = "Añadir Doctor";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnDoctoresCreateAceptar;
-        private Button btnDoctoresCreateCancel;
+        private Button btnAceptarFrmDoctoresCreate;
+        private Button btnCancelFrmDoctoresCreate;
         private Label lblNombrefrmDocCreate;
         private Label lblApellidosFrmDocCreate;
         private Label lblNumColegiadoFrmDocCreate;

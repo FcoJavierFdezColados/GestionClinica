@@ -16,5 +16,10 @@ namespace WinForm.Frm.Doctores
         {
             InitializeComponent();
         }
+
+        private void btnAceptarFrmDoctoresCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

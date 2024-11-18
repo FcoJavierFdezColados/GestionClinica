@@ -33,6 +33,13 @@
             lblDevelopedBy = new Label();
             lblIconsUrl = new Label();
             llbUrlIcons = new LinkLabel();
+            lklAuthorIcons = new LinkLabel();
+            lblAuthorIcons = new Label();
+            groupBox1 = new GroupBox();
+            lblAuthorApp = new Label();
+            lblRepository = new Label();
+            lklRepository = new LinkLabel();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -72,7 +79,7 @@
             // 
             lblIconsUrl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblIconsUrl.AutoSize = true;
-            lblIconsUrl.Location = new Point(204, 211);
+            lblIconsUrl.Location = new Point(51, 19);
             lblIconsUrl.Name = "lblIconsUrl";
             lblIconsUrl.Size = new Size(118, 15);
             lblIconsUrl.TabIndex = 3;
@@ -82,20 +89,82 @@
             // 
             llbUrlIcons.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             llbUrlIcons.AutoSize = true;
-            llbUrlIcons.Location = new Point(353, 211);
+            llbUrlIcons.Location = new Point(200, 19);
             llbUrlIcons.Name = "llbUrlIcons";
             llbUrlIcons.Size = new Size(144, 15);
             llbUrlIcons.TabIndex = 4;
             llbUrlIcons.TabStop = true;
             llbUrlIcons.Text = "https://www.flaticon.com";
             // 
+            // lklAuthorIcons
+            // 
+            lklAuthorIcons.AutoSize = true;
+            lklAuthorIcons.Location = new Point(165, 46);
+            lklAuthorIcons.Name = "lklAuthorIcons";
+            lklAuthorIcons.Size = new Size(261, 15);
+            lklAuthorIcons.TabIndex = 8;
+            lklAuthorIcons.TabStop = true;
+            lklAuthorIcons.Text = "https://www.flaticon.com/authors/pixel-perfect";
+            // 
+            // lblAuthorIcons
+            // 
+            lblAuthorIcons.AutoSize = true;
+            lblAuthorIcons.Location = new Point(51, 46);
+            lblAuthorIcons.Name = "lblAuthorIcons";
+            lblAuthorIcons.Size = new Size(108, 15);
+            lblAuthorIcons.TabIndex = 7;
+            lblAuthorIcons.Text = "Derechos de Autor:";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblIconsUrl);
+            groupBox1.Controls.Add(lklAuthorIcons);
+            groupBox1.Controls.Add(llbUrlIcons);
+            groupBox1.Controls.Add(lblAuthorIcons);
+            groupBox1.Location = new Point(114, 165);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(493, 94);
+            groupBox1.TabIndex = 9;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Autoría de los Iconos";
+            // 
+            // lblAuthorApp
+            // 
+            lblAuthorApp.AutoSize = true;
+            lblAuthorApp.Location = new Point(165, 279);
+            lblAuthorApp.Name = "lblAuthorApp";
+            lblAuthorApp.Size = new Size(386, 15);
+            lblAuthorApp.TabIndex = 10;
+            lblAuthorApp.Text = "Derechos de Autor de la Aplicación: Francisco Javier Fernández Collados";
+            // 
+            // lblRepository
+            // 
+            lblRepository.AutoSize = true;
+            lblRepository.Location = new Point(165, 316);
+            lblRepository.Name = "lblRepository";
+            lblRepository.Size = new Size(70, 15);
+            lblRepository.TabIndex = 11;
+            lblRepository.Text = "Repositorio:";
+            // 
+            // lklRepository
+            // 
+            lklRepository.AutoSize = true;
+            lklRepository.Location = new Point(241, 316);
+            lklRepository.Name = "lklRepository";
+            lklRepository.Size = new Size(310, 15);
+            lklRepository.TabIndex = 12;
+            lklRepository.TabStop = true;
+            lklRepository.Text = "https://github.com/FcoJavierFdezColados/GestionClinica";
+            // 
             // FrmAcercaDe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(llbUrlIcons);
-            Controls.Add(lblIconsUrl);
+            Controls.Add(lklRepository);
+            Controls.Add(lblRepository);
+            Controls.Add(lblAuthorApp);
+            Controls.Add(groupBox1);
             Controls.Add(lblDevelopedBy);
             Controls.Add(btnFrmAcercaDeAceptar);
             Controls.Add(label1);
@@ -105,6 +174,8 @@
             Name = "FrmAcercaDe";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Acerca de Gestión Clínica";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +187,11 @@
         private Label lblDevelopedBy;
         private Label lblIconsUrl;
         private LinkLabel llbUrlIcons;
+        private LinkLabel lklAuthorIcons;
+        private Label lblAuthorIcons;
+        private GroupBox groupBox1;
+        private Label lblAuthorApp;
+        private Label lblRepository;
+        private LinkLabel lklRepository;
     }
 }
