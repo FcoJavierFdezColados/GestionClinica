@@ -19,7 +19,46 @@ namespace WinForm.Frm.Doctores
 
         private void btnAceptarFrmDoctoresCreate_Click(object sender, EventArgs e)
         {
+            Modelo.Doctor doctor = new Modelo.Doctor();
 
+            if (ValidarDatos())
+            {
+                doctor.Nombre = tbNombreFrmDocCreate.Text;
+                doctor.Apellidos = tbApellidosFrmDocCreate.Text;
+                doctor.NumColegiado = tbNumColegiadoFrmDocCreate.Text;
+
+                Data.DataDoctor.GetInstance().InsertarDoctor(doctor);
+
+                MessageBox.Show("Doctor añadido correctamente");
+            }
+            else
+            {
+                DialogResult = DialogResult.None;
+            }
+        }
+
+        private bool ValidarDatos()
+        {
+            if(tbNombreFrmDocCreate.Text == "")
+            {
+                MessageBox.Show("El campo nombre debe estar relleno.");
+                tbNombreFrmDocCreate.Focus();
+                return false;
+            }
+            else if(tbApellidosFrmDocCreate.Text == "")
+            {
+                MessageBox.Show("El campo apellidos debe estar relleno.");
+                tbApellidosFrmDocCreate.Focus();
+                return false;
+            }
+            else if(tbNumColegiadoFrmDocCreate.Text == "")
+            {
+                MessageBox.Show("El campo número de colegiado debe estar relleno.");
+                tbNumColegiadoFrmDocCreate.Focus();
+                return false;
+            }
+
+            return true;
         }
     }
 }

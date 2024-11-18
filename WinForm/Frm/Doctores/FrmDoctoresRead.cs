@@ -45,11 +45,20 @@ namespace WinForm.Frm.Doctores
 
         private void tsbFrmDoctoresEliminar_Click(object sender, EventArgs e)
         {
-            if(DgvwDoctoresRead.Rows.Count > 0)
+            if (DgvwDoctoresRead.Rows.Count > 0)
             {
-                int doctorId = (int)DgvwDoctoresRead.Rows[0].Cells["PacienteId"].Value;
-                Data.DataDoctor.GetInstance().BorrarDoctor(doctorId);
-                CargarDatos();
+                var result = MessageBox.Show
+                    (
+                        "¿Esta seguro de querer eliminar el registro de la tabla?",
+                        "Aviso", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning
+                    );
+                if (result == DialogResult.OK)
+                {
+                    int doctorId = (int)DgvwDoctoresRead.SelectedRows[0].Cells["DoctorId"].Value;
+                    Data.DataDoctor.GetInstance().BorrarDoctor(doctorId);
+                    CargarDatos();
+                }
             }
             else
             {
@@ -63,7 +72,7 @@ namespace WinForm.Frm.Doctores
             {
                 DgvwDoctoresRead.DataSource = Data.DataDoctor.GetInstance().ListarDoctores();
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 Console.Error.WriteLine(ex.Message);
             }

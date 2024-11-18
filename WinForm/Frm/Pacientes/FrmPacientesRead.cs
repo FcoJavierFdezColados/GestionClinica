@@ -71,9 +71,18 @@ namespace WinForm.Frm.Pacientes
         {
             if (dgwPacientesRead.SelectedRows.Count > 0)
             {
-                int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
-                Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
-                CargarDatos();
+                var result = MessageBox.Show
+                    (
+                        "¿Esta seguro de querer eliminar el registro de la tabla?",
+                        "Aviso", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning
+                    );
+                if (result == DialogResult.OK)
+                {
+                    int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                    Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
+                    CargarDatos();
+                }
             }
             else
             {
