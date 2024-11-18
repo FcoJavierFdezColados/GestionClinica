@@ -57,14 +57,27 @@ namespace WinForm.Frm.Pacientes
             {
                 dgwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
             }
-
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+
+        private void tsbFrmPacientesEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgwPacientesRead.SelectedRows.Count > 0)
+            {
+                int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
+                cargarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar toda la fila.");
             }
         }
     }

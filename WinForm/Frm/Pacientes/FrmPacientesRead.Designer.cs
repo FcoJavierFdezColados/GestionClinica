@@ -75,12 +75,14 @@
             tsbFrmPacientesEliminar.Name = "tsbFrmPacientesEliminar";
             tsbFrmPacientesEliminar.Size = new Size(23, 22);
             tsbFrmPacientesEliminar.Text = "Eliminar";
+            tsbFrmPacientesEliminar.Click += tsbFrmPacientesEliminar_Click;
             // 
             // dgwPacientesRead
             // 
             dgwPacientesRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwPacientesRead.Dock = DockStyle.Fill;
             dgwPacientesRead.Location = new Point(0, 25);
+            dgwPacientesRead.MultiSelect = false;
             dgwPacientesRead.Name = "dgwPacientesRead";
             dgwPacientesRead.Size = new Size(800, 425);
             dgwPacientesRead.TabIndex = 1;

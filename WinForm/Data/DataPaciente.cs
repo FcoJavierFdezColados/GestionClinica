@@ -74,7 +74,7 @@ namespace WinForm.Data
             }
             catch (Exception ex)
             {
-                Console.Error.Write($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Error: {ex.Message}");
                 Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
             }
         }
@@ -102,7 +102,7 @@ namespace WinForm.Data
             }
             catch (Exception ex)
             {
-                Console.Error.Write($"Error: {ex.Message}");
+                Console.Error.WriteLine($"Error: {ex.Message}");
                 Console.Error.WriteLine($"Stack Trace: {ex.StackTrace}");
             }
         }
