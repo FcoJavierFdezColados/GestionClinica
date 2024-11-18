@@ -89,5 +89,21 @@ namespace WinForm.Frm.Doctores
                 Console.Error.WriteLine(ex.StackTrace);
             }
         }
+
+        private void tstbBuscarFrmDocRead_TextChanged(object sender, EventArgs e)
+        {
+            if (tstbBuscarFrmDocRead.Text.Length > 0)
+            {
+                DgvwDoctoresRead.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().Where
+                (
+                    x => x.Apellidos.ToLower().Contains(tstbBuscarFrmDocRead.Text.ToLower())
+                )
+                .ToList();
+            }
+            else
+            {
+                CargarDatos();
+            }
+        }
     }
 }

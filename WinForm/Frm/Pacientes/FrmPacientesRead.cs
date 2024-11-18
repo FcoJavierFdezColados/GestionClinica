@@ -30,9 +30,9 @@ namespace WinForm.Frm.Pacientes
 
         private void tsbFrmPacientesEditar_Click(object sender, EventArgs e)
         {
-            if (dgwPacientesRead.SelectedRows.Count > 0)
+            if (DgvwPacientesRead.SelectedRows.Count > 0)
             {
-                int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
                 FrmPacientesUpdate frmPacientesUpdate = new FrmPacientesUpdate(pacienteId);
 
                 if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
@@ -55,7 +55,7 @@ namespace WinForm.Frm.Pacientes
         {
             try
             {
-                dgwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
+                DgvwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
             }
             catch (SqlException e)
             {
@@ -69,7 +69,7 @@ namespace WinForm.Frm.Pacientes
 
         private void tsbFrmPacientesEliminar_Click(object sender, EventArgs e)
         {
-            if (dgwPacientesRead.SelectedRows.Count > 0)
+            if (DgvwPacientesRead.SelectedRows.Count > 0)
             {
                 var result = MessageBox.Show
                     (
@@ -79,7 +79,7 @@ namespace WinForm.Frm.Pacientes
                     );
                 if (result == DialogResult.OK)
                 {
-                    int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                    int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
                     Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
                     CargarDatos();
                 }
@@ -87,6 +87,22 @@ namespace WinForm.Frm.Pacientes
             else
             {
                 MessageBox.Show("Debe seleccionar toda la fila.");
+            }
+        }
+
+        private void tstbBuscarFrmPacientesRead_TextChanged(object sender, EventArgs e)
+        {
+            if(tstbBuscarFrmPacientesRead.Text.Length > 0)
+            {
+                DgvwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes().Where
+                    (
+                        x => x.Apellidos.ToLower().Contains(tstbBuscarFrmPacientesRead.Text.ToLower())
+                    )
+                    .ToList();
+            }
+            else
+            {
+                CargarDatos();
             }
         }
     }

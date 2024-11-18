@@ -37,13 +37,14 @@
             tslBuscarFrmDocRead = new ToolStripLabel();
             tstbBuscarFrmDocRead = new ToolStripTextBox();
             DgvwDoctoresRead = new DataGridView();
+            toolStripLabel1 = new ToolStripLabel();
             toolStripFrmDocRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).BeginInit();
             SuspendLayout();
             // 
             // toolStripFrmDocRead
             // 
-            toolStripFrmDocRead.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar, toolStripSeparator1, tslBuscarFrmDocRead, tstbBuscarFrmDocRead });
+            toolStripFrmDocRead.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar, toolStripSeparator1, tslBuscarFrmDocRead, tstbBuscarFrmDocRead, toolStripLabel1 });
             toolStripFrmDocRead.Location = new Point(0, 0);
             toolStripFrmDocRead.Name = "toolStripFrmDocRead";
             toolStripFrmDocRead.Size = new Size(800, 25);
@@ -100,6 +101,7 @@
             tstbBuscarFrmDocRead.Name = "tstbBuscarFrmDocRead";
             tstbBuscarFrmDocRead.Size = new Size(100, 25);
             tstbBuscarFrmDocRead.ToolTipText = "Buscar Doctor";
+            tstbBuscarFrmDocRead.TextChanged += tstbBuscarFrmDocRead_TextChanged;
             // 
             // DgvwDoctoresRead
             // 
@@ -110,6 +112,13 @@
             DgvwDoctoresRead.Name = "DgvwDoctoresRead";
             DgvwDoctoresRead.Size = new Size(800, 425);
             DgvwDoctoresRead.TabIndex = 1;
+            // 
+            // toolStripLabel1
+            // 
+            toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new Size(59, 22);
+            toolStripLabel1.Text = "Apellidos:";
             // 
             // FrmDoctoresRead
             // 
@@ -138,5 +147,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel tslBuscarFrmDocRead;
         private ToolStripTextBox tstbBuscarFrmDocRead;
+        private ToolStripLabel toolStripLabel1;
     }
 }
