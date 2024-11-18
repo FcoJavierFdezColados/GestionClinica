@@ -55,7 +55,7 @@ namespace WinForm.Frm.Pacientes
         {
             try
             {
-                DgvwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes();
+                DgvwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes().OrderBy(x => x.Apellidos).ToList();
             }
             catch (SqlException e)
             {

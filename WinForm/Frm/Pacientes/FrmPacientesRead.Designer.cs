@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPacientesRead));
             toolStripFrmPacientes = new ToolStrip();
             tsbFrmPacientesCrear = new ToolStripButton();
@@ -36,10 +37,21 @@
             toolStripSeparator1 = new ToolStripSeparator();
             tslBuscarFrmPacientesRead = new ToolStripLabel();
             tstbBuscarFrmPacientesRead = new ToolStripTextBox();
-            DgvwPacientesRead = new DataGridView();
             toolStripLabel1 = new ToolStripLabel();
+            DgvwPacientesRead = new DataGridView();
+            pacienteBindingSource = new BindingSource(components);
+            pacienteIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            apellidosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            telefono1DataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            telefono2DataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            codigoPostalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            poblacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            provinciaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             toolStripFrmPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwPacientesRead).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).BeginInit();
             SuspendLayout();
             // 
             // toolStripFrmPacientes
@@ -47,7 +59,7 @@
             toolStripFrmPacientes.Items.AddRange(new ToolStripItem[] { tsbFrmPacientesCrear, tsbFrmPacientesEditar, tsbFrmPacientesEliminar, toolStripSeparator1, tslBuscarFrmPacientesRead, tstbBuscarFrmPacientesRead, toolStripLabel1 });
             toolStripFrmPacientes.Location = new Point(0, 0);
             toolStripFrmPacientes.Name = "toolStripFrmPacientes";
-            toolStripFrmPacientes.Size = new Size(800, 25);
+            toolStripFrmPacientes.Size = new Size(845, 25);
             toolStripFrmPacientes.TabIndex = 0;
             toolStripFrmPacientes.Text = "Menú Pacientes";
             // 
@@ -101,16 +113,6 @@
             tstbBuscarFrmPacientesRead.Size = new Size(100, 25);
             tstbBuscarFrmPacientesRead.TextChanged += tstbBuscarFrmPacientesRead_TextChanged;
             // 
-            // DgvwPacientesRead
-            // 
-            DgvwPacientesRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvwPacientesRead.Dock = DockStyle.Fill;
-            DgvwPacientesRead.Location = new Point(0, 25);
-            DgvwPacientesRead.MultiSelect = false;
-            DgvwPacientesRead.Name = "DgvwPacientesRead";
-            DgvwPacientesRead.Size = new Size(800, 425);
-            DgvwPacientesRead.TabIndex = 1;
-            // 
             // toolStripLabel1
             // 
             toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
@@ -118,11 +120,84 @@
             toolStripLabel1.Size = new Size(59, 22);
             toolStripLabel1.Text = "Apellidos:";
             // 
+            // DgvwPacientesRead
+            // 
+            DgvwPacientesRead.AutoGenerateColumns = false;
+            DgvwPacientesRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvwPacientesRead.Columns.AddRange(new DataGridViewColumn[] { pacienteIdDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, telefono1DataGridViewTextBoxColumn, telefono2DataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, codigoPostalDataGridViewTextBoxColumn, poblacionDataGridViewTextBoxColumn, provinciaDataGridViewTextBoxColumn });
+            DgvwPacientesRead.DataSource = pacienteBindingSource;
+            DgvwPacientesRead.Dock = DockStyle.Fill;
+            DgvwPacientesRead.Location = new Point(0, 25);
+            DgvwPacientesRead.MultiSelect = false;
+            DgvwPacientesRead.Name = "DgvwPacientesRead";
+            DgvwPacientesRead.Size = new Size(845, 425);
+            DgvwPacientesRead.TabIndex = 1;
+            // 
+            // pacienteBindingSource
+            // 
+            pacienteBindingSource.DataSource = typeof(Modelo.Paciente);
+            // 
+            // pacienteIdDataGridViewTextBoxColumn
+            // 
+            pacienteIdDataGridViewTextBoxColumn.DataPropertyName = "PacienteId";
+            pacienteIdDataGridViewTextBoxColumn.HeaderText = "PacienteId";
+            pacienteIdDataGridViewTextBoxColumn.Name = "pacienteIdDataGridViewTextBoxColumn";
+            pacienteIdDataGridViewTextBoxColumn.ReadOnly = true;
+            pacienteIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
+            apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
+            apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // telefono1DataGridViewTextBoxColumn
+            // 
+            telefono1DataGridViewTextBoxColumn.DataPropertyName = "Telefono1";
+            telefono1DataGridViewTextBoxColumn.HeaderText = "Telefono1";
+            telefono1DataGridViewTextBoxColumn.Name = "telefono1DataGridViewTextBoxColumn";
+            // 
+            // telefono2DataGridViewTextBoxColumn
+            // 
+            telefono2DataGridViewTextBoxColumn.DataPropertyName = "Telefono2";
+            telefono2DataGridViewTextBoxColumn.HeaderText = "Telefono2";
+            telefono2DataGridViewTextBoxColumn.Name = "telefono2DataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            // 
+            // codigoPostalDataGridViewTextBoxColumn
+            // 
+            codigoPostalDataGridViewTextBoxColumn.DataPropertyName = "CodigoPostal";
+            codigoPostalDataGridViewTextBoxColumn.HeaderText = "CodigoPostal";
+            codigoPostalDataGridViewTextBoxColumn.Name = "codigoPostalDataGridViewTextBoxColumn";
+            // 
+            // poblacionDataGridViewTextBoxColumn
+            // 
+            poblacionDataGridViewTextBoxColumn.DataPropertyName = "Poblacion";
+            poblacionDataGridViewTextBoxColumn.HeaderText = "Poblacion";
+            poblacionDataGridViewTextBoxColumn.Name = "poblacionDataGridViewTextBoxColumn";
+            // 
+            // provinciaDataGridViewTextBoxColumn
+            // 
+            provinciaDataGridViewTextBoxColumn.DataPropertyName = "Provincia";
+            provinciaDataGridViewTextBoxColumn.HeaderText = "Provincia";
+            provinciaDataGridViewTextBoxColumn.Name = "provinciaDataGridViewTextBoxColumn";
+            // 
             // FrmPacientesRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(845, 450);
             Controls.Add(DgvwPacientesRead);
             Controls.Add(toolStripFrmPacientes);
             Name = "FrmPacientesRead";
@@ -131,6 +206,7 @@
             toolStripFrmPacientes.ResumeLayout(false);
             toolStripFrmPacientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwPacientesRead).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,5 +222,15 @@
         private ToolStripLabel tslBuscarFrmPacientesRead;
         private ToolStripTextBox tstbBuscarFrmPacientesRead;
         private ToolStripLabel toolStripLabel1;
+        private BindingSource pacienteBindingSource;
+        private DataGridViewTextBoxColumn pacienteIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn telefono1DataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn telefono2DataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn codigoPostalDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn poblacionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn;
     }
 }

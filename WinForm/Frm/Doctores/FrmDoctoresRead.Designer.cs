@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoctoresRead));
             toolStripFrmDocRead = new ToolStrip();
             tsbFrmDoctoresCrear = new ToolStripButton();
@@ -36,10 +37,16 @@
             toolStripSeparator1 = new ToolStripSeparator();
             tslBuscarFrmDocRead = new ToolStripLabel();
             tstbBuscarFrmDocRead = new ToolStripTextBox();
-            DgvwDoctoresRead = new DataGridView();
             toolStripLabel1 = new ToolStripLabel();
+            DgvwDoctoresRead = new DataGridView();
+            doctorBindingSource = new BindingSource(components);
+            doctorIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            numColegiadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            apellidosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             toolStripFrmDocRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
             SuspendLayout();
             // 
             // toolStripFrmDocRead
@@ -103,9 +110,19 @@
             tstbBuscarFrmDocRead.ToolTipText = "Buscar Doctor";
             tstbBuscarFrmDocRead.TextChanged += tstbBuscarFrmDocRead_TextChanged;
             // 
+            // toolStripLabel1
+            // 
+            toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new Size(59, 22);
+            toolStripLabel1.Text = "Apellidos:";
+            // 
             // DgvwDoctoresRead
             // 
+            DgvwDoctoresRead.AutoGenerateColumns = false;
             DgvwDoctoresRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvwDoctoresRead.Columns.AddRange(new DataGridViewColumn[] { doctorIdDataGridViewTextBoxColumn, numColegiadoDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn });
+            DgvwDoctoresRead.DataSource = doctorBindingSource;
             DgvwDoctoresRead.Dock = DockStyle.Fill;
             DgvwDoctoresRead.Location = new Point(0, 25);
             DgvwDoctoresRead.MultiSelect = false;
@@ -113,12 +130,35 @@
             DgvwDoctoresRead.Size = new Size(800, 425);
             DgvwDoctoresRead.TabIndex = 1;
             // 
-            // toolStripLabel1
+            // doctorBindingSource
             // 
-            toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
-            toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new Size(59, 22);
-            toolStripLabel1.Text = "Apellidos:";
+            doctorBindingSource.DataSource = typeof(Modelo.Doctor);
+            // 
+            // doctorIdDataGridViewTextBoxColumn
+            // 
+            doctorIdDataGridViewTextBoxColumn.DataPropertyName = "DoctorId";
+            doctorIdDataGridViewTextBoxColumn.HeaderText = "DoctorId";
+            doctorIdDataGridViewTextBoxColumn.Name = "doctorIdDataGridViewTextBoxColumn";
+            doctorIdDataGridViewTextBoxColumn.ReadOnly = true;
+            doctorIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // numColegiadoDataGridViewTextBoxColumn
+            // 
+            numColegiadoDataGridViewTextBoxColumn.DataPropertyName = "NumColegiado";
+            numColegiadoDataGridViewTextBoxColumn.HeaderText = "NumColegiado";
+            numColegiadoDataGridViewTextBoxColumn.Name = "numColegiadoDataGridViewTextBoxColumn";
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
+            apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
+            apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
             // FrmDoctoresRead
             // 
@@ -133,6 +173,7 @@
             toolStripFrmDocRead.ResumeLayout(false);
             toolStripFrmDocRead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).EndInit();
+            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,5 +189,10 @@
         private ToolStripLabel tslBuscarFrmDocRead;
         private ToolStripTextBox tstbBuscarFrmDocRead;
         private ToolStripLabel toolStripLabel1;
+        private DataGridViewTextBoxColumn doctorIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numColegiadoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private BindingSource doctorBindingSource;
     }
 }

@@ -78,7 +78,7 @@ namespace WinForm.Frm.Doctores
         {
             try
             {
-                DgvwDoctoresRead.DataSource = Data.DataDoctor.GetInstance().ListarDoctores();
+                DgvwDoctoresRead.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().OrderBy(x => x.Apellidos).ToList();
             }
             catch (SqlException ex)
             {
