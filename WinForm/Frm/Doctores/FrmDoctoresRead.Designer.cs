@@ -34,16 +34,16 @@
             tsbFrmDoctoresEditar = new ToolStripButton();
             tsbFrmDoctoresEliminar = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            toolStripLabel1 = new ToolStripLabel();
+            tslBuscarFrmDocRead = new ToolStripLabel();
             tstbBuscarFrmDocRead = new ToolStripTextBox();
-            dataGridView1 = new DataGridView();
+            DgvwDoctoresRead = new DataGridView();
             toolStripFrmDocRead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).BeginInit();
             SuspendLayout();
             // 
             // toolStripFrmDocRead
             // 
-            toolStripFrmDocRead.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar, toolStripSeparator1, toolStripLabel1, tstbBuscarFrmDocRead });
+            toolStripFrmDocRead.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar, toolStripSeparator1, tslBuscarFrmDocRead, tstbBuscarFrmDocRead });
             toolStripFrmDocRead.Location = new Point(0, 0);
             toolStripFrmDocRead.Name = "toolStripFrmDocRead";
             toolStripFrmDocRead.Size = new Size(800, 25);
@@ -57,7 +57,7 @@
             tsbFrmDoctoresCrear.ImageTransparentColor = Color.Magenta;
             tsbFrmDoctoresCrear.Name = "tsbFrmDoctoresCrear";
             tsbFrmDoctoresCrear.Size = new Size(23, 22);
-            tsbFrmDoctoresCrear.Text = "Añadir";
+            tsbFrmDoctoresCrear.Text = "Añadir Doctor";
             tsbFrmDoctoresCrear.Click += tsbFrmDoctoresCrear_Click;
             // 
             // tsbFrmDoctoresEditar
@@ -67,7 +67,7 @@
             tsbFrmDoctoresEditar.ImageTransparentColor = Color.Magenta;
             tsbFrmDoctoresEditar.Name = "tsbFrmDoctoresEditar";
             tsbFrmDoctoresEditar.Size = new Size(23, 22);
-            tsbFrmDoctoresEditar.Text = "Editar";
+            tsbFrmDoctoresEditar.Text = "Editar Doctor";
             tsbFrmDoctoresEditar.Click += tsbFrmDoctoresEditar_Click;
             // 
             // tsbFrmDoctoresEliminar
@@ -77,19 +77,21 @@
             tsbFrmDoctoresEliminar.ImageTransparentColor = Color.Magenta;
             tsbFrmDoctoresEliminar.Name = "tsbFrmDoctoresEliminar";
             tsbFrmDoctoresEliminar.Size = new Size(23, 22);
-            tsbFrmDoctoresEliminar.Text = "Eliminar";
+            tsbFrmDoctoresEliminar.Text = "Borrar Doctor";
+            tsbFrmDoctoresEliminar.Click += tsbFrmDoctoresEliminar_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 25);
             // 
-            // toolStripLabel1
+            // tslBuscarFrmDocRead
             // 
-            toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
-            toolStripLabel1.Image = (Image)resources.GetObject("toolStripLabel1.Image");
-            toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new Size(16, 22);
+            tslBuscarFrmDocRead.Alignment = ToolStripItemAlignment.Right;
+            tslBuscarFrmDocRead.Image = (Image)resources.GetObject("tslBuscarFrmDocRead.Image");
+            tslBuscarFrmDocRead.Margin = new Padding(0, 1, 1, 2);
+            tslBuscarFrmDocRead.Name = "tslBuscarFrmDocRead";
+            tslBuscarFrmDocRead.Size = new Size(16, 22);
             // 
             // tstbBuscarFrmDocRead
             // 
@@ -99,28 +101,29 @@
             tstbBuscarFrmDocRead.Size = new Size(100, 25);
             tstbBuscarFrmDocRead.ToolTipText = "Buscar Doctor";
             // 
-            // dataGridView1
+            // DgvwDoctoresRead
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 25);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(800, 425);
-            dataGridView1.TabIndex = 1;
+            DgvwDoctoresRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvwDoctoresRead.Dock = DockStyle.Fill;
+            DgvwDoctoresRead.Location = new Point(0, 25);
+            DgvwDoctoresRead.MultiSelect = false;
+            DgvwDoctoresRead.Name = "DgvwDoctoresRead";
+            DgvwDoctoresRead.Size = new Size(800, 425);
+            DgvwDoctoresRead.TabIndex = 1;
             // 
             // FrmDoctoresRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(DgvwDoctoresRead);
             Controls.Add(toolStripFrmDocRead);
             Name = "FrmDoctoresRead";
             Text = "Lista de Doctores";
+            Load += FrmDoctoresRead_Load;
             toolStripFrmDocRead.ResumeLayout(false);
             toolStripFrmDocRead.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -131,9 +134,9 @@
         private ToolStripButton tsbFrmDoctoresCrear;
         private ToolStripButton tsbFrmDoctoresEditar;
         private ToolStripButton tsbFrmDoctoresEliminar;
-        private DataGridView dataGridView1;
+        private DataGridView DgvwDoctoresRead;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripLabel toolStripLabel1;
+        private ToolStripLabel tslBuscarFrmDocRead;
         private ToolStripTextBox tstbBuscarFrmDocRead;
     }
 }

@@ -34,13 +34,16 @@
             tsbFrmPacientesEditar = new ToolStripButton();
             tsbFrmPacientesEliminar = new ToolStripButton();
             dgwPacientesRead = new DataGridView();
+            toolStripSeparator1 = new ToolStripSeparator();
+            tslBuscarFrmPacientesRead = new ToolStripLabel();
+            tstbBuscarFrmPacientesRead = new ToolStripTextBox();
             toolStripFrmPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgwPacientesRead).BeginInit();
             SuspendLayout();
             // 
             // toolStripFrmPacientes
             // 
-            toolStripFrmPacientes.Items.AddRange(new ToolStripItem[] { tsbFrmPacientesCrear, tsbFrmPacientesEditar, tsbFrmPacientesEliminar });
+            toolStripFrmPacientes.Items.AddRange(new ToolStripItem[] { tsbFrmPacientesCrear, tsbFrmPacientesEditar, tsbFrmPacientesEliminar, toolStripSeparator1, tslBuscarFrmPacientesRead, tstbBuscarFrmPacientesRead });
             toolStripFrmPacientes.Location = new Point(0, 0);
             toolStripFrmPacientes.Name = "toolStripFrmPacientes";
             toolStripFrmPacientes.Size = new Size(800, 25);
@@ -87,6 +90,25 @@
             dgwPacientesRead.Size = new Size(800, 425);
             dgwPacientesRead.TabIndex = 1;
             // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // tslBuscarFrmPacientesRead
+            // 
+            tslBuscarFrmPacientesRead.Alignment = ToolStripItemAlignment.Right;
+            tslBuscarFrmPacientesRead.Image = (Image)resources.GetObject("tslBuscarFrmPacientesRead.Image");
+            tslBuscarFrmPacientesRead.Name = "tslBuscarFrmPacientesRead";
+            tslBuscarFrmPacientesRead.Size = new Size(16, 22);
+            // 
+            // tstbBuscarFrmPacientesRead
+            // 
+            tstbBuscarFrmPacientesRead.Alignment = ToolStripItemAlignment.Right;
+            tstbBuscarFrmPacientesRead.BorderStyle = BorderStyle.FixedSingle;
+            tstbBuscarFrmPacientesRead.Name = "tstbBuscarFrmPacientesRead";
+            tstbBuscarFrmPacientesRead.Size = new Size(100, 25);
+            // 
             // FrmPacientesRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -111,5 +133,8 @@
         private ToolStripButton tsbFrmPacientesEditar;
         private ToolStripButton tsbFrmPacientesEliminar;
         private DataGridView dgwPacientesRead;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripLabel tslBuscarFrmPacientesRead;
+        private ToolStripTextBox tstbBuscarFrmPacientesRead;
     }
 }

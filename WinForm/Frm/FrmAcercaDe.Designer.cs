@@ -39,6 +39,7 @@
             lblAuthorApp = new Label();
             lblRepository = new Label();
             lklRepository = new LinkLabel();
+            lblAutoríaIconos = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -117,6 +118,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblAutoríaIconos);
             groupBox1.Controls.Add(lblIconsUrl);
             groupBox1.Controls.Add(lklAuthorIcons);
             groupBox1.Controls.Add(llbUrlIcons);
@@ -156,6 +158,15 @@
             lklRepository.TabStop = true;
             lklRepository.Text = "https://github.com/FcoJavierFdezColados/GestionClinica";
             // 
+            // lblAutoríaIconos
+            // 
+            lblAutoríaIconos.AutoSize = true;
+            lblAutoríaIconos.Location = new Point(51, 76);
+            lblAutoríaIconos.Name = "lblAutoríaIconos";
+            lblAutoríaIconos.Size = new Size(378, 15);
+            lblAutoríaIconos.TabIndex = 9;
+            lblAutoríaIconos.Text = "El uso de estos iconos es gratuíto siempre que se reconozca a su autor.";
+            // 
             // FrmAcercaDe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,5 +204,6 @@
         private Label lblAuthorApp;
         private Label lblRepository;
         private LinkLabel lklRepository;
+        private Label lblAutoríaIconos;
     }
 }

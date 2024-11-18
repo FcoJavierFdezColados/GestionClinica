@@ -24,7 +24,7 @@ namespace WinForm.Frm.Pacientes
 
             if (frmPacientesCreate.ShowDialog() == DialogResult.OK)
             {
-                cargarDatos();
+                CargarDatos();
             }
         }
 
@@ -37,7 +37,7 @@ namespace WinForm.Frm.Pacientes
 
                 if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
                 {
-                    cargarDatos();
+                    CargarDatos();
                 }
             }
             else
@@ -48,10 +48,10 @@ namespace WinForm.Frm.Pacientes
 
         private void FrmPacientesRead_Load(object sender, EventArgs e)
         {
-            cargarDatos();
+            CargarDatos();
         }
 
-        private void cargarDatos()
+        private void CargarDatos()
         {
             try
             {
@@ -59,11 +59,11 @@ namespace WinForm.Frm.Pacientes
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                Console.Error.WriteLine(e.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.StackTrace);
+                Console.Error.WriteLine(ex.StackTrace);
             }
         }
 
@@ -73,7 +73,7 @@ namespace WinForm.Frm.Pacientes
             {
                 int pacienteId = (int)dgwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
                 Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
-                cargarDatos();
+                CargarDatos();
             }
             else
             {

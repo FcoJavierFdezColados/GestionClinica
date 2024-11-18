@@ -35,8 +35,10 @@
             toolStripFrmCitas = new ToolStrip();
             tsbFrmCitasAgregar = new ToolStripButton();
             tsbFrmCitasEditar = new ToolStripButton();
+            toolStripLabel1 = new ToolStripLabel();
             toolStripTextBox1 = new ToolStripTextBox();
             tsbFrmCitasEliminar = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
             statusStripFrmCitasRead = new StatusStrip();
             tsslFrmCitasRead = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -89,7 +91,7 @@
             // 
             // toolStripFrmCitas
             // 
-            toolStripFrmCitas.Items.AddRange(new ToolStripItem[] { tsbFrmCitasAgregar, tsbFrmCitasEditar, toolStripTextBox1, tsbFrmCitasEliminar });
+            toolStripFrmCitas.Items.AddRange(new ToolStripItem[] { tsbFrmCitasAgregar, tsbFrmCitasEditar, toolStripLabel1, toolStripTextBox1, tsbFrmCitasEliminar, toolStripSeparator1 });
             toolStripFrmCitas.Location = new Point(0, 0);
             toolStripFrmCitas.Name = "toolStripFrmCitas";
             toolStripFrmCitas.Size = new Size(800, 25);
@@ -125,10 +127,18 @@
             tsbFrmCitasEditar.MouseLeave += tsbFrmCitasEditar_MouseLeave;
             tsbFrmCitasEditar.MouseHover += tsbFrmCitasEditar_MouseHover;
             // 
+            // toolStripLabel1
+            // 
+            toolStripLabel1.Alignment = ToolStripItemAlignment.Right;
+            toolStripLabel1.Image = (Image)resources.GetObject("toolStripLabel1.Image");
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new Size(16, 22);
+            // 
             // toolStripTextBox1
             // 
             toolStripTextBox1.Alignment = ToolStripItemAlignment.Right;
-            toolStripTextBox1.BackColor = SystemColors.GradientInactiveCaption;
+            toolStripTextBox1.BackColor = SystemColors.Window;
+            toolStripTextBox1.BorderStyle = BorderStyle.FixedSingle;
             toolStripTextBox1.Name = "toolStripTextBox1";
             toolStripTextBox1.Size = new Size(100, 25);
             // 
@@ -143,6 +153,11 @@
             tsbFrmCitasEliminar.Text = "Eliminar";
             tsbFrmCitasEliminar.MouseLeave += tsbFrmCitasEliminar_MouseLeave;
             tsbFrmCitasEliminar.MouseHover += tsbFrmCitasEliminar_MouseHover;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
             // 
             // statusStripFrmCitasRead
             // 
@@ -193,5 +208,7 @@
         private DataGridView dgwCitasRead;
         private ToolStripStatusLabel tsslFrmCitasRead;
         private ToolStripButton tsbFrmCitasEliminar;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripLabel toolStripLabel1;
     }
 }
