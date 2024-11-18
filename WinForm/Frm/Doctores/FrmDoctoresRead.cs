@@ -30,11 +30,19 @@ namespace WinForm.Frm.Doctores
 
         private void tsbFrmDoctoresEditar_Click(object sender, EventArgs e)
         {
-            FrmDoctoresUpdate frmDoctoresUpdate = new FrmDoctoresUpdate();
-
-            if (frmDoctoresUpdate.ShowDialog() == DialogResult.OK)
+            if (DgvwDoctoresRead.SelectedRows.Count > 0)
             {
-                CargarDatos();
+                int doctorId = (int)DgvwDoctoresRead.SelectedRows[0].Cells["DoctorId"].Value;
+                FrmDoctoresUpdate frmDoctoresUpdate = new FrmDoctoresUpdate(doctorId);
+
+                if (frmDoctoresUpdate.ShowDialog() == DialogResult.OK)
+                {
+                    CargarDatos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar toda la fila.");
             }
         }
 

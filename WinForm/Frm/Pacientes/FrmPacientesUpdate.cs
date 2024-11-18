@@ -25,6 +25,7 @@ namespace WinForm.Frm.Pacientes
             }
             catch (SqlException e)
             {
+                MessageBox.Show("Error al obtener el registro de la base de datos. Cierre el formulario e intentelo más tarde.");
                 Console.Error.WriteLine(e.Message);
             }
             catch (Exception ex)
@@ -35,7 +36,7 @@ namespace WinForm.Frm.Pacientes
 
         private void btnFrmPacientesUpdateAceptar_Click(object sender, EventArgs e)
         {
-            if (validarCampos() && paciente != null)
+            if (ValidarCampos() && paciente != null)
             {
                 paciente.Nombre = tbNombreFrmPacientesUpdate.Text;
                 paciente.Apellidos = tbApellidosFrmPacientesUpdate.Text;
@@ -48,7 +49,7 @@ namespace WinForm.Frm.Pacientes
 
                 Data.DataPaciente.GetInstance().ActualizarPaciente(_pacienteId, paciente);
 
-                MessageBox.Show("Paciente añadido correctamente");
+                MessageBox.Show("Paciente editado correctamente");
             }
             else
             {
@@ -56,7 +57,7 @@ namespace WinForm.Frm.Pacientes
             }
         }
 
-        private void cargarDatos(Modelo.Paciente paciente)
+        private void CargarDatos(Modelo.Paciente paciente)
         {
             
             if (paciente != null)
@@ -78,10 +79,10 @@ namespace WinForm.Frm.Pacientes
 
         private void FrmPacientesUpdate_Load(object sender, EventArgs e)
         {
-            cargarDatos(paciente);
+            CargarDatos(paciente);
         }
 
-        private bool validarCampos()
+        private bool ValidarCampos()
         {
             if (tbNombreFrmPacientesUpdate.Text == "")
             {

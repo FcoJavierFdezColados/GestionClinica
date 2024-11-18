@@ -30,12 +30,12 @@
         {
             btnDoctoresUpdateAceptar = new Button();
             btnDoctoresUpdateCancel = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            lblNombreFrmDocUpdate = new Label();
+            lblApellidosFrmDocUpdate = new Label();
+            lblNumColegiadoFrmDocUpdate = new Label();
+            tbNumColegiadoFrmDocUpdate = new TextBox();
+            tbApellidosFrmDocUpdate = new TextBox();
+            tbNombreFrmDocUpdate = new TextBox();
             SuspendLayout();
             // 
             // btnDoctoresUpdateAceptar
@@ -48,6 +48,7 @@
             btnDoctoresUpdateAceptar.TabIndex = 0;
             btnDoctoresUpdateAceptar.Text = "Aceptar";
             btnDoctoresUpdateAceptar.UseVisualStyleBackColor = true;
+            btnDoctoresUpdateAceptar.Click += btnDoctoresUpdateAceptar_Click;
             // 
             // btnDoctoresUpdateCancel
             // 
@@ -60,53 +61,53 @@
             btnDoctoresUpdateCancel.Text = "Cancelar";
             btnDoctoresUpdateCancel.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblNombreFrmDocUpdate
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(85, 63);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Nombre";
+            lblNombreFrmDocUpdate.AutoSize = true;
+            lblNombreFrmDocUpdate.Location = new Point(85, 63);
+            lblNombreFrmDocUpdate.Name = "lblNombreFrmDocUpdate";
+            lblNombreFrmDocUpdate.Size = new Size(51, 15);
+            lblNombreFrmDocUpdate.TabIndex = 2;
+            lblNombreFrmDocUpdate.Text = "Nombre";
             // 
-            // label2
+            // lblApellidosFrmDocUpdate
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(80, 123);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Apellidos";
+            lblApellidosFrmDocUpdate.AutoSize = true;
+            lblApellidosFrmDocUpdate.Location = new Point(80, 123);
+            lblApellidosFrmDocUpdate.Name = "lblApellidosFrmDocUpdate";
+            lblApellidosFrmDocUpdate.Size = new Size(56, 15);
+            lblApellidosFrmDocUpdate.TabIndex = 3;
+            lblApellidosFrmDocUpdate.Text = "Apellidos";
             // 
-            // label3
+            // lblNumColegiadoFrmDocUpdate
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 184);
-            label3.Name = "label3";
-            label3.Size = new Size(124, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Número de Colegiado";
+            lblNumColegiadoFrmDocUpdate.AutoSize = true;
+            lblNumColegiadoFrmDocUpdate.Location = new Point(12, 184);
+            lblNumColegiadoFrmDocUpdate.Name = "lblNumColegiadoFrmDocUpdate";
+            lblNumColegiadoFrmDocUpdate.Size = new Size(124, 15);
+            lblNumColegiadoFrmDocUpdate.TabIndex = 4;
+            lblNumColegiadoFrmDocUpdate.Text = "Número de Colegiado";
             // 
-            // textBox1
+            // tbNumColegiadoFrmDocUpdate
             // 
-            textBox1.Location = new Point(142, 181);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(646, 23);
-            textBox1.TabIndex = 5;
+            tbNumColegiadoFrmDocUpdate.Location = new Point(142, 181);
+            tbNumColegiadoFrmDocUpdate.Name = "tbNumColegiadoFrmDocUpdate";
+            tbNumColegiadoFrmDocUpdate.Size = new Size(646, 23);
+            tbNumColegiadoFrmDocUpdate.TabIndex = 5;
             // 
-            // textBox2
+            // tbApellidosFrmDocUpdate
             // 
-            textBox2.Location = new Point(142, 120);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(646, 23);
-            textBox2.TabIndex = 6;
+            tbApellidosFrmDocUpdate.Location = new Point(142, 120);
+            tbApellidosFrmDocUpdate.Name = "tbApellidosFrmDocUpdate";
+            tbApellidosFrmDocUpdate.Size = new Size(646, 23);
+            tbApellidosFrmDocUpdate.TabIndex = 6;
             // 
-            // textBox3
+            // tbNombreFrmDocUpdate
             // 
-            textBox3.Location = new Point(142, 60);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(646, 23);
-            textBox3.TabIndex = 7;
+            tbNombreFrmDocUpdate.Location = new Point(142, 60);
+            tbNombreFrmDocUpdate.Name = "tbNombreFrmDocUpdate";
+            tbNombreFrmDocUpdate.Size = new Size(646, 23);
+            tbNombreFrmDocUpdate.TabIndex = 7;
             // 
             // FrmDoctoresUpdate
             // 
@@ -115,16 +116,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnDoctoresUpdateCancel;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(tbNombreFrmDocUpdate);
+            Controls.Add(tbApellidosFrmDocUpdate);
+            Controls.Add(tbNumColegiadoFrmDocUpdate);
+            Controls.Add(lblNumColegiadoFrmDocUpdate);
+            Controls.Add(lblApellidosFrmDocUpdate);
+            Controls.Add(lblNombreFrmDocUpdate);
             Controls.Add(btnDoctoresUpdateCancel);
             Controls.Add(btnDoctoresUpdateAceptar);
             Name = "FrmDoctoresUpdate";
             Text = "FrmDoctoresUpdate";
+            Load += FrmDoctoresUpdate_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,11 +135,11 @@
 
         private Button btnDoctoresUpdateAceptar;
         private Button btnDoctoresUpdateCancel;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Label lblNombreFrmDocUpdate;
+        private Label lblApellidosFrmDocUpdate;
+        private Label lblNumColegiadoFrmDocUpdate;
+        private TextBox tbNumColegiadoFrmDocUpdate;
+        private TextBox tbApellidosFrmDocUpdate;
+        private TextBox tbNombreFrmDocUpdate;
     }
 }
