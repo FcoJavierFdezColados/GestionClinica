@@ -28,141 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnFrmCitaCreateAceptar = new Button();
-            btnFrmCitaCreateCancelar = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            textBox1 = new TextBox();
+            components = new System.ComponentModel.Container();
+            btnAceptarFrmCitaCreate = new Button();
+            btnCancelarFrmCitaCreate = new Button();
+            dtpFechaCitaFrmCitaCreate = new DateTimePicker();
+            lblFechaCitaFrmCitaCreate = new Label();
+            lblPacienteFrmCitaCreate = new Label();
+            lblDoctorFrmCitaCreate = new Label();
+            lblMotivoCitaFrmCitaCreate = new Label();
+            cbPacienteFrmCitaCreate = new ComboBox();
+            pacienteBindingSource = new BindingSource(components);
+            cbDoctorFrmCitaCreate = new ComboBox();
+            tbMotivoCitaFrmCitaCreate = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // btnFrmCitaCreateAceptar
+            // btnAceptarFrmCitaCreate
             // 
-            btnFrmCitaCreateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnFrmCitaCreateAceptar.DialogResult = DialogResult.OK;
-            btnFrmCitaCreateAceptar.Location = new Point(243, 352);
-            btnFrmCitaCreateAceptar.Name = "btnFrmCitaCreateAceptar";
-            btnFrmCitaCreateAceptar.Size = new Size(75, 23);
-            btnFrmCitaCreateAceptar.TabIndex = 0;
-            btnFrmCitaCreateAceptar.Text = "Aceptar";
-            btnFrmCitaCreateAceptar.UseVisualStyleBackColor = true;
+            btnAceptarFrmCitaCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAceptarFrmCitaCreate.DialogResult = DialogResult.OK;
+            btnAceptarFrmCitaCreate.Location = new Point(243, 352);
+            btnAceptarFrmCitaCreate.Name = "btnAceptarFrmCitaCreate";
+            btnAceptarFrmCitaCreate.Size = new Size(75, 23);
+            btnAceptarFrmCitaCreate.TabIndex = 0;
+            btnAceptarFrmCitaCreate.Text = "Aceptar";
+            btnAceptarFrmCitaCreate.UseVisualStyleBackColor = true;
+            btnAceptarFrmCitaCreate.Click += btnAceptarFrmCitaCreate_Click;
             // 
-            // btnFrmCitaCreateCancelar
+            // btnCancelarFrmCitaCreate
             // 
-            btnFrmCitaCreateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnFrmCitaCreateCancelar.DialogResult = DialogResult.Cancel;
-            btnFrmCitaCreateCancelar.Location = new Point(476, 352);
-            btnFrmCitaCreateCancelar.Name = "btnFrmCitaCreateCancelar";
-            btnFrmCitaCreateCancelar.Size = new Size(75, 23);
-            btnFrmCitaCreateCancelar.TabIndex = 1;
-            btnFrmCitaCreateCancelar.Text = "Cancelar";
-            btnFrmCitaCreateCancelar.UseVisualStyleBackColor = true;
+            btnCancelarFrmCitaCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelarFrmCitaCreate.DialogResult = DialogResult.Cancel;
+            btnCancelarFrmCitaCreate.Location = new Point(476, 352);
+            btnCancelarFrmCitaCreate.Name = "btnCancelarFrmCitaCreate";
+            btnCancelarFrmCitaCreate.Size = new Size(75, 23);
+            btnCancelarFrmCitaCreate.TabIndex = 1;
+            btnCancelarFrmCitaCreate.Text = "Cancelar";
+            btnCancelarFrmCitaCreate.UseVisualStyleBackColor = true;
+            btnCancelarFrmCitaCreate.Click += btnCancelarFrmCitaCreate_Click;
             // 
-            // dateTimePicker1
+            // dtpFechaCitaFrmCitaCreate
             // 
-            dateTimePicker1.Location = new Point(106, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(682, 23);
-            dateTimePicker1.TabIndex = 2;
+            dtpFechaCitaFrmCitaCreate.Location = new Point(106, 12);
+            dtpFechaCitaFrmCitaCreate.Name = "dtpFechaCitaFrmCitaCreate";
+            dtpFechaCitaFrmCitaCreate.Size = new Size(682, 23);
+            dtpFechaCitaFrmCitaCreate.TabIndex = 2;
             // 
-            // label1
+            // lblFechaCitaFrmCitaCreate
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Fecha de la cita";
+            lblFechaCitaFrmCitaCreate.AutoSize = true;
+            lblFechaCitaFrmCitaCreate.Location = new Point(12, 18);
+            lblFechaCitaFrmCitaCreate.Name = "lblFechaCitaFrmCitaCreate";
+            lblFechaCitaFrmCitaCreate.Size = new Size(88, 15);
+            lblFechaCitaFrmCitaCreate.TabIndex = 3;
+            lblFechaCitaFrmCitaCreate.Text = "Fecha de la cita";
             // 
-            // label2
+            // lblPacienteFrmCitaCreate
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(48, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Paciente";
+            lblPacienteFrmCitaCreate.AutoSize = true;
+            lblPacienteFrmCitaCreate.Location = new Point(48, 69);
+            lblPacienteFrmCitaCreate.Name = "lblPacienteFrmCitaCreate";
+            lblPacienteFrmCitaCreate.Size = new Size(52, 15);
+            lblPacienteFrmCitaCreate.TabIndex = 4;
+            lblPacienteFrmCitaCreate.Text = "Paciente";
             // 
-            // label3
+            // lblDoctorFrmCitaCreate
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(57, 122);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Doctor";
+            lblDoctorFrmCitaCreate.AutoSize = true;
+            lblDoctorFrmCitaCreate.Location = new Point(57, 122);
+            lblDoctorFrmCitaCreate.Name = "lblDoctorFrmCitaCreate";
+            lblDoctorFrmCitaCreate.Size = new Size(43, 15);
+            lblDoctorFrmCitaCreate.TabIndex = 5;
+            lblDoctorFrmCitaCreate.Text = "Doctor";
             // 
-            // label4
+            // lblMotivoCitaFrmCitaCreate
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 173);
-            label4.Name = "label4";
-            label4.Size = new Size(98, 15);
-            label4.TabIndex = 6;
-            label4.Text = "Motivo de la cita:";
+            lblMotivoCitaFrmCitaCreate.AutoSize = true;
+            lblMotivoCitaFrmCitaCreate.Location = new Point(12, 173);
+            lblMotivoCitaFrmCitaCreate.Name = "lblMotivoCitaFrmCitaCreate";
+            lblMotivoCitaFrmCitaCreate.Size = new Size(98, 15);
+            lblMotivoCitaFrmCitaCreate.TabIndex = 6;
+            lblMotivoCitaFrmCitaCreate.Text = "Motivo de la cita:";
             // 
-            // comboBox1
+            // cbPacienteFrmCitaCreate
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(106, 66);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(682, 23);
-            comboBox1.TabIndex = 7;
+            cbPacienteFrmCitaCreate.DataSource = pacienteBindingSource;
+            cbPacienteFrmCitaCreate.DisplayMember = "Apellidos";
+            cbPacienteFrmCitaCreate.FormattingEnabled = true;
+            cbPacienteFrmCitaCreate.Location = new Point(106, 66);
+            cbPacienteFrmCitaCreate.Name = "cbPacienteFrmCitaCreate";
+            cbPacienteFrmCitaCreate.Size = new Size(682, 23);
+            cbPacienteFrmCitaCreate.TabIndex = 7;
             // 
-            // comboBox2
+            // pacienteBindingSource
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(106, 119);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(682, 23);
-            comboBox2.TabIndex = 8;
+            pacienteBindingSource.DataSource = typeof(Modelo.Paciente);
             // 
-            // textBox1
+            // cbDoctorFrmCitaCreate
             // 
-            textBox1.Location = new Point(12, 191);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(776, 142);
-            textBox1.TabIndex = 9;
+            cbDoctorFrmCitaCreate.FormattingEnabled = true;
+            cbDoctorFrmCitaCreate.Location = new Point(106, 119);
+            cbDoctorFrmCitaCreate.Name = "cbDoctorFrmCitaCreate";
+            cbDoctorFrmCitaCreate.Size = new Size(682, 23);
+            cbDoctorFrmCitaCreate.TabIndex = 8;
+            // 
+            // tbMotivoCitaFrmCitaCreate
+            // 
+            tbMotivoCitaFrmCitaCreate.Location = new Point(12, 191);
+            tbMotivoCitaFrmCitaCreate.Multiline = true;
+            tbMotivoCitaFrmCitaCreate.Name = "tbMotivoCitaFrmCitaCreate";
+            tbMotivoCitaFrmCitaCreate.Size = new Size(776, 142);
+            tbMotivoCitaFrmCitaCreate.TabIndex = 9;
             // 
             // FrmCitaCreate
             // 
-            AcceptButton = btnFrmCitaCreateAceptar;
+            AcceptButton = btnAceptarFrmCitaCreate;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnFrmCitaCreateCancelar;
+            CancelButton = btnCancelarFrmCitaCreate;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(btnFrmCitaCreateCancelar);
-            Controls.Add(btnFrmCitaCreateAceptar);
+            Controls.Add(tbMotivoCitaFrmCitaCreate);
+            Controls.Add(cbDoctorFrmCitaCreate);
+            Controls.Add(cbPacienteFrmCitaCreate);
+            Controls.Add(lblMotivoCitaFrmCitaCreate);
+            Controls.Add(lblDoctorFrmCitaCreate);
+            Controls.Add(lblPacienteFrmCitaCreate);
+            Controls.Add(lblFechaCitaFrmCitaCreate);
+            Controls.Add(dtpFechaCitaFrmCitaCreate);
+            Controls.Add(btnCancelarFrmCitaCreate);
+            Controls.Add(btnAceptarFrmCitaCreate);
             Name = "FrmCitaCreate";
             Text = "FrmCitaCreate";
+            Load += FrmCitaCreate_Load;
+            ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnFrmCitaCreateAceptar;
-        private Button btnFrmCitaCreateCancelar;
-        private DateTimePicker dateTimePicker1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private TextBox textBox1;
+        private Button btnAceptarFrmCitaCreate;
+        private Button btnCancelarFrmCitaCreate;
+        private DateTimePicker dtpFechaCitaFrmCitaCreate;
+        private Label lblFechaCitaFrmCitaCreate;
+        private Label lblPacienteFrmCitaCreate;
+        private Label lblDoctorFrmCitaCreate;
+        private Label lblMotivoCitaFrmCitaCreate;
+        private ComboBox cbPacienteFrmCitaCreate;
+        private ComboBox cbDoctorFrmCitaCreate;
+        private TextBox tbMotivoCitaFrmCitaCreate;
+        private BindingSource pacienteBindingSource;
     }
 }

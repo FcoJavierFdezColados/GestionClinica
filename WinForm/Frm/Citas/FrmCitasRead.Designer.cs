@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCitasRead));
             splitContainer1 = new SplitContainer();
             dateTimePicker1 = new DateTimePicker();
@@ -41,6 +42,17 @@
             toolStripSeparator1 = new ToolStripSeparator();
             statusStripFrmCitasRead = new StatusStrip();
             tsslFrmCitasRead = new ToolStripStatusLabel();
+            citaBindingSource = new BindingSource(components);
+            CitaId = new DataGridViewTextBoxColumn();
+            FechaCita = new DataGridViewTextBoxColumn();
+            Motivo = new DataGridViewTextBoxColumn();
+            EstaCancelada = new DataGridViewCheckBoxColumn();
+            FechaCancelacion = new DataGridViewTextBoxColumn();
+            MotivoCancelacion = new DataGridViewTextBoxColumn();
+            PacienteId = new DataGridViewTextBoxColumn();
+            Paciente = new DataGridViewTextBoxColumn();
+            DoctorId = new DataGridViewTextBoxColumn();
+            doctorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -48,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)dgwCitasRead).BeginInit();
             toolStripFrmCitas.SuspendLayout();
             statusStripFrmCitasRead.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)citaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -82,7 +95,10 @@
             // 
             // dgwCitasRead
             // 
+            dgwCitasRead.AutoGenerateColumns = false;
             dgwCitasRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwCitasRead.Columns.AddRange(new DataGridViewColumn[] { CitaId, FechaCita, Motivo, EstaCancelada, FechaCancelacion, MotivoCancelacion, PacienteId, Paciente, DoctorId, doctorDataGridViewTextBoxColumn });
+            dgwCitasRead.DataSource = citaBindingSource;
             dgwCitasRead.Dock = DockStyle.Fill;
             dgwCitasRead.Location = new Point(0, 25);
             dgwCitasRead.Name = "dgwCitasRead";
@@ -174,6 +190,80 @@
             tsslFrmCitasRead.Size = new Size(0, 17);
             tsslFrmCitasRead.Tag = "Editar cita";
             // 
+            // citaBindingSource
+            // 
+            citaBindingSource.DataSource = typeof(Modelo.Cita);
+            // 
+            // CitaId
+            // 
+            CitaId.DataPropertyName = "CitaId";
+            CitaId.HeaderText = "CitaId";
+            CitaId.Name = "CitaId";
+            CitaId.ToolTipText = "CitaId";
+            // 
+            // FechaCita
+            // 
+            FechaCita.DataPropertyName = "FechaCita";
+            FechaCita.HeaderText = "FechaCita";
+            FechaCita.Name = "FechaCita";
+            FechaCita.ToolTipText = "FechaCita";
+            // 
+            // Motivo
+            // 
+            Motivo.DataPropertyName = "Motivo";
+            Motivo.HeaderText = "Motivo";
+            Motivo.Name = "Motivo";
+            Motivo.ToolTipText = "Motivo";
+            // 
+            // EstaCancelada
+            // 
+            EstaCancelada.DataPropertyName = "EstaCancelada";
+            EstaCancelada.HeaderText = "EstaCancelada";
+            EstaCancelada.Name = "EstaCancelada";
+            EstaCancelada.ToolTipText = "EstaCancelada";
+            // 
+            // FechaCancelacion
+            // 
+            FechaCancelacion.DataPropertyName = "FechaCancelacion";
+            FechaCancelacion.HeaderText = "FechaCancelacion";
+            FechaCancelacion.Name = "FechaCancelacion";
+            FechaCancelacion.ToolTipText = "FechaCancelacion";
+            // 
+            // MotivoCancelacion
+            // 
+            MotivoCancelacion.DataPropertyName = "MotivoCancelacion";
+            MotivoCancelacion.HeaderText = "MotivoCancelacion";
+            MotivoCancelacion.Name = "MotivoCancelacion";
+            MotivoCancelacion.ToolTipText = "MotivoCancelacion";
+            // 
+            // PacienteId
+            // 
+            PacienteId.DataPropertyName = "PacienteId";
+            PacienteId.HeaderText = "PacienteId";
+            PacienteId.Name = "PacienteId";
+            PacienteId.ToolTipText = "PacienteId";
+            // 
+            // Paciente
+            // 
+            Paciente.DataPropertyName = "Paciente";
+            Paciente.HeaderText = "Paciente";
+            Paciente.Name = "Paciente";
+            Paciente.ToolTipText = "Paciente";
+            // 
+            // DoctorId
+            // 
+            DoctorId.DataPropertyName = "DoctorId";
+            DoctorId.HeaderText = "DoctorId";
+            DoctorId.Name = "DoctorId";
+            DoctorId.ToolTipText = "DoctorId";
+            // 
+            // doctorDataGridViewTextBoxColumn
+            // 
+            doctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor";
+            doctorDataGridViewTextBoxColumn.HeaderText = "Doctor";
+            doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
+            doctorDataGridViewTextBoxColumn.ToolTipText = "Doctor";
+            // 
             // FrmCitasRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,6 +283,7 @@
             toolStripFrmCitas.PerformLayout();
             statusStripFrmCitasRead.ResumeLayout(false);
             statusStripFrmCitasRead.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)citaBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -210,5 +301,16 @@
         private ToolStripButton tsbFrmCitasEliminar;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel toolStripLabel1;
+        private DataGridViewTextBoxColumn CitaId;
+        private DataGridViewTextBoxColumn FechaCita;
+        private DataGridViewTextBoxColumn Motivo;
+        private DataGridViewCheckBoxColumn EstaCancelada;
+        private DataGridViewTextBoxColumn FechaCancelacion;
+        private DataGridViewTextBoxColumn MotivoCancelacion;
+        private DataGridViewTextBoxColumn PacienteId;
+        private DataGridViewTextBoxColumn Paciente;
+        private DataGridViewTextBoxColumn DoctorId;
+        private DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
+        private BindingSource citaBindingSource;
     }
 }
