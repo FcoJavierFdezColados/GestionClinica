@@ -32,12 +32,25 @@ namespace WinForm.Frm.Doctores
         {
             if (DgvwDoctoresRead.SelectedRows.Count > 0)
             {
-                int doctorId = (int)DgvwDoctoresRead.SelectedRows[0].Cells["DoctorId"].Value;
-                FrmDoctoresUpdate frmDoctoresUpdate = new FrmDoctoresUpdate(doctorId);
-
-                if (frmDoctoresUpdate.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    CargarDatos();
+                    int doctorId = (int)DgvwDoctoresRead.SelectedRows[0].Cells["DoctorId"].Value;
+                    FrmDoctoresUpdate frmDoctoresUpdate = new FrmDoctoresUpdate(doctorId);
+
+                    if (frmDoctoresUpdate.ShowDialog() == DialogResult.OK)
+                    {
+                        CargarDatos();
+                    }
+                }
+                catch(ArgumentException ex)
+                {
+                    MessageBox.Show("No se encontró la columna seleccionada.");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                    Console.Error.WriteLine(ex.StackTrace);
                 }
             }
             else
@@ -63,9 +76,24 @@ namespace WinForm.Frm.Doctores
                     );
                 if (result == DialogResult.OK)
                 {
-                    int doctorId = (int)DgvwDoctoresRead.SelectedRows[0].Cells["DoctorId"].Value;
-                    Data.DataDoctor.GetInstance().BorrarDoctor(doctorId);
-                    CargarDatos();
+                    try
+                    {
+                        int doctorId = (int)DgvwDoctoresRead.SelectedRows[0].Cells["DoctorId"].Value;
+                        Data.DataDoctor.GetInstance().BorrarDoctor(doctorId);
+                        tstbBuscarFrmDocRead.Text = "";
+                        CargarDatos();
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        MessageBox.Show("No se encontró la columna seleccionada.");
+                        Console.Error.WriteLine(ex.StackTrace);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                        Console.Error.WriteLine(ex.StackTrace);
+                    }
+
                 }
             }
             else

@@ -32,12 +32,26 @@ namespace WinForm.Frm.Pacientes
         {
             if (DgvwPacientesRead.SelectedRows.Count > 0)
             {
-                int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
-                FrmPacientesUpdate frmPacientesUpdate = new FrmPacientesUpdate(pacienteId);
-
-                if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    CargarDatos();
+                    int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                    FrmPacientesUpdate frmPacientesUpdate = new FrmPacientesUpdate(pacienteId);
+
+                    if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
+                    {
+                        CargarDatos();
+                    }
+
+                }
+                catch(ArgumentException aex)//Por si falla al encontrar PacienteId
+                {
+                    MessageBox.Show("No se encontró la columna seleccionada.");
+                    Console.Error.WriteLine(aex.StackTrace);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                    Console.Error.WriteLine(ex.StackTrace);
                 }
             }
             else
@@ -79,9 +93,23 @@ namespace WinForm.Frm.Pacientes
                     );
                 if (result == DialogResult.OK)
                 {
-                    int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
-                    Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
-                    CargarDatos();
+                    try
+                    {
+                        int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
+                        Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
+                        tstbBuscarFrmPacientesRead.Text = "";
+                        CargarDatos();
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        MessageBox.Show("No se encontró la columna seleccionada.");
+                        Console.Error.WriteLine(ex.StackTrace);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                        Console.Error.WriteLine(ex.StackTrace);
+                    }
                 }
             }
             else
@@ -92,7 +120,7 @@ namespace WinForm.Frm.Pacientes
 
         private void tstbBuscarFrmPacientesRead_TextChanged(object sender, EventArgs e)
         {
-            if(tstbBuscarFrmPacientesRead.Text.Length > 0)
+            if (tstbBuscarFrmPacientesRead.Text.Length > 0)
             {
                 DgvwPacientesRead.DataSource = Data.DataPaciente.GetInstance().ListarPacientes().Where
                     (

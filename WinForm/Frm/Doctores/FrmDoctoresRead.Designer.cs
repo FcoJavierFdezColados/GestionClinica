@@ -40,10 +40,10 @@
             toolStripLabel1 = new ToolStripLabel();
             DgvwDoctoresRead = new DataGridView();
             doctorBindingSource = new BindingSource(components);
-            doctorIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            numColegiadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            apellidosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            DoctorId = new DataGridViewTextBoxColumn();
+            NumColegiado = new DataGridViewTextBoxColumn();
+            Apellidos = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
             toolStripFrmDocRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).BeginInit();
             ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
@@ -121,7 +121,7 @@
             // 
             DgvwDoctoresRead.AutoGenerateColumns = false;
             DgvwDoctoresRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvwDoctoresRead.Columns.AddRange(new DataGridViewColumn[] { doctorIdDataGridViewTextBoxColumn, numColegiadoDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn });
+            DgvwDoctoresRead.Columns.AddRange(new DataGridViewColumn[] { DoctorId, NumColegiado, Apellidos, Nombre });
             DgvwDoctoresRead.DataSource = doctorBindingSource;
             DgvwDoctoresRead.Dock = DockStyle.Fill;
             DgvwDoctoresRead.Location = new Point(0, 25);
@@ -134,31 +134,34 @@
             // 
             doctorBindingSource.DataSource = typeof(Modelo.Doctor);
             // 
-            // doctorIdDataGridViewTextBoxColumn
+            // DoctorId
             // 
-            doctorIdDataGridViewTextBoxColumn.DataPropertyName = "DoctorId";
-            doctorIdDataGridViewTextBoxColumn.HeaderText = "DoctorId";
-            doctorIdDataGridViewTextBoxColumn.Name = "doctorIdDataGridViewTextBoxColumn";
-            doctorIdDataGridViewTextBoxColumn.ReadOnly = true;
-            doctorIdDataGridViewTextBoxColumn.Visible = false;
+            DoctorId.DataPropertyName = "DoctorId";
+            DoctorId.HeaderText = "DoctorId";
+            DoctorId.Name = "DoctorId";
+            DoctorId.ToolTipText = "DoctorId";
+            DoctorId.Visible = false;
             // 
-            // numColegiadoDataGridViewTextBoxColumn
+            // NumColegiado
             // 
-            numColegiadoDataGridViewTextBoxColumn.DataPropertyName = "NumColegiado";
-            numColegiadoDataGridViewTextBoxColumn.HeaderText = "NumColegiado";
-            numColegiadoDataGridViewTextBoxColumn.Name = "numColegiadoDataGridViewTextBoxColumn";
+            NumColegiado.DataPropertyName = "NumColegiado";
+            NumColegiado.HeaderText = "Número de Colegiado";
+            NumColegiado.Name = "NumColegiado";
+            NumColegiado.ToolTipText = "NumColegiado";
             // 
-            // apellidosDataGridViewTextBoxColumn
+            // Apellidos
             // 
-            apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            Apellidos.DataPropertyName = "Apellidos";
+            Apellidos.HeaderText = "Apellidos";
+            Apellidos.Name = "Apellidos";
+            Apellidos.ToolTipText = "Apellidos";
             // 
-            // nombreDataGridViewTextBoxColumn
+            // Nombre
             // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ToolTipText = "Nombre";
             // 
             // FrmDoctoresRead
             // 
@@ -193,6 +196,10 @@
         private DataGridViewTextBoxColumn numColegiadoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn DoctorId;
+        private DataGridViewTextBoxColumn NumColegiado;
+        private DataGridViewTextBoxColumn Apellidos;
+        private DataGridViewTextBoxColumn Nombre;
         private BindingSource doctorBindingSource;
     }
 }

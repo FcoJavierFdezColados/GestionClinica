@@ -40,15 +40,15 @@
             toolStripLabel1 = new ToolStripLabel();
             DgvwPacientesRead = new DataGridView();
             pacienteBindingSource = new BindingSource(components);
-            pacienteIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            apellidosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telefono1DataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telefono2DataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            codigoPostalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            poblacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            provinciaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            PacienteId = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            CodigoPostal = new DataGridViewTextBoxColumn();
+            Poblacion = new DataGridViewTextBoxColumn();
+            Provincia = new DataGridViewTextBoxColumn();
+            Telefono1 = new DataGridViewTextBoxColumn();
+            Telefono2 = new DataGridViewTextBoxColumn();
             toolStripFrmPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwPacientesRead).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).BeginInit();
@@ -124,7 +124,7 @@
             // 
             DgvwPacientesRead.AutoGenerateColumns = false;
             DgvwPacientesRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvwPacientesRead.Columns.AddRange(new DataGridViewColumn[] { pacienteIdDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, nombreDataGridViewTextBoxColumn, telefono1DataGridViewTextBoxColumn, telefono2DataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, codigoPostalDataGridViewTextBoxColumn, poblacionDataGridViewTextBoxColumn, provinciaDataGridViewTextBoxColumn });
+            DgvwPacientesRead.Columns.AddRange(new DataGridViewColumn[] { PacienteId, dataGridViewTextBoxColumn3, Nombre, Direccion, CodigoPostal, Poblacion, Provincia, Telefono1, Telefono2 });
             DgvwPacientesRead.DataSource = pacienteBindingSource;
             DgvwPacientesRead.Dock = DockStyle.Fill;
             DgvwPacientesRead.Location = new Point(0, 25);
@@ -137,65 +137,72 @@
             // 
             pacienteBindingSource.DataSource = typeof(Modelo.Paciente);
             // 
-            // pacienteIdDataGridViewTextBoxColumn
+            // PacienteId
             // 
-            pacienteIdDataGridViewTextBoxColumn.DataPropertyName = "PacienteId";
-            pacienteIdDataGridViewTextBoxColumn.HeaderText = "PacienteId";
-            pacienteIdDataGridViewTextBoxColumn.Name = "pacienteIdDataGridViewTextBoxColumn";
-            pacienteIdDataGridViewTextBoxColumn.ReadOnly = true;
-            pacienteIdDataGridViewTextBoxColumn.Visible = false;
+            PacienteId.DataPropertyName = "PacienteId";
+            PacienteId.HeaderText = "PacienteId";
+            PacienteId.Name = "PacienteId";
+            PacienteId.ToolTipText = "PacienteId";
+            PacienteId.Visible = false;
             // 
-            // apellidosDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            dataGridViewTextBoxColumn3.DataPropertyName = "Apellidos";
+            dataGridViewTextBoxColumn3.HeaderText = "Apellidos";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // nombreDataGridViewTextBoxColumn
+            // Nombre
             // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ToolTipText = "Nombre";
             // 
-            // telefono1DataGridViewTextBoxColumn
+            // Direccion
             // 
-            telefono1DataGridViewTextBoxColumn.DataPropertyName = "Telefono1";
-            telefono1DataGridViewTextBoxColumn.HeaderText = "Telefono1";
-            telefono1DataGridViewTextBoxColumn.Name = "telefono1DataGridViewTextBoxColumn";
+            Direccion.DataPropertyName = "Direccion";
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            Direccion.ToolTipText = "Direccion";
+            Direccion.Visible = false;
             // 
-            // telefono2DataGridViewTextBoxColumn
+            // CodigoPostal
             // 
-            telefono2DataGridViewTextBoxColumn.DataPropertyName = "Telefono2";
-            telefono2DataGridViewTextBoxColumn.HeaderText = "Telefono2";
-            telefono2DataGridViewTextBoxColumn.Name = "telefono2DataGridViewTextBoxColumn";
+            CodigoPostal.DataPropertyName = "CodigoPostal";
+            CodigoPostal.HeaderText = "CodigoPostal";
+            CodigoPostal.Name = "CodigoPostal";
+            CodigoPostal.ToolTipText = "CodigoPostal";
+            CodigoPostal.Visible = false;
             // 
-            // direccionDataGridViewTextBoxColumn
+            // Poblacion
             // 
-            direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            direccionDataGridViewTextBoxColumn.Visible = false;
+            Poblacion.DataPropertyName = "Poblacion";
+            Poblacion.HeaderText = "Poblacion";
+            Poblacion.Name = "Poblacion";
+            Poblacion.ToolTipText = "Poblacion";
+            Poblacion.Visible = false;
             // 
-            // codigoPostalDataGridViewTextBoxColumn
+            // Provincia
             // 
-            codigoPostalDataGridViewTextBoxColumn.DataPropertyName = "CodigoPostal";
-            codigoPostalDataGridViewTextBoxColumn.HeaderText = "CodigoPostal";
-            codigoPostalDataGridViewTextBoxColumn.Name = "codigoPostalDataGridViewTextBoxColumn";
-            codigoPostalDataGridViewTextBoxColumn.Visible = false;
+            Provincia.DataPropertyName = "Provincia";
+            Provincia.HeaderText = "Provincia";
+            Provincia.Name = "Provincia";
+            Provincia.ToolTipText = "Provincia";
+            Provincia.Visible = false;
             // 
-            // poblacionDataGridViewTextBoxColumn
+            // Telefono1
             // 
-            poblacionDataGridViewTextBoxColumn.DataPropertyName = "Poblacion";
-            poblacionDataGridViewTextBoxColumn.HeaderText = "Poblacion";
-            poblacionDataGridViewTextBoxColumn.Name = "poblacionDataGridViewTextBoxColumn";
-            poblacionDataGridViewTextBoxColumn.Visible = false;
+            Telefono1.DataPropertyName = "Telefono1";
+            Telefono1.HeaderText = "Telefono1";
+            Telefono1.Name = "Telefono1";
+            Telefono1.ToolTipText = "Telefono1";
             // 
-            // provinciaDataGridViewTextBoxColumn
+            // Telefono2
             // 
-            provinciaDataGridViewTextBoxColumn.DataPropertyName = "Provincia";
-            provinciaDataGridViewTextBoxColumn.HeaderText = "Provincia";
-            provinciaDataGridViewTextBoxColumn.Name = "provinciaDataGridViewTextBoxColumn";
-            provinciaDataGridViewTextBoxColumn.Visible = false;
+            Telefono2.DataPropertyName = "Telefono2";
+            Telefono2.HeaderText = "Telefono2";
+            Telefono2.Name = "Telefono2";
+            Telefono2.ToolTipText = "Telefono2";
             // 
             // FrmPacientesRead
             // 
@@ -226,7 +233,6 @@
         private ToolStripLabel tslBuscarFrmPacientesRead;
         private ToolStripTextBox tstbBuscarFrmPacientesRead;
         private ToolStripLabel toolStripLabel1;
-        private BindingSource pacienteBindingSource;
         private DataGridViewTextBoxColumn pacienteIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
@@ -236,5 +242,15 @@
         private DataGridViewTextBoxColumn codigoPostalDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn poblacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn PacienteId;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn CodigoPostal;
+        private DataGridViewTextBoxColumn Poblacion;
+        private DataGridViewTextBoxColumn Provincia;
+        private DataGridViewTextBoxColumn Telefono1;
+        private DataGridViewTextBoxColumn Telefono2;
+        private BindingSource pacienteBindingSource;
     }
 }
