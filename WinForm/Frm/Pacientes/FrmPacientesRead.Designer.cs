@@ -59,7 +59,7 @@
             toolStripFrmPacientes.Items.AddRange(new ToolStripItem[] { tsbFrmPacientesCrear, tsbFrmPacientesEditar, tsbFrmPacientesEliminar, toolStripSeparator1, tslBuscarFrmPacientesRead, tstbBuscarFrmPacientesRead, toolStripLabel1 });
             toolStripFrmPacientes.Location = new Point(0, 0);
             toolStripFrmPacientes.Name = "toolStripFrmPacientes";
-            toolStripFrmPacientes.Size = new Size(845, 25);
+            toolStripFrmPacientes.Size = new Size(443, 25);
             toolStripFrmPacientes.TabIndex = 0;
             toolStripFrmPacientes.Text = "Menú Pacientes";
             // 
@@ -130,7 +130,7 @@
             DgvwPacientesRead.Location = new Point(0, 25);
             DgvwPacientesRead.MultiSelect = false;
             DgvwPacientesRead.Name = "DgvwPacientesRead";
-            DgvwPacientesRead.Size = new Size(845, 425);
+            DgvwPacientesRead.Size = new Size(443, 425);
             DgvwPacientesRead.TabIndex = 1;
             // 
             // pacienteBindingSource
@@ -174,30 +174,34 @@
             direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
             direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
             direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            direccionDataGridViewTextBoxColumn.Visible = false;
             // 
             // codigoPostalDataGridViewTextBoxColumn
             // 
             codigoPostalDataGridViewTextBoxColumn.DataPropertyName = "CodigoPostal";
             codigoPostalDataGridViewTextBoxColumn.HeaderText = "CodigoPostal";
             codigoPostalDataGridViewTextBoxColumn.Name = "codigoPostalDataGridViewTextBoxColumn";
+            codigoPostalDataGridViewTextBoxColumn.Visible = false;
             // 
             // poblacionDataGridViewTextBoxColumn
             // 
             poblacionDataGridViewTextBoxColumn.DataPropertyName = "Poblacion";
             poblacionDataGridViewTextBoxColumn.HeaderText = "Poblacion";
             poblacionDataGridViewTextBoxColumn.Name = "poblacionDataGridViewTextBoxColumn";
+            poblacionDataGridViewTextBoxColumn.Visible = false;
             // 
             // provinciaDataGridViewTextBoxColumn
             // 
             provinciaDataGridViewTextBoxColumn.DataPropertyName = "Provincia";
             provinciaDataGridViewTextBoxColumn.HeaderText = "Provincia";
             provinciaDataGridViewTextBoxColumn.Name = "provinciaDataGridViewTextBoxColumn";
+            provinciaDataGridViewTextBoxColumn.Visible = false;
             // 
             // FrmPacientesRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(845, 450);
+            ClientSize = new Size(443, 450);
             Controls.Add(DgvwPacientesRead);
             Controls.Add(toolStripFrmPacientes);
             Name = "FrmPacientesRead";
