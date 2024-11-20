@@ -84,7 +84,8 @@ namespace WinForm.Frm.Citas
 
         private void cargarDatos()
         {
-            dgwCitasRead.DataSource = Data.DataCita.GetInstance().ListarCitas();
+            dgwCitasRead.DataSource = Data.DataCita.GetInstance().ListarCitasConDoctorPaciente();
         }
+
     }
 }

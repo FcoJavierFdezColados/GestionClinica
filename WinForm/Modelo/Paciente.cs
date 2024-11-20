@@ -17,6 +17,13 @@ namespace WinForm.Modelo
         public string Provincia { get; set; }
         public string Telefono1 { get; set; }
         public string? Telefono2 { get; set; }
+        public string NombreCompleto
+        {
+            get
+            {
+                return $"{Apellidos}, {Nombre}";
+            }
+        }
 
         public List<Cita>? Citas { get; set; }
     }

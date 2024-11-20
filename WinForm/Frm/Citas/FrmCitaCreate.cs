@@ -28,10 +28,10 @@ namespace WinForm.Frm.Citas
         {
             dtpFechaCitaFrmCitaCreate.MinDate = DateTime.Now;
             dtpFechaCitaFrmCitaCreate.Focus();
-            cbPacienteFrmCitaCreate.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().ToList();
+            cbPacienteFrmCitaCreate.DataSource = Data.DataPaciente.GetInstance().ListarPacientes().ToList();
             cbDoctorFrmCitaCreate.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().ToList();
-            cbPacienteFrmCitaCreate.DisplayMember = "Nombre";
-            cbDoctorFrmCitaCreate.DisplayMember = "Nombre";
+            cbPacienteFrmCitaCreate.DisplayMember = "NombreCompleto";
+            cbDoctorFrmCitaCreate.DisplayMember = "NombreCompleto";
             cbPacienteFrmCitaCreate.ValueMember = "PacienteId";
             cbDoctorFrmCitaCreate.ValueMember = "DoctorId";
         }
@@ -42,15 +42,29 @@ namespace WinForm.Frm.Citas
             {
                 Modelo.Cita cita = new Modelo.Cita();
                 cita.FechaCita = dtpFechaCitaFrmCitaCreate.Value;
-                cita.Paciente.PacienteId = (int) cbPacienteFrmCitaCreate.SelectedValue;
-                cita.Doctor.DoctorId = (int) cbDoctorFrmCitaCreate.SelectedValue;
+                MessageBox.Show(cbPacienteFrmCitaCreate.SelectedValue.ToString());
+                cita.PacienteId = (int)cbPacienteFrmCitaCreate.SelectedValue;
+                cita.DoctorId = (int) cbDoctorFrmCitaCreate.SelectedValue;
+                /*
+                 * Otra forma de hacerlo sería:
+                 * var doctor = (Modelo.Doctor) cbDoctorFrmCitaCreate.SelectedItem;
+                 * cita.DoctorId = doctor.DoctorId;
+                */
+                MessageBox.Show(cita.DoctorId.ToString());
                 cita.Motivo = tbMotivoCitaFrmCitaCreate.Text;
+
+                Data.DataCita.GetInstance().InsertarCita(cita);
+                MessageBox.Show("Cita creada correctamente");
+            }
+            else
+            {
+                this.DialogResult = DialogResult.None;
             }
         }
 
         private bool ValidarDatos()
         {
-            if (dtpFechaCitaFrmCitaCreate.Value != null)
+            if (dtpFechaCitaFrmCitaCreate.Text == "")
             {
                 MessageBox.Show("El campo Fecha de la cita es obligatorio.");
                 dtpFechaCitaFrmCitaCreate.Focus();

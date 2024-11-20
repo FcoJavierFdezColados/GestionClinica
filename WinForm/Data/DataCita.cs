@@ -27,6 +27,29 @@ namespace WinForm.Data
             }
         }
 
+        public List<ViewModel.CitaViewModel> ListarCitasConDoctorPaciente()
+        {
+            using (var context = new Modelo.GestionClinicaContextSqlServer())
+            {
+                return context
+                    .Citas.Include("Paciente").Include("Doctor").Select
+                    (
+                        x => new ViewModel.CitaViewModel
+                        {
+                            CitaId = x.CitaId,
+                            FechaCita = x.FechaCita,
+                            Motivo = x.Motivo,
+                            EstaCancelada = x.EstaCancelada,
+                            FechaCancelacion = x.FechaCancelacion,
+                            MotivoCancelacion = x.MotivoCancelacion,
+                            NombreCompletoPaciente = x.Paciente.NombreCompleto,
+                            NombreCompletoDoctor = x.Doctor.NombreCompleto
+                        }
+                    )
+                    .ToList();
+            }
+        }
+
         public void InsertarCita(Modelo.Cita cita)
         {
             using(var context = new Modelo.GestionClinicaContextSqlServer())

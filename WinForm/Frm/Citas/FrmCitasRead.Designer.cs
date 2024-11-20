@@ -43,16 +43,20 @@
             statusStripFrmCitasRead = new StatusStrip();
             tsslFrmCitasRead = new ToolStripStatusLabel();
             citaBindingSource = new BindingSource(components);
-            CitaId = new DataGridViewTextBoxColumn();
-            FechaCita = new DataGridViewTextBoxColumn();
-            Motivo = new DataGridViewTextBoxColumn();
-            EstaCancelada = new DataGridViewCheckBoxColumn();
-            FechaCancelacion = new DataGridViewTextBoxColumn();
-            MotivoCancelacion = new DataGridViewTextBoxColumn();
-            PacienteId = new DataGridViewTextBoxColumn();
+            doctorBindingSource = new BindingSource(components);
+            citaViewModelBindingSource = new BindingSource(components);
             Paciente = new DataGridViewTextBoxColumn();
+            PacienteId = new DataGridViewTextBoxColumn();
+            Doctor = new DataGridViewTextBoxColumn();
             DoctorId = new DataGridViewTextBoxColumn();
-            doctorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            citaIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaCitaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            motivoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            estaCanceladaDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            fechaCancelacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            motivoCancelacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreCompletoPacienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreCompletoDoctorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +65,8 @@
             toolStripFrmCitas.SuspendLayout();
             statusStripFrmCitasRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)citaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)citaViewModelBindingSource).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -81,14 +87,14 @@
             splitContainer1.Panel2.Controls.Add(dgwCitasRead);
             splitContainer1.Panel2.Controls.Add(toolStripFrmCitas);
             splitContainer1.Panel2.Controls.Add(statusStripFrmCitasRead);
-            splitContainer1.Size = new Size(800, 450);
+            splitContainer1.Size = new Size(1041, 450);
             splitContainer1.SplitterDistance = 29;
             splitContainer1.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            dateTimePicker1.Location = new Point(577, 3);
+            dateTimePicker1.Location = new Point(818, 3);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(220, 23);
             dateTimePicker1.TabIndex = 0;
@@ -97,12 +103,12 @@
             // 
             dgwCitasRead.AutoGenerateColumns = false;
             dgwCitasRead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwCitasRead.Columns.AddRange(new DataGridViewColumn[] { CitaId, FechaCita, Motivo, EstaCancelada, FechaCancelacion, MotivoCancelacion, PacienteId, Paciente, DoctorId, doctorDataGridViewTextBoxColumn });
-            dgwCitasRead.DataSource = citaBindingSource;
+            dgwCitasRead.Columns.AddRange(new DataGridViewColumn[] { Paciente, PacienteId, Doctor, DoctorId, citaIdDataGridViewTextBoxColumn, fechaCitaDataGridViewTextBoxColumn, motivoDataGridViewTextBoxColumn, estaCanceladaDataGridViewCheckBoxColumn, fechaCancelacionDataGridViewTextBoxColumn, motivoCancelacionDataGridViewTextBoxColumn, nombreCompletoPacienteDataGridViewTextBoxColumn, nombreCompletoDoctorDataGridViewTextBoxColumn });
+            dgwCitasRead.DataSource = citaViewModelBindingSource;
             dgwCitasRead.Dock = DockStyle.Fill;
             dgwCitasRead.Location = new Point(0, 25);
             dgwCitasRead.Name = "dgwCitasRead";
-            dgwCitasRead.Size = new Size(800, 370);
+            dgwCitasRead.Size = new Size(1041, 370);
             dgwCitasRead.TabIndex = 3;
             // 
             // toolStripFrmCitas
@@ -110,7 +116,7 @@
             toolStripFrmCitas.Items.AddRange(new ToolStripItem[] { tsbFrmCitasAgregar, tsbFrmCitasEditar, toolStripLabel1, toolStripTextBox1, tsbFrmCitasEliminar, toolStripSeparator1 });
             toolStripFrmCitas.Location = new Point(0, 0);
             toolStripFrmCitas.Name = "toolStripFrmCitas";
-            toolStripFrmCitas.Size = new Size(800, 25);
+            toolStripFrmCitas.Size = new Size(1041, 25);
             toolStripFrmCitas.TabIndex = 2;
             toolStripFrmCitas.Text = "toolStrip1";
             // 
@@ -180,7 +186,7 @@
             statusStripFrmCitasRead.Items.AddRange(new ToolStripItem[] { tsslFrmCitasRead });
             statusStripFrmCitasRead.Location = new Point(0, 395);
             statusStripFrmCitasRead.Name = "statusStripFrmCitasRead";
-            statusStripFrmCitasRead.Size = new Size(800, 22);
+            statusStripFrmCitasRead.Size = new Size(1041, 22);
             statusStripFrmCitasRead.TabIndex = 1;
             statusStripFrmCitasRead.Text = "statusStrip1";
             // 
@@ -194,81 +200,96 @@
             // 
             citaBindingSource.DataSource = typeof(Modelo.Cita);
             // 
-            // CitaId
+            // doctorBindingSource
             // 
-            CitaId.DataPropertyName = "CitaId";
-            CitaId.HeaderText = "CitaId";
-            CitaId.Name = "CitaId";
-            CitaId.ToolTipText = "CitaId";
+            doctorBindingSource.DataSource = typeof(Modelo.Doctor);
             // 
-            // FechaCita
+            // citaViewModelBindingSource
             // 
-            FechaCita.DataPropertyName = "FechaCita";
-            FechaCita.HeaderText = "FechaCita";
-            FechaCita.Name = "FechaCita";
-            FechaCita.ToolTipText = "FechaCita";
-            // 
-            // Motivo
-            // 
-            Motivo.DataPropertyName = "Motivo";
-            Motivo.HeaderText = "Motivo";
-            Motivo.Name = "Motivo";
-            Motivo.ToolTipText = "Motivo";
-            // 
-            // EstaCancelada
-            // 
-            EstaCancelada.DataPropertyName = "EstaCancelada";
-            EstaCancelada.HeaderText = "EstaCancelada";
-            EstaCancelada.Name = "EstaCancelada";
-            EstaCancelada.ToolTipText = "EstaCancelada";
-            // 
-            // FechaCancelacion
-            // 
-            FechaCancelacion.DataPropertyName = "FechaCancelacion";
-            FechaCancelacion.HeaderText = "FechaCancelacion";
-            FechaCancelacion.Name = "FechaCancelacion";
-            FechaCancelacion.ToolTipText = "FechaCancelacion";
-            // 
-            // MotivoCancelacion
-            // 
-            MotivoCancelacion.DataPropertyName = "MotivoCancelacion";
-            MotivoCancelacion.HeaderText = "MotivoCancelacion";
-            MotivoCancelacion.Name = "MotivoCancelacion";
-            MotivoCancelacion.ToolTipText = "MotivoCancelacion";
-            // 
-            // PacienteId
-            // 
-            PacienteId.DataPropertyName = "PacienteId";
-            PacienteId.HeaderText = "PacienteId";
-            PacienteId.Name = "PacienteId";
-            PacienteId.ToolTipText = "PacienteId";
+            citaViewModelBindingSource.DataSource = typeof(ViewModel.CitaViewModel);
             // 
             // Paciente
             // 
             Paciente.DataPropertyName = "Paciente";
             Paciente.HeaderText = "Paciente";
             Paciente.Name = "Paciente";
-            Paciente.ToolTipText = "Paciente";
+            Paciente.Visible = false;
+            // 
+            // PacienteId
+            // 
+            PacienteId.DataPropertyName = "PacienteId";
+            PacienteId.HeaderText = "PacienteId";
+            PacienteId.Name = "PacienteId";
+            PacienteId.Visible = false;
+            // 
+            // Doctor
+            // 
+            Doctor.DataPropertyName = "Doctor";
+            Doctor.HeaderText = "Doctor";
+            Doctor.Name = "Doctor";
+            Doctor.Visible = false;
             // 
             // DoctorId
             // 
             DoctorId.DataPropertyName = "DoctorId";
             DoctorId.HeaderText = "DoctorId";
             DoctorId.Name = "DoctorId";
-            DoctorId.ToolTipText = "DoctorId";
+            DoctorId.Visible = false;
             // 
-            // doctorDataGridViewTextBoxColumn
+            // citaIdDataGridViewTextBoxColumn
             // 
-            doctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor";
-            doctorDataGridViewTextBoxColumn.HeaderText = "Doctor";
-            doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
-            doctorDataGridViewTextBoxColumn.ToolTipText = "Doctor";
+            citaIdDataGridViewTextBoxColumn.DataPropertyName = "CitaId";
+            citaIdDataGridViewTextBoxColumn.HeaderText = "CitaId";
+            citaIdDataGridViewTextBoxColumn.Name = "citaIdDataGridViewTextBoxColumn";
+            citaIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaCitaDataGridViewTextBoxColumn
+            // 
+            fechaCitaDataGridViewTextBoxColumn.DataPropertyName = "FechaCita";
+            fechaCitaDataGridViewTextBoxColumn.HeaderText = "FechaCita";
+            fechaCitaDataGridViewTextBoxColumn.Name = "fechaCitaDataGridViewTextBoxColumn";
+            // 
+            // motivoDataGridViewTextBoxColumn
+            // 
+            motivoDataGridViewTextBoxColumn.DataPropertyName = "Motivo";
+            motivoDataGridViewTextBoxColumn.HeaderText = "Motivo";
+            motivoDataGridViewTextBoxColumn.Name = "motivoDataGridViewTextBoxColumn";
+            // 
+            // estaCanceladaDataGridViewCheckBoxColumn
+            // 
+            estaCanceladaDataGridViewCheckBoxColumn.DataPropertyName = "EstaCancelada";
+            estaCanceladaDataGridViewCheckBoxColumn.HeaderText = "EstaCancelada";
+            estaCanceladaDataGridViewCheckBoxColumn.Name = "estaCanceladaDataGridViewCheckBoxColumn";
+            // 
+            // fechaCancelacionDataGridViewTextBoxColumn
+            // 
+            fechaCancelacionDataGridViewTextBoxColumn.DataPropertyName = "FechaCancelacion";
+            fechaCancelacionDataGridViewTextBoxColumn.HeaderText = "FechaCancelacion";
+            fechaCancelacionDataGridViewTextBoxColumn.Name = "fechaCancelacionDataGridViewTextBoxColumn";
+            // 
+            // motivoCancelacionDataGridViewTextBoxColumn
+            // 
+            motivoCancelacionDataGridViewTextBoxColumn.DataPropertyName = "MotivoCancelacion";
+            motivoCancelacionDataGridViewTextBoxColumn.HeaderText = "MotivoCancelacion";
+            motivoCancelacionDataGridViewTextBoxColumn.Name = "motivoCancelacionDataGridViewTextBoxColumn";
+            // 
+            // nombreCompletoPacienteDataGridViewTextBoxColumn
+            // 
+            nombreCompletoPacienteDataGridViewTextBoxColumn.DataPropertyName = "NombreCompletoPaciente";
+            nombreCompletoPacienteDataGridViewTextBoxColumn.HeaderText = "Paciente";
+            nombreCompletoPacienteDataGridViewTextBoxColumn.Name = "nombreCompletoPacienteDataGridViewTextBoxColumn";
+            // 
+            // nombreCompletoDoctorDataGridViewTextBoxColumn
+            // 
+            nombreCompletoDoctorDataGridViewTextBoxColumn.DataPropertyName = "NombreCompletoDoctor";
+            nombreCompletoDoctorDataGridViewTextBoxColumn.HeaderText = "Doctor";
+            nombreCompletoDoctorDataGridViewTextBoxColumn.Name = "nombreCompletoDoctorDataGridViewTextBoxColumn";
             // 
             // FrmCitasRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1041, 450);
             Controls.Add(splitContainer1);
             Name = "FrmCitasRead";
             Text = "FrmCitasRead";
@@ -284,6 +305,8 @@
             statusStripFrmCitasRead.ResumeLayout(false);
             statusStripFrmCitasRead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)citaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)citaViewModelBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -301,16 +324,27 @@
         private ToolStripButton tsbFrmCitasEliminar;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel toolStripLabel1;
+        private DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn CitaId;
         private DataGridViewTextBoxColumn FechaCita;
         private DataGridViewTextBoxColumn Motivo;
         private DataGridViewCheckBoxColumn EstaCancelada;
         private DataGridViewTextBoxColumn FechaCancelacion;
         private DataGridViewTextBoxColumn MotivoCancelacion;
-        private DataGridViewTextBoxColumn PacienteId;
-        private DataGridViewTextBoxColumn Paciente;
-        private DataGridViewTextBoxColumn DoctorId;
-        private DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
+        private BindingSource doctorBindingSource;
         private BindingSource citaBindingSource;
+        private DataGridViewTextBoxColumn Paciente;
+        private DataGridViewTextBoxColumn PacienteId;
+        private DataGridViewTextBoxColumn Doctor;
+        private DataGridViewTextBoxColumn DoctorId;
+        private DataGridViewTextBoxColumn citaIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fechaCitaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn motivoDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn estaCanceladaDataGridViewCheckBoxColumn;
+        private DataGridViewTextBoxColumn fechaCancelacionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn motivoCancelacionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreCompletoPacienteDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreCompletoDoctorDataGridViewTextBoxColumn;
+        private BindingSource citaViewModelBindingSource;
     }
 }
