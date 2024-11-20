@@ -12,6 +12,7 @@ namespace WinForm.Modelo
         public DbSet<Cita> Citas { get; set; }
         public DbSet<Doctor> Doctores { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {            

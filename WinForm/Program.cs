@@ -16,12 +16,13 @@ namespace WinForm
             ApplicationConfiguration.Initialize();
             try
             {
+                IniciarDatos();
                 Data.DataDoctor.GetInstance().ListarDoctores();
                 Data.DataPaciente.GetInstance().ListarPacientes();
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error al precargar los datos de la base de datos.");
+                MessageBox.Show("Error al precargar los datos.");
                 Console.Error.WriteLine(ex.StackTrace);
             }
             catch(Exception ex)
@@ -32,6 +33,18 @@ namespace WinForm
 
             //Application.Run(new FrmSplash());
             Application.Run(new FrmPpal());
+        }
+
+        private static void IniciarDatos()
+        {
+            Modelo.Usuario usuario = new Modelo.Usuario();
+            usuario.Nombre = "Administrador";
+            usuario.Apellidos = "Administrador";
+            usuario.NombreUsuario = "admin";
+            usuario.EstaBloqueado = false;
+            usuario.Password = Auxiliar.Password.GetInstance().GenerarHash("123456");
+
+            Data.DataUsuario.GetInstance().InsertarUsuario(usuario);
         }
     }
 }

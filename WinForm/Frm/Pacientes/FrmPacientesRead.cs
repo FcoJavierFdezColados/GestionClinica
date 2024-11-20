@@ -87,7 +87,7 @@ namespace WinForm.Frm.Pacientes
             {
                 var result = MessageBox.Show
                     (
-                        "¿Esta seguro de querer eliminar el registro de la tabla?",
+                        "¿Esta seguro de querer editar el registro de la tabla?",
                         "Aviso", MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Warning
                     );

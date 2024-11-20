@@ -40,6 +40,8 @@
             cascadaToolStripMenuItem = new ToolStripMenuItem();
             horizontalToolStripMenuItem = new ToolStripMenuItem();
             verticalToolStripMenuItem = new ToolStripMenuItem();
+            usuariosToolStripMenuItem = new ToolStripMenuItem();
+            usuariosToolStripMenuItem1 = new ToolStripMenuItem();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
             acercaDeToolStripMenuItem = new ToolStripMenuItem();
             statussFrmPpal = new StatusStrip();
@@ -50,7 +52,7 @@
             // 
             // menuFrmPpal
             // 
-            menuFrmPpal.Items.AddRange(new ToolStripItem[] { archivosToolStripMenuItem, citasToolStripMenuItem, ventanaToolStripMenuItem, ayudaToolStripMenuItem });
+            menuFrmPpal.Items.AddRange(new ToolStripItem[] { archivosToolStripMenuItem, citasToolStripMenuItem, ventanaToolStripMenuItem, usuariosToolStripMenuItem, ayudaToolStripMenuItem });
             menuFrmPpal.Location = new Point(0, 0);
             menuFrmPpal.Name = "menuFrmPpal";
             menuFrmPpal.Size = new Size(800, 24);
@@ -148,6 +150,20 @@
             verticalToolStripMenuItem.Text = "&Vertical";
             verticalToolStripMenuItem.Click += verticalToolStripMenuItem_Click;
             // 
+            // usuariosToolStripMenuItem
+            // 
+            usuariosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuariosToolStripMenuItem1 });
+            usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            usuariosToolStripMenuItem.Size = new Size(64, 20);
+            usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // usuariosToolStripMenuItem1
+            // 
+            usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
+            usuariosToolStripMenuItem1.Size = new Size(180, 22);
+            usuariosToolStripMenuItem1.Text = "Usuarios";
+            usuariosToolStripMenuItem1.Click += usuariosToolStripMenuItem1_Click;
+            // 
             // ayudaToolStripMenuItem
             // 
             ayudaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { acercaDeToolStripMenuItem });
@@ -189,6 +205,7 @@
             Text = "Gestión Clínica";
             WindowState = FormWindowState.Maximized;
             FormClosing += FrmPpal_FormClosing;
+            Load += FrmPpal_Load;
             menuFrmPpal.ResumeLayout(false);
             menuFrmPpal.PerformLayout();
             statussFrmPpal.ResumeLayout(false);
@@ -215,5 +232,7 @@
         private ToolStripMenuItem acercaDeToolStripMenuItem;
         private StatusStrip statussFrmPpal;
         private ToolStripStatusLabel tsslStatusFrmPpal;
+        private ToolStripMenuItem usuariosToolStripMenuItem;
+        private ToolStripMenuItem usuariosToolStripMenuItem1;
     }
 }

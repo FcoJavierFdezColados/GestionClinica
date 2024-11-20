@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WinForm.Frm.Citas;
 using WinForm.Frm.Doctores;
 using WinForm.Frm.Pacientes;
+using WinForm.Frm.Usuarios;
 
 namespace WinForm.Frm
 {
@@ -51,6 +52,13 @@ namespace WinForm.Frm
             frmDoctoresRead.Show();
         }
 
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmUsuariosRead frmUsuariosRead = new FrmUsuariosRead();
+            frmUsuariosRead.MdiParent = this;
+            frmUsuariosRead.Show();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -82,7 +90,7 @@ namespace WinForm.Frm
             {
                 string message = "Tiene formularios abiertos. Le recomendamos que guarde los datos y cierre los formularios antes de cerrar la aplicación. ¿Desea cerrar la aplicación pese a ello?";
                 var result = MessageBox.Show(message, "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                
+
                 if (result == DialogResult.Cancel)
                 {
                     e.Cancel = true;
@@ -119,6 +127,21 @@ namespace WinForm.Frm
         private void citasToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
         {
             tsslStatusFrmPpal.Text = "";
+        }
+
+        private void FrmPpal_Load(object sender, EventArgs e)
+        {
+            FrmUsuariosLogin frmUsuariosLogin = new FrmUsuariosLogin();
+            
+
+            if(frmUsuariosLogin.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }
