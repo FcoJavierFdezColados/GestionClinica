@@ -15,22 +15,23 @@ namespace WinForm.Frm.Pacientes
         public FrmPacientesCreate()
         {
             InitializeComponent();
+            tbNombreFrmPacientesCreate.Focus();
         }
 
-        private void btnFrmPacientesCreateAceptar_Click(object sender, EventArgs e)
+        private void btnAceptarFrmPacientesCreate_Click(object sender, EventArgs e)
         {
             Modelo.Paciente paciente = new Modelo.Paciente();
 
             if (validarCampos())
             {
-                paciente.Nombre = tbPacientesNombreFrmCreate.Text;
-                paciente.Apellidos = tbPacientesApellidosFrmCreate.Text;
-                paciente.Direccion = tbPacientesDireccionFrmCreate.Text;
-                paciente.Poblacion = tbPacientesPoblacionFrmCreate.Text;
-                paciente.CodigoPostal = tbPacientesCodigoPostalFrmCreate.Text;
-                paciente.Provincia = tbPacientesProvinciaFrmCreate.Text;
-                paciente.Telefono1 = tbPacientesTelefono1FrmCreate.Text;
-                paciente.Telefono2 = tbPacientesTelefono2FrmCreate.Text;
+                paciente.Nombre = tbNombreFrmPacientesCreate.Text;
+                paciente.Apellidos = tbApellidosFrmPacientesCreate.Text;
+                paciente.Direccion = tbDireccionFrmPacientesCreate.Text;
+                paciente.Poblacion = tbPoblacionFrmPacientesCreate.Text;
+                paciente.CodigoPostal = tbCodigoPostalFrmPacientesCreate.Text;
+                paciente.Provincia = tbProvinciaFrmPacientesCreate.Text;
+                paciente.Telefono1 = tbTelefono1FrmPacientesCreate.Text;
+                paciente.Telefono2 = tbTelefono2FrmPacientesCreate.Text;
 
                 Data.DataPaciente.GetInstance().InsertarPacinte(paciente);
 
@@ -45,50 +46,55 @@ namespace WinForm.Frm.Pacientes
 
         private bool validarCampos()
         {
-            if(tbPacientesNombreFrmCreate.Text == "")
+            if (tbNombreFrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo nombre debe estar relleno.");
-                tbPacientesNombreFrmCreate.Focus();
+                tbNombreFrmPacientesCreate.Focus();
                 return false;
             }
-            else if(tbPacientesApellidosFrmCreate.Text == "")
+            else if (tbApellidosFrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo apellidos debe estar relleno.");
-                tbPacientesApellidosFrmCreate.Focus();
+                tbApellidosFrmPacientesCreate.Focus();
                 return false;
             }
-            else if (tbPacientesDireccionFrmCreate.Text == "")
+            else if (tbDireccionFrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo dirección debe estar relleno.");
-                tbPacientesDireccionFrmCreate.Focus();
+                tbDireccionFrmPacientesCreate.Focus();
                 return false;
             }
-            else if (tbPacientesPoblacionFrmCreate.Text == "")
+            else if (tbPoblacionFrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo población debe estar relleno.");
-                tbPacientesPoblacionFrmCreate.Focus();
+                tbPoblacionFrmPacientesCreate.Focus();
                 return false;
             }
-            else if (tbPacientesCodigoPostalFrmCreate.Text == "")
+            else if (tbCodigoPostalFrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo código postal debe estar relleno.");
-                tbPacientesCodigoPostalFrmCreate.Focus();
+                tbCodigoPostalFrmPacientesCreate.Focus();
                 return false;
             }
-            else if (tbPacientesProvinciaFrmCreate.Text == "")
+            else if (tbProvinciaFrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo Provincia debe estar relleno.");
-                tbPacientesProvinciaFrmCreate.Focus();
+                tbProvinciaFrmPacientesCreate.Focus();
                 return false;
             }
-            else if (tbPacientesTelefono1FrmCreate.Text == "")
+            else if (tbTelefono1FrmPacientesCreate.Text == "")
             {
                 MessageBox.Show("El campo teléfono 1 debe estar relleno.");
-                tbPacientesTelefono1FrmCreate.Focus();
+                tbTelefono1FrmPacientesCreate.Focus();
                 return false;
             }
 
             return true;
+        }
+
+        private void btnCancelarPacientesCreate_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }
