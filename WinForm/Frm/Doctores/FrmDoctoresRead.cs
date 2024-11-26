@@ -42,12 +42,12 @@ namespace WinForm.Frm.Doctores
                         CargarDatos();
                     }
                 }
-                catch(ArgumentException ex)
+                catch (ArgumentException ex)
                 {
                     MessageBox.Show("No se encontró la columna seleccionada.");
                     Console.Error.WriteLine(ex.StackTrace);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                     Console.Error.WriteLine(ex.StackTrace);
@@ -122,11 +122,24 @@ namespace WinForm.Frm.Doctores
         {
             if (tstbBuscarFrmDocRead.Text.Length > 0)
             {
-                DgvwDoctoresRead.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().Where
-                (
-                    x => x.Apellidos.ToLower().Contains(tstbBuscarFrmDocRead.Text.ToLower())
-                )
-                .ToList();
+                try
+                {
+                    DgvwDoctoresRead.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().Where
+                    (
+                        x => x.Apellidos.ToLower().Contains(tstbBuscarFrmDocRead.Text.ToLower())
+                    )
+                    .ToList();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ocurrió un error al buscar la cita en la base de datos.");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
             }
             else
             {

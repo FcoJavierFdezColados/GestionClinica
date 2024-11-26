@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace WinForm.Frm.Citas
 {
@@ -24,7 +25,7 @@ namespace WinForm.Frm.Citas
 
             if (dialogResult == DialogResult.OK)
             {
-
+                cargarDatos();
             }
             else if (dialogResult == DialogResult.Cancel)
             {
@@ -32,19 +33,36 @@ namespace WinForm.Frm.Citas
             }
         }
 
-        private void tsbFrmCitasEditar_Click(object sender, EventArgs e)
+        private void tsbFrmCitasCancelar_Click(object sender, EventArgs e)
         {
-            FrmCitaUpdate frmCitaUpdate = new FrmCitaUpdate();
-            DialogResult dialogResult = frmCitaUpdate.ShowDialog();
 
-            if (dialogResult == DialogResult.OK)
+            if (dgwCitasRead.SelectedRows.Count > 0)
             {
+                try
+                {
+                    int citaId = (int)dgwCitasRead.SelectedRows[0].Cells["CitaId"].Value;
+                    FrmCitaUpdate frmCitaUpdate = new FrmCitaUpdate(citaId);
+                    if (frmCitaUpdate.ShowDialog() == DialogResult.OK)
+                    {
+                        cargarDatos();
+                    }
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto.");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar toda la fila.");
+            }
 
-            }
-            else if (dialogResult == DialogResult.Cancel)
-            {
-                frmCitaUpdate.Close();
-            }
         }
 
         private void tsbFrmCitasAgregar_MouseHover(object sender, EventArgs e)
@@ -57,22 +75,12 @@ namespace WinForm.Frm.Citas
             tsslFrmCitasRead.Text = "";
         }
 
-        private void tsbFrmCitasEditar_MouseHover(object sender, EventArgs e)
+        private void tsbFrmCitasCancelar_MouseHover(object sender, EventArgs e)
         {
             tsslFrmCitasRead.Text = ((ToolStripButton)sender).Tag.ToString();
         }
 
-        private void tsbFrmCitasEditar_MouseLeave(object sender, EventArgs e)
-        {
-            tsslFrmCitasRead.Text = "";
-        }
-
-        private void tsbFrmCitasEliminar_MouseHover(object sender, EventArgs e)
-        {
-            tsslFrmCitasRead.Text = ((ToolStripButton)sender).Tag.ToString();
-        }
-
-        private void tsbFrmCitasEliminar_MouseLeave(object sender, EventArgs e)
+        private void tsbFrmCitasCancelar_MouseLeave(object sender, EventArgs e)
         {
             tsslFrmCitasRead.Text = "";
         }
@@ -84,8 +92,66 @@ namespace WinForm.Frm.Citas
 
         private void cargarDatos()
         {
-            dgwCitasRead.DataSource = Data.DataCita.GetInstance().ListarCitasConDoctorPaciente();
+            try
+            {
+
+                var fechaCita = dtpFechaCitaFrmCitasRead.Value.Date;
+
+                dgwCitasRead.DataSource = Data.DataCita.GetInstance().ListarCitas().
+                    Where
+                    (
+                        x => x.FechaCita.Date == fechaCita
+                    )
+                    .OrderBy
+                    (
+                        x => x.NombreCompletoPaciente
+                    )
+                    .ToList();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                Console.Error.WriteLine(ex.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                Console.Error.WriteLine(ex.StackTrace);
+            }
         }
 
+        private void dtpFechaCitaFrmCitasRead_ValueChanged(object sender, EventArgs e)
+        {
+            cargarDatos();
+        }
+
+        private void tbBuscarCitaFrmCitasRead_TextChanged(object sender, EventArgs e)
+        {
+            if (tbBuscarCitaFrmCitasRead.Text.Length > 0)
+            {
+                try
+                {
+                    dgwCitasRead.DataSource = Data.DataCita.GetInstance().ListarCitas().Where
+                        (
+                            x => x.NombreCompletoPaciente.ToLower().Contains(tbBuscarCitaFrmCitasRead.Text.ToLower())
+                        )
+                        .ToList();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ocurrio un error al buscar la cita en base de datos.");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+            }
+            else
+            {
+                cargarDatos();
+            }
+        }
     }
 }

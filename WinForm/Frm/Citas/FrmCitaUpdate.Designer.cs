@@ -28,57 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnFrmCitaUpdateAceptar = new Button();
-            btnFrmCitaUpdateCancelar = new Button();
+            btnAceptarFrmCitaUpdate = new Button();
+            btnCancelarFrmCitaUpdate = new Button();
             gbFrmCitaUpdateActualizar = new GroupBox();
-            gbFrmCitaUpdateCancelar = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            tbDoctorFrmCitaUpdate = new TextBox();
+            tbPacienteFrmCitaUpdate = new TextBox();
+            tbMotivoCitaFrmCitaUpdate = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
-            label5 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            checkBox1 = new CheckBox();
-            label6 = new Label();
-            textBox2 = new TextBox();
+            dtpFechaCitaFrmCitaUpdate = new DateTimePicker();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            gbFrmCitaUpdateCancelar = new GroupBox();
             label7 = new Label();
+            tbMotivoCancelFrmCitaUpdate = new TextBox();
+            label6 = new Label();
+            ckbEstaCanceladaFrmCitaUpdate = new CheckBox();
+            dtpFechaCancelFrmCitaUpdate = new DateTimePicker();
+            label5 = new Label();
             gbFrmCitaUpdateActualizar.SuspendLayout();
             gbFrmCitaUpdateCancelar.SuspendLayout();
             SuspendLayout();
             // 
-            // btnFrmCitaUpdateAceptar
+            // btnAceptarFrmCitaUpdate
             // 
-            btnFrmCitaUpdateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnFrmCitaUpdateAceptar.DialogResult = DialogResult.OK;
-            btnFrmCitaUpdateAceptar.Location = new Point(240, 415);
-            btnFrmCitaUpdateAceptar.Name = "btnFrmCitaUpdateAceptar";
-            btnFrmCitaUpdateAceptar.Size = new Size(75, 23);
-            btnFrmCitaUpdateAceptar.TabIndex = 0;
-            btnFrmCitaUpdateAceptar.Text = "Aceptar";
-            btnFrmCitaUpdateAceptar.UseVisualStyleBackColor = true;
+            btnAceptarFrmCitaUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAceptarFrmCitaUpdate.DialogResult = DialogResult.OK;
+            btnAceptarFrmCitaUpdate.Location = new Point(240, 415);
+            btnAceptarFrmCitaUpdate.Name = "btnAceptarFrmCitaUpdate";
+            btnAceptarFrmCitaUpdate.Size = new Size(75, 23);
+            btnAceptarFrmCitaUpdate.TabIndex = 0;
+            btnAceptarFrmCitaUpdate.Text = "Aceptar";
+            btnAceptarFrmCitaUpdate.UseVisualStyleBackColor = true;
+            btnAceptarFrmCitaUpdate.Click += btnAceptarFrmCitaUpdate_Click;
             // 
-            // btnFrmCitaUpdateCancelar
+            // btnCancelarFrmCitaUpdate
             // 
-            btnFrmCitaUpdateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnFrmCitaUpdateCancelar.DialogResult = DialogResult.Cancel;
-            btnFrmCitaUpdateCancelar.Location = new Point(461, 415);
-            btnFrmCitaUpdateCancelar.Name = "btnFrmCitaUpdateCancelar";
-            btnFrmCitaUpdateCancelar.Size = new Size(75, 23);
-            btnFrmCitaUpdateCancelar.TabIndex = 1;
-            btnFrmCitaUpdateCancelar.Text = "Cancelar";
-            btnFrmCitaUpdateCancelar.UseVisualStyleBackColor = true;
+            btnCancelarFrmCitaUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelarFrmCitaUpdate.DialogResult = DialogResult.Cancel;
+            btnCancelarFrmCitaUpdate.Location = new Point(461, 415);
+            btnCancelarFrmCitaUpdate.Name = "btnCancelarFrmCitaUpdate";
+            btnCancelarFrmCitaUpdate.Size = new Size(75, 23);
+            btnCancelarFrmCitaUpdate.TabIndex = 1;
+            btnCancelarFrmCitaUpdate.Text = "Cancelar";
+            btnCancelarFrmCitaUpdate.UseVisualStyleBackColor = true;
             // 
             // gbFrmCitaUpdateActualizar
             // 
-            gbFrmCitaUpdateActualizar.Controls.Add(textBox1);
+            gbFrmCitaUpdateActualizar.Controls.Add(tbDoctorFrmCitaUpdate);
+            gbFrmCitaUpdateActualizar.Controls.Add(tbPacienteFrmCitaUpdate);
+            gbFrmCitaUpdateActualizar.Controls.Add(tbMotivoCitaFrmCitaUpdate);
             gbFrmCitaUpdateActualizar.Controls.Add(label4);
-            gbFrmCitaUpdateActualizar.Controls.Add(comboBox2);
-            gbFrmCitaUpdateActualizar.Controls.Add(comboBox1);
-            gbFrmCitaUpdateActualizar.Controls.Add(dateTimePicker1);
+            gbFrmCitaUpdateActualizar.Controls.Add(dtpFechaCitaFrmCitaUpdate);
             gbFrmCitaUpdateActualizar.Controls.Add(label3);
             gbFrmCitaUpdateActualizar.Controls.Add(label2);
             gbFrmCitaUpdateActualizar.Controls.Add(label1);
@@ -89,73 +90,30 @@
             gbFrmCitaUpdateActualizar.TabStop = false;
             gbFrmCitaUpdateActualizar.Text = "Datos de la cita";
             // 
-            // gbFrmCitaUpdateCancelar
+            // tbDoctorFrmCitaUpdate
             // 
-            gbFrmCitaUpdateCancelar.Controls.Add(label7);
-            gbFrmCitaUpdateCancelar.Controls.Add(textBox2);
-            gbFrmCitaUpdateCancelar.Controls.Add(label6);
-            gbFrmCitaUpdateCancelar.Controls.Add(checkBox1);
-            gbFrmCitaUpdateCancelar.Controls.Add(dateTimePicker2);
-            gbFrmCitaUpdateCancelar.Controls.Add(label5);
-            gbFrmCitaUpdateCancelar.Location = new Point(12, 232);
-            gbFrmCitaUpdateCancelar.Name = "gbFrmCitaUpdateCancelar";
-            gbFrmCitaUpdateCancelar.Size = new Size(776, 163);
-            gbFrmCitaUpdateCancelar.TabIndex = 3;
-            gbFrmCitaUpdateCancelar.TabStop = false;
-            gbFrmCitaUpdateCancelar.Text = "Cancelar Cita";
+            tbDoctorFrmCitaUpdate.Enabled = false;
+            tbDoctorFrmCitaUpdate.Location = new Point(103, 153);
+            tbDoctorFrmCitaUpdate.Name = "tbDoctorFrmCitaUpdate";
+            tbDoctorFrmCitaUpdate.Size = new Size(247, 23);
+            tbDoctorFrmCitaUpdate.TabIndex = 9;
             // 
-            // label1
+            // tbPacienteFrmCitaUpdate
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(9, 54);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Fecha de la cita";
+            tbPacienteFrmCitaUpdate.Enabled = false;
+            tbPacienteFrmCitaUpdate.Location = new Point(103, 103);
+            tbPacienteFrmCitaUpdate.Name = "tbPacienteFrmCitaUpdate";
+            tbPacienteFrmCitaUpdate.Size = new Size(247, 23);
+            tbPacienteFrmCitaUpdate.TabIndex = 8;
             // 
-            // label2
+            // tbMotivoCitaFrmCitaUpdate
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(45, 106);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Paciente";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(54, 156);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Doctor";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Enabled = false;
-            dateTimePicker1.Location = new Point(103, 48);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(247, 23);
-            dateTimePicker1.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Enabled = false;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(103, 103);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(247, 23);
-            comboBox1.TabIndex = 4;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Enabled = false;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(103, 153);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(247, 23);
-            comboBox2.TabIndex = 5;
+            tbMotivoCitaFrmCitaUpdate.Enabled = false;
+            tbMotivoCitaFrmCitaUpdate.Location = new Point(449, 48);
+            tbMotivoCitaFrmCitaUpdate.Multiline = true;
+            tbMotivoCitaFrmCitaUpdate.Name = "tbMotivoCitaFrmCitaUpdate";
+            tbMotivoCitaFrmCitaUpdate.Size = new Size(321, 160);
+            tbMotivoCitaFrmCitaUpdate.TabIndex = 7;
             // 
             // label4
             // 
@@ -166,61 +124,55 @@
             label4.TabIndex = 6;
             label4.Text = "Motivo de la cita:";
             // 
-            // textBox1
+            // dtpFechaCitaFrmCitaUpdate
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(449, 48);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(321, 160);
-            textBox1.TabIndex = 7;
+            dtpFechaCitaFrmCitaUpdate.Enabled = false;
+            dtpFechaCitaFrmCitaUpdate.Location = new Point(103, 48);
+            dtpFechaCitaFrmCitaUpdate.Name = "dtpFechaCitaFrmCitaUpdate";
+            dtpFechaCitaFrmCitaUpdate.Size = new Size(247, 23);
+            dtpFechaCitaFrmCitaUpdate.TabIndex = 3;
             // 
-            // label5
+            // label3
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 42);
-            label5.Name = "label5";
-            label5.Size = new Size(120, 15);
-            label5.TabIndex = 0;
-            label5.Text = "Fecha de cancelación";
+            label3.AutoSize = true;
+            label3.Location = new Point(54, 156);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Doctor";
             // 
-            // dateTimePicker2
+            // label2
             // 
-            dateTimePicker2.Enabled = false;
-            dateTimePicker2.Location = new Point(132, 36);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(218, 23);
-            dateTimePicker2.TabIndex = 1;
+            label2.AutoSize = true;
+            label2.Location = new Point(45, 106);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Paciente";
             // 
-            // checkBox1
+            // label1
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Enabled = false;
-            checkBox1.Location = new Point(157, 93);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(103, 19);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Está cancelada";
-            checkBox1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(9, 54);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Fecha de la cita";
             // 
-            // label6
+            // gbFrmCitaUpdateCancelar
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(449, 19);
-            label6.Name = "label6";
-            label6.Size = new Size(142, 15);
-            label6.TabIndex = 4;
-            label6.Text = "Motivo de la cancelación:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(449, 37);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(321, 120);
-            textBox2.TabIndex = 5;
+            gbFrmCitaUpdateCancelar.Controls.Add(label7);
+            gbFrmCitaUpdateCancelar.Controls.Add(tbMotivoCancelFrmCitaUpdate);
+            gbFrmCitaUpdateCancelar.Controls.Add(label6);
+            gbFrmCitaUpdateCancelar.Controls.Add(ckbEstaCanceladaFrmCitaUpdate);
+            gbFrmCitaUpdateCancelar.Controls.Add(dtpFechaCancelFrmCitaUpdate);
+            gbFrmCitaUpdateCancelar.Controls.Add(label5);
+            gbFrmCitaUpdateCancelar.Location = new Point(12, 232);
+            gbFrmCitaUpdateCancelar.Name = "gbFrmCitaUpdateCancelar";
+            gbFrmCitaUpdateCancelar.Size = new Size(776, 163);
+            gbFrmCitaUpdateCancelar.TabIndex = 3;
+            gbFrmCitaUpdateCancelar.TabStop = false;
+            gbFrmCitaUpdateCancelar.Text = "Cancelar Cita";
             // 
             // label7
             // 
@@ -231,19 +183,67 @@
             label7.TabIndex = 6;
             label7.Text = "Marcar para cancelar cita:";
             // 
+            // tbMotivoCancelFrmCitaUpdate
+            // 
+            tbMotivoCancelFrmCitaUpdate.Location = new Point(449, 37);
+            tbMotivoCancelFrmCitaUpdate.Multiline = true;
+            tbMotivoCancelFrmCitaUpdate.Name = "tbMotivoCancelFrmCitaUpdate";
+            tbMotivoCancelFrmCitaUpdate.Size = new Size(321, 120);
+            tbMotivoCancelFrmCitaUpdate.TabIndex = 5;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(449, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(142, 15);
+            label6.TabIndex = 4;
+            label6.Text = "Motivo de la cancelación:";
+            // 
+            // ckbEstaCanceladaFrmCitaUpdate
+            // 
+            ckbEstaCanceladaFrmCitaUpdate.AutoSize = true;
+            ckbEstaCanceladaFrmCitaUpdate.Checked = true;
+            ckbEstaCanceladaFrmCitaUpdate.CheckState = CheckState.Checked;
+            ckbEstaCanceladaFrmCitaUpdate.Enabled = false;
+            ckbEstaCanceladaFrmCitaUpdate.Location = new Point(157, 93);
+            ckbEstaCanceladaFrmCitaUpdate.Name = "ckbEstaCanceladaFrmCitaUpdate";
+            ckbEstaCanceladaFrmCitaUpdate.Size = new Size(103, 19);
+            ckbEstaCanceladaFrmCitaUpdate.TabIndex = 3;
+            ckbEstaCanceladaFrmCitaUpdate.Text = "Está cancelada";
+            ckbEstaCanceladaFrmCitaUpdate.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaCancelFrmCitaUpdate
+            // 
+            dtpFechaCancelFrmCitaUpdate.Enabled = false;
+            dtpFechaCancelFrmCitaUpdate.Location = new Point(132, 36);
+            dtpFechaCancelFrmCitaUpdate.Name = "dtpFechaCancelFrmCitaUpdate";
+            dtpFechaCancelFrmCitaUpdate.Size = new Size(218, 23);
+            dtpFechaCancelFrmCitaUpdate.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 42);
+            label5.Name = "label5";
+            label5.Size = new Size(120, 15);
+            label5.TabIndex = 0;
+            label5.Text = "Fecha de cancelación";
+            // 
             // FrmCitaUpdate
             // 
-            AcceptButton = btnFrmCitaUpdateAceptar;
+            AcceptButton = btnAceptarFrmCitaUpdate;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnFrmCitaUpdateCancelar;
+            CancelButton = btnCancelarFrmCitaUpdate;
             ClientSize = new Size(800, 450);
             Controls.Add(gbFrmCitaUpdateCancelar);
             Controls.Add(gbFrmCitaUpdateActualizar);
-            Controls.Add(btnFrmCitaUpdateCancelar);
-            Controls.Add(btnFrmCitaUpdateAceptar);
+            Controls.Add(btnCancelarFrmCitaUpdate);
+            Controls.Add(btnAceptarFrmCitaUpdate);
             Name = "FrmCitaUpdate";
-            Text = "FrmCitaUpdate";
+            Text = "Cancelar Cita";
+            Load += FrmCitaUpdate_Load;
             gbFrmCitaUpdateActualizar.ResumeLayout(false);
             gbFrmCitaUpdateActualizar.PerformLayout();
             gbFrmCitaUpdateCancelar.ResumeLayout(false);
@@ -253,23 +253,23 @@
 
         #endregion
 
-        private Button btnFrmCitaUpdateAceptar;
-        private Button btnFrmCitaUpdateCancelar;
+        private Button btnAceptarFrmCitaUpdate;
+        private Button btnCancelarFrmCitaUpdate;
         private GroupBox gbFrmCitaUpdateActualizar;
         private GroupBox gbFrmCitaUpdateCancelar;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFechaCitaFrmCitaUpdate;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox tbMotivoCitaFrmCitaUpdate;
         private Label label4;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
+        private TextBox tbMotivoCancelFrmCitaUpdate;
         private Label label6;
-        private CheckBox checkBox1;
-        private DateTimePicker dateTimePicker2;
+        private CheckBox ckbEstaCanceladaFrmCitaUpdate;
+        private DateTimePicker dtpFechaCancelFrmCitaUpdate;
         private Label label5;
         private Label label7;
+        private TextBox tbDoctorFrmCitaUpdate;
+        private TextBox tbPacienteFrmCitaUpdate;
     }
 }

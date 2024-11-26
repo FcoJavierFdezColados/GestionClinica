@@ -39,11 +39,11 @@
             tstbBuscarFrmDocRead = new ToolStripTextBox();
             toolStripLabel1 = new ToolStripLabel();
             DgvwDoctoresRead = new DataGridView();
-            doctorBindingSource = new BindingSource(components);
             DoctorId = new DataGridViewTextBoxColumn();
             NumColegiado = new DataGridViewTextBoxColumn();
             Apellidos = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
+            doctorBindingSource = new BindingSource(components);
             toolStripFrmDocRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwDoctoresRead).BeginInit();
             ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
@@ -54,7 +54,7 @@
             toolStripFrmDocRead.Items.AddRange(new ToolStripItem[] { tsbFrmDoctoresCrear, tsbFrmDoctoresEditar, tsbFrmDoctoresEliminar, toolStripSeparator1, tslBuscarFrmDocRead, tstbBuscarFrmDocRead, toolStripLabel1 });
             toolStripFrmDocRead.Location = new Point(0, 0);
             toolStripFrmDocRead.Name = "toolStripFrmDocRead";
-            toolStripFrmDocRead.Size = new Size(800, 25);
+            toolStripFrmDocRead.Size = new Size(343, 25);
             toolStripFrmDocRead.TabIndex = 0;
             toolStripFrmDocRead.Text = "toolStrip1";
             // 
@@ -127,12 +127,8 @@
             DgvwDoctoresRead.Location = new Point(0, 25);
             DgvwDoctoresRead.MultiSelect = false;
             DgvwDoctoresRead.Name = "DgvwDoctoresRead";
-            DgvwDoctoresRead.Size = new Size(800, 425);
+            DgvwDoctoresRead.Size = new Size(343, 425);
             DgvwDoctoresRead.TabIndex = 1;
-            // 
-            // doctorBindingSource
-            // 
-            doctorBindingSource.DataSource = typeof(Modelo.Doctor);
             // 
             // DoctorId
             // 
@@ -163,11 +159,15 @@
             Nombre.Name = "Nombre";
             Nombre.ToolTipText = "Nombre";
             // 
+            // doctorBindingSource
+            // 
+            doctorBindingSource.DataSource = typeof(Modelo.Doctor);
+            // 
             // FrmDoctoresRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(343, 450);
             Controls.Add(DgvwDoctoresRead);
             Controls.Add(toolStripFrmDocRead);
             Name = "FrmDoctoresRead";

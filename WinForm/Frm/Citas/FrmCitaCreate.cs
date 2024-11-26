@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace WinForm.Frm.Citas
 {
@@ -26,14 +27,33 @@ namespace WinForm.Frm.Citas
 
         private void FrmCitaCreate_Load(object sender, EventArgs e)
         {
-            dtpFechaCitaFrmCitaCreate.MinDate = DateTime.Now;
-            dtpFechaCitaFrmCitaCreate.Focus();
-            cbPacienteFrmCitaCreate.DataSource = Data.DataPaciente.GetInstance().ListarPacientes().ToList();
-            cbDoctorFrmCitaCreate.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().ToList();
-            cbPacienteFrmCitaCreate.DisplayMember = "NombreCompleto";
-            cbDoctorFrmCitaCreate.DisplayMember = "NombreCompleto";
-            cbPacienteFrmCitaCreate.ValueMember = "PacienteId";
-            cbDoctorFrmCitaCreate.ValueMember = "DoctorId";
+            CargarDatos();
+            
+        }
+
+        private void CargarDatos()
+        {
+            try
+            {
+                dtpFechaCitaFrmCitaCreate.MinDate = DateTime.Now;
+                dtpFechaCitaFrmCitaCreate.Focus();
+                cbPacienteFrmCitaCreate.DataSource = Data.DataPaciente.GetInstance().ListarPacientes().ToList();
+                cbDoctorFrmCitaCreate.DataSource = Data.DataDoctor.GetInstance().ListarDoctores().ToList();
+                cbPacienteFrmCitaCreate.DisplayMember = "NombreCompleto";
+                cbDoctorFrmCitaCreate.DisplayMember = "NombreCompleto";
+                cbPacienteFrmCitaCreate.ValueMember = "PacienteId";
+                cbDoctorFrmCitaCreate.ValueMember = "DoctorId";
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Error al cargar los datos desde la base de datos.");
+                Console.Error.WriteLine(ex.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                Console.Error.WriteLine(ex.StackTrace);
+            }
         }
 
         private void btnAceptarFrmCitaCreate_Click(object sender, EventArgs e)
@@ -41,20 +61,18 @@ namespace WinForm.Frm.Citas
             if (ValidarDatos())
             {
                 Modelo.Cita cita = new Modelo.Cita();
-                cita.FechaCita = dtpFechaCitaFrmCitaCreate.Value;
-                MessageBox.Show(cbPacienteFrmCitaCreate.SelectedValue.ToString());
+                cita.FechaCita = dtpFechaCitaFrmCitaCreate.Value;                
                 cita.PacienteId = (int)cbPacienteFrmCitaCreate.SelectedValue;
                 cita.DoctorId = (int) cbDoctorFrmCitaCreate.SelectedValue;
                 /*
                  * Otra forma de hacerlo sería:
                  * var doctor = (Modelo.Doctor) cbDoctorFrmCitaCreate.SelectedItem;
                  * cita.DoctorId = doctor.DoctorId;
-                */
-                MessageBox.Show(cita.DoctorId.ToString());
+                */                
                 cita.Motivo = tbMotivoCitaFrmCitaCreate.Text;
 
                 Data.DataCita.GetInstance().InsertarCita(cita);
-                MessageBox.Show("Cita creada correctamente");
+                MessageBox.Show("Cita reservada correctamente.");
             }
             else
             {
@@ -67,6 +85,18 @@ namespace WinForm.Frm.Citas
             if (dtpFechaCitaFrmCitaCreate.Text == "")
             {
                 MessageBox.Show("El campo Fecha de la cita es obligatorio.");
+                dtpFechaCitaFrmCitaCreate.Focus();
+                return false;
+            } 
+            else if (dtpFechaCitaFrmCitaCreate.Value.DayOfWeek == DayOfWeek.Saturday)
+            {
+                MessageBox.Show("No se puede reservar una cita un sabado. Seleccione un día de lunes a viernes.");
+                dtpFechaCitaFrmCitaCreate.Focus();
+                return false;
+            }
+            else if (dtpFechaCitaFrmCitaCreate.Value.DayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("No se puede reservar una cita un domingo. Seleccione un día de lunes a viernes.");
                 dtpFechaCitaFrmCitaCreate.Focus();
                 return false;
             }

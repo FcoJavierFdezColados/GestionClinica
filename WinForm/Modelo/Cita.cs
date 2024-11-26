@@ -15,6 +15,22 @@ namespace WinForm.Modelo
         public DateTime? FechaCancelacion { get; set; }
         public string? MotivoCancelacion { get; set; }
 
+        public string NombreCompletoPaciente
+        {
+            get
+            {
+                return $"{Paciente.Apellidos}, {Paciente.Nombre}";
+            }
+        }
+
+        public string NombreCompletoDoctor
+        {
+            get
+            {
+                return $"{Doctor.Apellidos}, {Doctor.Nombre}";
+            }
+        }
+
         public int PacienteId { get; set; }
         public Paciente Paciente { get; set; }
 
