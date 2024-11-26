@@ -36,6 +36,7 @@ namespace WinForm.Frm.Pacientes
                 Data.DataPaciente.GetInstance().InsertarPacinte(paciente);
 
                 MessageBox.Show("Paciente añadido correctamente");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {

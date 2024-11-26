@@ -19,12 +19,13 @@ namespace WinForm.Frm.Pacientes
         }
 
         private void tsbFrmPacientesCrear_Click(object sender, EventArgs e)
-        {
+        {            
             FrmPacientesCreate frmPacientesCreate = new FrmPacientesCreate();
 
             if (frmPacientesCreate.ShowDialog() == DialogResult.OK)
             {
                 CargarDatos();
+                LimpiarBusqueda();
             }
         }
 
@@ -40,12 +41,13 @@ namespace WinForm.Frm.Pacientes
                     if (frmPacientesUpdate.ShowDialog() == DialogResult.OK)
                     {
                         CargarDatos();
+                        LimpiarBusqueda();
                     }
 
                 }
                 catch(ArgumentException aex)//Por si falla al encontrar PacienteId
                 {
-                    MessageBox.Show("No se encontró la columna seleccionada.");
+                    MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto. Consulte con el servicio técnico de soporte.");
                     Console.Error.WriteLine(aex.StackTrace);
                 }
                 catch(Exception ex)
@@ -82,7 +84,8 @@ namespace WinForm.Frm.Pacientes
         }
 
         private void tsbFrmPacientesEliminar_Click(object sender, EventArgs e)
-        {
+        {            
+
             if (DgvwPacientesRead.SelectedRows.Count > 0)
             {
                 var result = MessageBox.Show
@@ -99,10 +102,11 @@ namespace WinForm.Frm.Pacientes
                         Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
                         tstbBuscarFrmPacientesRead.Text = "";
                         CargarDatos();
+                        LimpiarBusqueda();
                     }
                     catch (ArgumentException ex)
                     {
-                        MessageBox.Show("No se encontró la columna seleccionada.");
+                        MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto. Consulte con el servicio técnico de soporte.");
                         Console.Error.WriteLine(ex.StackTrace);
                     }
                     catch (Exception ex)
@@ -133,5 +137,13 @@ namespace WinForm.Frm.Pacientes
                 CargarDatos();
             }
         }
+
+
+
+        private void LimpiarBusqueda()
+        {
+            tstbBuscarFrmPacientesRead.Text = "";
+        }
+
     }
 }

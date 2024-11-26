@@ -73,6 +73,7 @@ namespace WinForm.Frm.Citas
 
                 Data.DataCita.GetInstance().InsertarCita(cita);
                 MessageBox.Show("Cita reservada correctamente.");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {

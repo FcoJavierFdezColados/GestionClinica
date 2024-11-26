@@ -26,6 +26,7 @@ namespace WinForm.Frm.Citas
             if (dialogResult == DialogResult.OK)
             {
                 cargarDatos();
+                LimpiarBusqueda();
             }
             else if (dialogResult == DialogResult.Cancel)
             {
@@ -45,11 +46,12 @@ namespace WinForm.Frm.Citas
                     if (frmCitaUpdate.ShowDialog() == DialogResult.OK)
                     {
                         cargarDatos();
+                        LimpiarBusqueda();
                     }
                 }
                 catch (ArgumentException ex)
                 {
-                    MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto.");
+                    MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto. Consulte con el servicio técnico de soporte.");
                     Console.Error.WriteLine(ex.StackTrace);
                 }
                 catch (Exception ex)
@@ -123,6 +125,7 @@ namespace WinForm.Frm.Citas
         private void dtpFechaCitaFrmCitasRead_ValueChanged(object sender, EventArgs e)
         {
             cargarDatos();
+            LimpiarBusqueda();
         }
 
         private void tbBuscarCitaFrmCitasRead_TextChanged(object sender, EventArgs e)
@@ -152,6 +155,11 @@ namespace WinForm.Frm.Citas
             {
                 cargarDatos();
             }
+        }
+
+        private void LimpiarBusqueda()
+        {
+            tbBuscarCitaFrmCitasRead.Text = "";
         }
     }
 }

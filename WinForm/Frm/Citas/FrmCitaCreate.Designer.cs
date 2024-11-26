@@ -50,7 +50,7 @@
             btnAceptarFrmCitaCreate.Location = new Point(243, 352);
             btnAceptarFrmCitaCreate.Name = "btnAceptarFrmCitaCreate";
             btnAceptarFrmCitaCreate.Size = new Size(75, 23);
-            btnAceptarFrmCitaCreate.TabIndex = 0;
+            btnAceptarFrmCitaCreate.TabIndex = 4;
             btnAceptarFrmCitaCreate.Text = "Aceptar";
             btnAceptarFrmCitaCreate.UseVisualStyleBackColor = true;
             btnAceptarFrmCitaCreate.Click += btnAceptarFrmCitaCreate_Click;
@@ -62,20 +62,22 @@
             btnCancelarFrmCitaCreate.Location = new Point(476, 352);
             btnCancelarFrmCitaCreate.Name = "btnCancelarFrmCitaCreate";
             btnCancelarFrmCitaCreate.Size = new Size(75, 23);
-            btnCancelarFrmCitaCreate.TabIndex = 1;
+            btnCancelarFrmCitaCreate.TabIndex = 5;
             btnCancelarFrmCitaCreate.Text = "Cancelar";
             btnCancelarFrmCitaCreate.UseVisualStyleBackColor = true;
             btnCancelarFrmCitaCreate.Click += btnCancelarFrmCitaCreate_Click;
             // 
             // dtpFechaCitaFrmCitaCreate
             // 
+            dtpFechaCitaFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtpFechaCitaFrmCitaCreate.Location = new Point(106, 12);
             dtpFechaCitaFrmCitaCreate.Name = "dtpFechaCitaFrmCitaCreate";
             dtpFechaCitaFrmCitaCreate.Size = new Size(682, 23);
-            dtpFechaCitaFrmCitaCreate.TabIndex = 2;
+            dtpFechaCitaFrmCitaCreate.TabIndex = 0;
             // 
             // lblFechaCitaFrmCitaCreate
             // 
+            lblFechaCitaFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblFechaCitaFrmCitaCreate.AutoSize = true;
             lblFechaCitaFrmCitaCreate.Location = new Point(12, 18);
             lblFechaCitaFrmCitaCreate.Name = "lblFechaCitaFrmCitaCreate";
@@ -85,6 +87,7 @@
             // 
             // lblPacienteFrmCitaCreate
             // 
+            lblPacienteFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPacienteFrmCitaCreate.AutoSize = true;
             lblPacienteFrmCitaCreate.Location = new Point(48, 69);
             lblPacienteFrmCitaCreate.Name = "lblPacienteFrmCitaCreate";
@@ -94,6 +97,7 @@
             // 
             // lblDoctorFrmCitaCreate
             // 
+            lblDoctorFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblDoctorFrmCitaCreate.AutoSize = true;
             lblDoctorFrmCitaCreate.Location = new Point(57, 122);
             lblDoctorFrmCitaCreate.Name = "lblDoctorFrmCitaCreate";
@@ -103,6 +107,7 @@
             // 
             // lblMotivoCitaFrmCitaCreate
             // 
+            lblMotivoCitaFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblMotivoCitaFrmCitaCreate.AutoSize = true;
             lblMotivoCitaFrmCitaCreate.Location = new Point(12, 173);
             lblMotivoCitaFrmCitaCreate.Name = "lblMotivoCitaFrmCitaCreate";
@@ -112,13 +117,14 @@
             // 
             // cbPacienteFrmCitaCreate
             // 
+            cbPacienteFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cbPacienteFrmCitaCreate.DataSource = pacienteBindingSource;
             cbPacienteFrmCitaCreate.DisplayMember = "Apellidos";
             cbPacienteFrmCitaCreate.FormattingEnabled = true;
             cbPacienteFrmCitaCreate.Location = new Point(106, 66);
             cbPacienteFrmCitaCreate.Name = "cbPacienteFrmCitaCreate";
             cbPacienteFrmCitaCreate.Size = new Size(682, 23);
-            cbPacienteFrmCitaCreate.TabIndex = 7;
+            cbPacienteFrmCitaCreate.TabIndex = 1;
             // 
             // pacienteBindingSource
             // 
@@ -126,19 +132,21 @@
             // 
             // cbDoctorFrmCitaCreate
             // 
+            cbDoctorFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cbDoctorFrmCitaCreate.FormattingEnabled = true;
             cbDoctorFrmCitaCreate.Location = new Point(106, 119);
             cbDoctorFrmCitaCreate.Name = "cbDoctorFrmCitaCreate";
             cbDoctorFrmCitaCreate.Size = new Size(682, 23);
-            cbDoctorFrmCitaCreate.TabIndex = 8;
+            cbDoctorFrmCitaCreate.TabIndex = 2;
             // 
             // tbMotivoCitaFrmCitaCreate
             // 
+            tbMotivoCitaFrmCitaCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbMotivoCitaFrmCitaCreate.Location = new Point(12, 191);
             tbMotivoCitaFrmCitaCreate.Multiline = true;
             tbMotivoCitaFrmCitaCreate.Name = "tbMotivoCitaFrmCitaCreate";
             tbMotivoCitaFrmCitaCreate.Size = new Size(776, 142);
-            tbMotivoCitaFrmCitaCreate.TabIndex = 9;
+            tbMotivoCitaFrmCitaCreate.TabIndex = 3;
             // 
             // FrmCitaCreate
             // 

@@ -30,11 +30,12 @@ namespace WinForm.Frm.Pacientes
             }
             catch (Exception ex)
             {
+                MessageBox.Show($"Error: {ex.Message}");
                 Console.Error.WriteLine(ex.StackTrace);
             }
         }
 
-        private void btnFrmPacientesUpdateAceptar_Click(object sender, EventArgs e)
+        private void btnAceptarFrmPacientesUpdate_Click(object sender, EventArgs e)
         {
             if (ValidarCampos() && paciente != null)
             {
@@ -50,6 +51,7 @@ namespace WinForm.Frm.Pacientes
                 Data.DataPaciente.GetInstance().ActualizarPaciente(_pacienteId, paciente);
 
                 MessageBox.Show("Paciente editado correctamente");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -59,7 +61,7 @@ namespace WinForm.Frm.Pacientes
 
         private void CargarDatos(Modelo.Paciente paciente)
         {
-            
+
             if (paciente != null)
             {
                 tbNombreFrmPacientesUpdate.Text = paciente.Nombre;
@@ -79,6 +81,7 @@ namespace WinForm.Frm.Pacientes
 
         private void FrmPacientesUpdate_Load(object sender, EventArgs e)
         {
+            tbNombreFrmPacientesUpdate.Focus();
             CargarDatos(paciente);
         }
 
@@ -128,6 +131,11 @@ namespace WinForm.Frm.Pacientes
             }
 
             return true;
+        }
+
+        private void btnCancelarPacientesUpdate_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

@@ -28,202 +28,219 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnFrmPacientesUpdateAceptar = new Button();
-            btnPacientesUpdateCancelar = new Button();
-            tbNombreFrmPacientesUpdate = new TextBox();
-            tbTelofono1FrmPacientesUpdate = new TextBox();
-            tbApellidosFrmPacientesUpdate = new TextBox();
-            tbTelefono2FrmPacientesUpdate = new TextBox();
-            tbDireccionFrmPacientesUpdate = new TextBox();
-            tbProvinciaFrmPacientesUpdate = new TextBox();
-            tbPoblacionFrmPacientesUpdate = new TextBox();
+            btnAceptarFrmPacientesUpdate = new Button();
+            btnCancelarPacientesUpdate = new Button();
+            lblNombreFrmPacientesUpdate = new Label();
             tbCodigoPostaFrmPacientesUpdate = new TextBox();
-            lblPacientesNameFrmUpdate = new Label();
-            lblPacientesApellidosFrmUpdate = new Label();
-            lblPacientesDireccionFrmUpdate = new Label();
-            lblPoblacionPacientesFrmUpdate = new Label();
-            lblPacientesTelefono1FrmUpdate = new Label();
-            lblPacientesTelefono2FrmUpdate = new Label();
-            lblPacientesProviciaFrmUpdate = new Label();
-            lblPacientesCodigoPostalFrmUpdate = new Label();
+            lblApellidosFrmPacientesUpdate = new Label();
+            tbPoblacionFrmPacientesUpdate = new TextBox();
+            lblDireccionFrmPacientesUpdate = new Label();
+            tbProvinciaFrmPacientesUpdate = new TextBox();
+            lblPoblacionFrmPacientesUpdate = new Label();
+            tbDireccionFrmPacientesUpdate = new TextBox();
+            lblTelefono1FrmPacientesUpdate = new Label();
+            tbTelefono2FrmPacientesUpdate = new TextBox();
+            lblTelefono2FrmPacientesUpdate = new Label();
+            tbApellidosFrmPacientesUpdate = new TextBox();
+            lblProviciaFrmPacientesUpdate = new Label();
+            tbTelofono1FrmPacientesUpdate = new TextBox();
+            lblCodigoPostalFrmPacientesUpdate = new Label();
+            tbNombreFrmPacientesUpdate = new TextBox();
             SuspendLayout();
             // 
-            // btnFrmPacientesUpdateAceptar
+            // btnAceptarFrmPacientesUpdate
             // 
-            btnFrmPacientesUpdateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnFrmPacientesUpdateAceptar.DialogResult = DialogResult.OK;
-            btnFrmPacientesUpdateAceptar.Location = new Point(234, 380);
-            btnFrmPacientesUpdateAceptar.Name = "btnFrmPacientesUpdateAceptar";
-            btnFrmPacientesUpdateAceptar.Size = new Size(75, 23);
-            btnFrmPacientesUpdateAceptar.TabIndex = 0;
-            btnFrmPacientesUpdateAceptar.Text = "Aceptar";
-            btnFrmPacientesUpdateAceptar.UseVisualStyleBackColor = true;
-            btnFrmPacientesUpdateAceptar.Click += btnFrmPacientesUpdateAceptar_Click;
+            btnAceptarFrmPacientesUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAceptarFrmPacientesUpdate.DialogResult = DialogResult.OK;
+            btnAceptarFrmPacientesUpdate.Location = new Point(234, 522);
+            btnAceptarFrmPacientesUpdate.Name = "btnAceptarFrmPacientesUpdate";
+            btnAceptarFrmPacientesUpdate.Size = new Size(75, 23);
+            btnAceptarFrmPacientesUpdate.TabIndex = 8;
+            btnAceptarFrmPacientesUpdate.Text = "Aceptar";
+            btnAceptarFrmPacientesUpdate.UseVisualStyleBackColor = true;
+            btnAceptarFrmPacientesUpdate.Click += btnAceptarFrmPacientesUpdate_Click;
             // 
-            // btnPacientesUpdateCancelar
+            // btnCancelarPacientesUpdate
             // 
-            btnPacientesUpdateCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnPacientesUpdateCancelar.DialogResult = DialogResult.Cancel;
-            btnPacientesUpdateCancelar.Location = new Point(483, 381);
-            btnPacientesUpdateCancelar.Name = "btnPacientesUpdateCancelar";
-            btnPacientesUpdateCancelar.Size = new Size(75, 23);
-            btnPacientesUpdateCancelar.TabIndex = 1;
-            btnPacientesUpdateCancelar.Text = "Cancelar";
-            btnPacientesUpdateCancelar.UseVisualStyleBackColor = true;
+            btnCancelarPacientesUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelarPacientesUpdate.DialogResult = DialogResult.Cancel;
+            btnCancelarPacientesUpdate.Location = new Point(512, 523);
+            btnCancelarPacientesUpdate.Name = "btnCancelarPacientesUpdate";
+            btnCancelarPacientesUpdate.Size = new Size(75, 23);
+            btnCancelarPacientesUpdate.TabIndex = 9;
+            btnCancelarPacientesUpdate.Text = "Cancelar";
+            btnCancelarPacientesUpdate.UseVisualStyleBackColor = true;
+            btnCancelarPacientesUpdate.Click += btnCancelarPacientesUpdate_Click;
             // 
-            // tbNombreFrmPacientesUpdate
+            // lblNombreFrmPacientesUpdate
             // 
-            tbNombreFrmPacientesUpdate.Location = new Point(69, 25);
-            tbNombreFrmPacientesUpdate.Name = "tbNombreFrmPacientesUpdate";
-            tbNombreFrmPacientesUpdate.Size = new Size(240, 23);
-            tbNombreFrmPacientesUpdate.TabIndex = 2;
-            // 
-            // tbTelofono1FrmPacientesUpdate
-            // 
-            tbTelofono1FrmPacientesUpdate.Location = new Point(496, 25);
-            tbTelofono1FrmPacientesUpdate.Name = "tbTelofono1FrmPacientesUpdate";
-            tbTelofono1FrmPacientesUpdate.Size = new Size(292, 23);
-            tbTelofono1FrmPacientesUpdate.TabIndex = 3;
-            // 
-            // tbApellidosFrmPacientesUpdate
-            // 
-            tbApellidosFrmPacientesUpdate.Location = new Point(69, 88);
-            tbApellidosFrmPacientesUpdate.Name = "tbApellidosFrmPacientesUpdate";
-            tbApellidosFrmPacientesUpdate.Size = new Size(240, 23);
-            tbApellidosFrmPacientesUpdate.TabIndex = 4;
-            // 
-            // tbTelefono2FrmPacientesUpdate
-            // 
-            tbTelefono2FrmPacientesUpdate.Location = new Point(496, 88);
-            tbTelefono2FrmPacientesUpdate.Name = "tbTelefono2FrmPacientesUpdate";
-            tbTelefono2FrmPacientesUpdate.Size = new Size(292, 23);
-            tbTelefono2FrmPacientesUpdate.TabIndex = 5;
-            // 
-            // tbDireccionFrmPacientesUpdate
-            // 
-            tbDireccionFrmPacientesUpdate.Location = new Point(70, 141);
-            tbDireccionFrmPacientesUpdate.Name = "tbDireccionFrmPacientesUpdate";
-            tbDireccionFrmPacientesUpdate.Size = new Size(239, 23);
-            tbDireccionFrmPacientesUpdate.TabIndex = 6;
-            // 
-            // tbProvinciaFrmPacientesUpdate
-            // 
-            tbProvinciaFrmPacientesUpdate.Location = new Point(496, 141);
-            tbProvinciaFrmPacientesUpdate.Name = "tbProvinciaFrmPacientesUpdate";
-            tbProvinciaFrmPacientesUpdate.Size = new Size(292, 23);
-            tbProvinciaFrmPacientesUpdate.TabIndex = 7;
-            // 
-            // tbPoblacionFrmPacientesUpdate
-            // 
-            tbPoblacionFrmPacientesUpdate.Location = new Point(69, 202);
-            tbPoblacionFrmPacientesUpdate.Name = "tbPoblacionFrmPacientesUpdate";
-            tbPoblacionFrmPacientesUpdate.Size = new Size(240, 23);
-            tbPoblacionFrmPacientesUpdate.TabIndex = 8;
+            lblNombreFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lblNombreFrmPacientesUpdate.AutoSize = true;
+            lblNombreFrmPacientesUpdate.Location = new Point(42, 37);
+            lblNombreFrmPacientesUpdate.Name = "lblNombreFrmPacientesUpdate";
+            lblNombreFrmPacientesUpdate.Size = new Size(51, 15);
+            lblNombreFrmPacientesUpdate.TabIndex = 10;
+            lblNombreFrmPacientesUpdate.Text = "Nombre";
             // 
             // tbCodigoPostaFrmPacientesUpdate
             // 
-            tbCodigoPostaFrmPacientesUpdate.Location = new Point(496, 202);
+            tbCodigoPostaFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbCodigoPostaFrmPacientesUpdate.Location = new Point(99, 444);
             tbCodigoPostaFrmPacientesUpdate.Name = "tbCodigoPostaFrmPacientesUpdate";
-            tbCodigoPostaFrmPacientesUpdate.Size = new Size(292, 23);
-            tbCodigoPostaFrmPacientesUpdate.TabIndex = 9;
+            tbCodigoPostaFrmPacientesUpdate.Size = new Size(718, 23);
+            tbCodigoPostaFrmPacientesUpdate.TabIndex = 7;
             // 
-            // lblPacientesNameFrmUpdate
+            // lblApellidosFrmPacientesUpdate
             // 
-            lblPacientesNameFrmUpdate.AutoSize = true;
-            lblPacientesNameFrmUpdate.Location = new Point(12, 28);
-            lblPacientesNameFrmUpdate.Name = "lblPacientesNameFrmUpdate";
-            lblPacientesNameFrmUpdate.Size = new Size(51, 15);
-            lblPacientesNameFrmUpdate.TabIndex = 10;
-            lblPacientesNameFrmUpdate.Text = "Nombre";
+            lblApellidosFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblApellidosFrmPacientesUpdate.AutoSize = true;
+            lblApellidosFrmPacientesUpdate.Location = new Point(37, 101);
+            lblApellidosFrmPacientesUpdate.Name = "lblApellidosFrmPacientesUpdate";
+            lblApellidosFrmPacientesUpdate.Size = new Size(56, 15);
+            lblApellidosFrmPacientesUpdate.TabIndex = 11;
+            lblApellidosFrmPacientesUpdate.Text = "Apellidos";
             // 
-            // lblPacientesApellidosFrmUpdate
+            // tbPoblacionFrmPacientesUpdate
             // 
-            lblPacientesApellidosFrmUpdate.AutoSize = true;
-            lblPacientesApellidosFrmUpdate.Location = new Point(7, 91);
-            lblPacientesApellidosFrmUpdate.Name = "lblPacientesApellidosFrmUpdate";
-            lblPacientesApellidosFrmUpdate.Size = new Size(56, 15);
-            lblPacientesApellidosFrmUpdate.TabIndex = 11;
-            lblPacientesApellidosFrmUpdate.Text = "Apellidos";
+            tbPoblacionFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbPoblacionFrmPacientesUpdate.Location = new Point(99, 323);
+            tbPoblacionFrmPacientesUpdate.Name = "tbPoblacionFrmPacientesUpdate";
+            tbPoblacionFrmPacientesUpdate.Size = new Size(718, 23);
+            tbPoblacionFrmPacientesUpdate.TabIndex = 5;
             // 
-            // lblPacientesDireccionFrmUpdate
+            // lblDireccionFrmPacientesUpdate
             // 
-            lblPacientesDireccionFrmUpdate.AutoSize = true;
-            lblPacientesDireccionFrmUpdate.Location = new Point(7, 144);
-            lblPacientesDireccionFrmUpdate.Name = "lblPacientesDireccionFrmUpdate";
-            lblPacientesDireccionFrmUpdate.Size = new Size(57, 15);
-            lblPacientesDireccionFrmUpdate.TabIndex = 12;
-            lblPacientesDireccionFrmUpdate.Text = "Dirección";
+            lblDireccionFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblDireccionFrmPacientesUpdate.AutoSize = true;
+            lblDireccionFrmPacientesUpdate.Location = new Point(36, 265);
+            lblDireccionFrmPacientesUpdate.Name = "lblDireccionFrmPacientesUpdate";
+            lblDireccionFrmPacientesUpdate.Size = new Size(57, 15);
+            lblDireccionFrmPacientesUpdate.TabIndex = 12;
+            lblDireccionFrmPacientesUpdate.Text = "Dirección";
             // 
-            // lblPoblacionPacientesFrmUpdate
+            // tbProvinciaFrmPacientesUpdate
             // 
-            lblPoblacionPacientesFrmUpdate.AutoSize = true;
-            lblPoblacionPacientesFrmUpdate.Location = new Point(3, 205);
-            lblPoblacionPacientesFrmUpdate.Name = "lblPoblacionPacientesFrmUpdate";
-            lblPoblacionPacientesFrmUpdate.Size = new Size(60, 15);
-            lblPoblacionPacientesFrmUpdate.TabIndex = 13;
-            lblPoblacionPacientesFrmUpdate.Text = "Población";
+            tbProvinciaFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbProvinciaFrmPacientesUpdate.Location = new Point(99, 378);
+            tbProvinciaFrmPacientesUpdate.Name = "tbProvinciaFrmPacientesUpdate";
+            tbProvinciaFrmPacientesUpdate.Size = new Size(718, 23);
+            tbProvinciaFrmPacientesUpdate.TabIndex = 6;
             // 
-            // lblPacientesTelefono1FrmUpdate
+            // lblPoblacionFrmPacientesUpdate
             // 
-            lblPacientesTelefono1FrmUpdate.AutoSize = true;
-            lblPacientesTelefono1FrmUpdate.Location = new Point(429, 28);
-            lblPacientesTelefono1FrmUpdate.Name = "lblPacientesTelefono1FrmUpdate";
-            lblPacientesTelefono1FrmUpdate.Size = new Size(61, 15);
-            lblPacientesTelefono1FrmUpdate.TabIndex = 14;
-            lblPacientesTelefono1FrmUpdate.Text = "Teléfono 1";
+            lblPoblacionFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblPoblacionFrmPacientesUpdate.AutoSize = true;
+            lblPoblacionFrmPacientesUpdate.Location = new Point(33, 326);
+            lblPoblacionFrmPacientesUpdate.Name = "lblPoblacionFrmPacientesUpdate";
+            lblPoblacionFrmPacientesUpdate.Size = new Size(60, 15);
+            lblPoblacionFrmPacientesUpdate.TabIndex = 13;
+            lblPoblacionFrmPacientesUpdate.Text = "Población";
             // 
-            // lblPacientesTelefono2FrmUpdate
+            // tbDireccionFrmPacientesUpdate
             // 
-            lblPacientesTelefono2FrmUpdate.AutoSize = true;
-            lblPacientesTelefono2FrmUpdate.Location = new Point(429, 91);
-            lblPacientesTelefono2FrmUpdate.Name = "lblPacientesTelefono2FrmUpdate";
-            lblPacientesTelefono2FrmUpdate.Size = new Size(61, 15);
-            lblPacientesTelefono2FrmUpdate.TabIndex = 15;
-            lblPacientesTelefono2FrmUpdate.Text = "Teléfono 2";
+            tbDireccionFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbDireccionFrmPacientesUpdate.Location = new Point(99, 262);
+            tbDireccionFrmPacientesUpdate.Name = "tbDireccionFrmPacientesUpdate";
+            tbDireccionFrmPacientesUpdate.Size = new Size(718, 23);
+            tbDireccionFrmPacientesUpdate.TabIndex = 4;
             // 
-            // lblPacientesProviciaFrmUpdate
+            // lblTelefono1FrmPacientesUpdate
             // 
-            lblPacientesProviciaFrmUpdate.AutoSize = true;
-            lblPacientesProviciaFrmUpdate.Location = new Point(434, 144);
-            lblPacientesProviciaFrmUpdate.Name = "lblPacientesProviciaFrmUpdate";
-            lblPacientesProviciaFrmUpdate.Size = new Size(56, 15);
-            lblPacientesProviciaFrmUpdate.TabIndex = 16;
-            lblPacientesProviciaFrmUpdate.Text = "Provincia";
+            lblTelefono1FrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblTelefono1FrmPacientesUpdate.AutoSize = true;
+            lblTelefono1FrmPacientesUpdate.Location = new Point(31, 158);
+            lblTelefono1FrmPacientesUpdate.Name = "lblTelefono1FrmPacientesUpdate";
+            lblTelefono1FrmPacientesUpdate.Size = new Size(62, 15);
+            lblTelefono1FrmPacientesUpdate.TabIndex = 14;
+            lblTelefono1FrmPacientesUpdate.Text = "Teléfono 1";
             // 
-            // lblPacientesCodigoPostalFrmUpdate
+            // tbTelefono2FrmPacientesUpdate
             // 
-            lblPacientesCodigoPostalFrmUpdate.AutoSize = true;
-            lblPacientesCodigoPostalFrmUpdate.Location = new Point(409, 205);
-            lblPacientesCodigoPostalFrmUpdate.Name = "lblPacientesCodigoPostalFrmUpdate";
-            lblPacientesCodigoPostalFrmUpdate.Size = new Size(81, 15);
-            lblPacientesCodigoPostalFrmUpdate.TabIndex = 17;
-            lblPacientesCodigoPostalFrmUpdate.Text = "Código Postal";
+            tbTelefono2FrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbTelefono2FrmPacientesUpdate.Location = new Point(99, 212);
+            tbTelefono2FrmPacientesUpdate.Name = "tbTelefono2FrmPacientesUpdate";
+            tbTelefono2FrmPacientesUpdate.Size = new Size(718, 23);
+            tbTelefono2FrmPacientesUpdate.TabIndex = 3;
+            // 
+            // lblTelefono2FrmPacientesUpdate
+            // 
+            lblTelefono2FrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblTelefono2FrmPacientesUpdate.AutoSize = true;
+            lblTelefono2FrmPacientesUpdate.Location = new Point(31, 215);
+            lblTelefono2FrmPacientesUpdate.Name = "lblTelefono2FrmPacientesUpdate";
+            lblTelefono2FrmPacientesUpdate.Size = new Size(62, 15);
+            lblTelefono2FrmPacientesUpdate.TabIndex = 15;
+            lblTelefono2FrmPacientesUpdate.Text = "Teléfono 2";
+            // 
+            // tbApellidosFrmPacientesUpdate
+            // 
+            tbApellidosFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbApellidosFrmPacientesUpdate.Location = new Point(99, 98);
+            tbApellidosFrmPacientesUpdate.Name = "tbApellidosFrmPacientesUpdate";
+            tbApellidosFrmPacientesUpdate.Size = new Size(718, 23);
+            tbApellidosFrmPacientesUpdate.TabIndex = 1;
+            // 
+            // lblProviciaFrmPacientesUpdate
+            // 
+            lblProviciaFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblProviciaFrmPacientesUpdate.AutoSize = true;
+            lblProviciaFrmPacientesUpdate.Location = new Point(37, 381);
+            lblProviciaFrmPacientesUpdate.Name = "lblProviciaFrmPacientesUpdate";
+            lblProviciaFrmPacientesUpdate.Size = new Size(56, 15);
+            lblProviciaFrmPacientesUpdate.TabIndex = 16;
+            lblProviciaFrmPacientesUpdate.Text = "Provincia";
+            // 
+            // tbTelofono1FrmPacientesUpdate
+            // 
+            tbTelofono1FrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbTelofono1FrmPacientesUpdate.Location = new Point(99, 155);
+            tbTelofono1FrmPacientesUpdate.Name = "tbTelofono1FrmPacientesUpdate";
+            tbTelofono1FrmPacientesUpdate.Size = new Size(718, 23);
+            tbTelofono1FrmPacientesUpdate.TabIndex = 2;
+            // 
+            // lblCodigoPostalFrmPacientesUpdate
+            // 
+            lblCodigoPostalFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblCodigoPostalFrmPacientesUpdate.AutoSize = true;
+            lblCodigoPostalFrmPacientesUpdate.Location = new Point(12, 447);
+            lblCodigoPostalFrmPacientesUpdate.Name = "lblCodigoPostalFrmPacientesUpdate";
+            lblCodigoPostalFrmPacientesUpdate.Size = new Size(81, 15);
+            lblCodigoPostalFrmPacientesUpdate.TabIndex = 17;
+            lblCodigoPostalFrmPacientesUpdate.Text = "Código Postal";
+            // 
+            // tbNombreFrmPacientesUpdate
+            // 
+            tbNombreFrmPacientesUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbNombreFrmPacientesUpdate.Location = new Point(99, 34);
+            tbNombreFrmPacientesUpdate.Name = "tbNombreFrmPacientesUpdate";
+            tbNombreFrmPacientesUpdate.Size = new Size(718, 23);
+            tbNombreFrmPacientesUpdate.TabIndex = 0;
             // 
             // FrmPacientesUpdate
             // 
-            AcceptButton = btnFrmPacientesUpdateAceptar;
+            AcceptButton = btnAceptarFrmPacientesUpdate;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnPacientesUpdateCancelar;
-            ClientSize = new Size(800, 450);
-            Controls.Add(lblPacientesCodigoPostalFrmUpdate);
-            Controls.Add(lblPacientesProviciaFrmUpdate);
-            Controls.Add(lblPacientesTelefono2FrmUpdate);
-            Controls.Add(lblPacientesTelefono1FrmUpdate);
-            Controls.Add(lblPoblacionPacientesFrmUpdate);
-            Controls.Add(lblPacientesDireccionFrmUpdate);
-            Controls.Add(lblPacientesApellidosFrmUpdate);
-            Controls.Add(lblPacientesNameFrmUpdate);
-            Controls.Add(tbCodigoPostaFrmPacientesUpdate);
-            Controls.Add(tbPoblacionFrmPacientesUpdate);
-            Controls.Add(tbProvinciaFrmPacientesUpdate);
-            Controls.Add(tbDireccionFrmPacientesUpdate);
-            Controls.Add(tbTelefono2FrmPacientesUpdate);
-            Controls.Add(tbApellidosFrmPacientesUpdate);
-            Controls.Add(tbTelofono1FrmPacientesUpdate);
+            CancelButton = btnCancelarPacientesUpdate;
+            ClientSize = new Size(829, 592);
             Controls.Add(tbNombreFrmPacientesUpdate);
-            Controls.Add(btnPacientesUpdateCancelar);
-            Controls.Add(btnFrmPacientesUpdateAceptar);
+            Controls.Add(lblCodigoPostalFrmPacientesUpdate);
+            Controls.Add(tbTelofono1FrmPacientesUpdate);
+            Controls.Add(btnCancelarPacientesUpdate);
+            Controls.Add(lblProviciaFrmPacientesUpdate);
+            Controls.Add(btnAceptarFrmPacientesUpdate);
+            Controls.Add(tbApellidosFrmPacientesUpdate);
+            Controls.Add(lblNombreFrmPacientesUpdate);
+            Controls.Add(lblTelefono2FrmPacientesUpdate);
+            Controls.Add(tbCodigoPostaFrmPacientesUpdate);
+            Controls.Add(tbTelefono2FrmPacientesUpdate);
+            Controls.Add(lblApellidosFrmPacientesUpdate);
+            Controls.Add(lblTelefono1FrmPacientesUpdate);
+            Controls.Add(tbPoblacionFrmPacientesUpdate);
+            Controls.Add(tbDireccionFrmPacientesUpdate);
+            Controls.Add(lblDireccionFrmPacientesUpdate);
+            Controls.Add(lblPoblacionFrmPacientesUpdate);
+            Controls.Add(tbProvinciaFrmPacientesUpdate);
             Name = "FrmPacientesUpdate";
             Text = "FrmPacientesUpdate";
             Load += FrmPacientesUpdate_Load;
@@ -233,23 +250,23 @@
 
         #endregion
 
-        private Button btnFrmPacientesUpdateAceptar;
-        private Button btnPacientesUpdateCancelar;
-        private TextBox tbNombreFrmPacientesUpdate;
-        private TextBox tbTelofono1FrmPacientesUpdate;
-        private TextBox tbApellidosFrmPacientesUpdate;
-        private TextBox tbTelefono2FrmPacientesUpdate;
-        private TextBox tbDireccionFrmPacientesUpdate;
-        private TextBox tbProvinciaFrmPacientesUpdate;
-        private TextBox tbPoblacionFrmPacientesUpdate;
+        private Button btnAceptarFrmPacientesUpdate;
+        private Button btnCancelarPacientesUpdate;
+        private Label lblNombreFrmPacientesUpdate;
         private TextBox tbCodigoPostaFrmPacientesUpdate;
-        private Label lblPacientesNameFrmUpdate;
-        private Label lblPacientesApellidosFrmUpdate;
-        private Label lblPacientesDireccionFrmUpdate;
-        private Label lblPoblacionPacientesFrmUpdate;
-        private Label lblPacientesTelefono1FrmUpdate;
-        private Label lblPacientesTelefono2FrmUpdate;
-        private Label lblPacientesProviciaFrmUpdate;
-        private Label lblPacientesCodigoPostalFrmUpdate;
+        private Label lblApellidosFrmPacientesUpdate;
+        private TextBox tbPoblacionFrmPacientesUpdate;
+        private Label lblDireccionFrmPacientesUpdate;
+        private TextBox tbProvinciaFrmPacientesUpdate;
+        private Label lblPoblacionFrmPacientesUpdate;
+        private TextBox tbDireccionFrmPacientesUpdate;
+        private Label lblTelefono1FrmPacientesUpdate;
+        private TextBox tbTelefono2FrmPacientesUpdate;
+        private Label lblTelefono2FrmPacientesUpdate;
+        private TextBox tbApellidosFrmPacientesUpdate;
+        private Label lblProviciaFrmPacientesUpdate;
+        private TextBox tbTelofono1FrmPacientesUpdate;
+        private Label lblCodigoPostalFrmPacientesUpdate;
+        private TextBox tbNombreFrmPacientesUpdate;
     }
 }

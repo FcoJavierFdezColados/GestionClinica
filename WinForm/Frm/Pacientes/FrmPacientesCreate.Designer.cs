@@ -52,7 +52,7 @@
             // 
             btnAceptarFrmPacientesCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnAceptarFrmPacientesCreate.DialogResult = DialogResult.OK;
-            btnAceptarFrmPacientesCreate.Location = new Point(255, 358);
+            btnAceptarFrmPacientesCreate.Location = new Point(255, 537);
             btnAceptarFrmPacientesCreate.Name = "btnAceptarFrmPacientesCreate";
             btnAceptarFrmPacientesCreate.Size = new Size(75, 23);
             btnAceptarFrmPacientesCreate.TabIndex = 8;
@@ -64,7 +64,7 @@
             // 
             btnCancelarPacientesCreate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelarPacientesCreate.DialogResult = DialogResult.Cancel;
-            btnCancelarPacientesCreate.Location = new Point(470, 358);
+            btnCancelarPacientesCreate.Location = new Point(470, 537);
             btnCancelarPacientesCreate.Name = "btnCancelarPacientesCreate";
             btnCancelarPacientesCreate.Size = new Size(75, 23);
             btnCancelarPacientesCreate.TabIndex = 9;
@@ -74,8 +74,9 @@
             // 
             // lblNombreFrmPacientesCreate
             // 
+            lblNombreFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblNombreFrmPacientesCreate.AutoSize = true;
-            lblNombreFrmPacientesCreate.Location = new Point(15, 19);
+            lblNombreFrmPacientesCreate.Location = new Point(42, 76);
             lblNombreFrmPacientesCreate.Name = "lblNombreFrmPacientesCreate";
             lblNombreFrmPacientesCreate.Size = new Size(51, 15);
             lblNombreFrmPacientesCreate.TabIndex = 2;
@@ -83,64 +84,73 @@
             // 
             // tbNombreFrmPacientesCreate
             // 
-            tbNombreFrmPacientesCreate.Location = new Point(72, 16);
+            tbNombreFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbNombreFrmPacientesCreate.Location = new Point(99, 73);
             tbNombreFrmPacientesCreate.Name = "tbNombreFrmPacientesCreate";
-            tbNombreFrmPacientesCreate.Size = new Size(258, 23);
+            tbNombreFrmPacientesCreate.Size = new Size(689, 23);
             tbNombreFrmPacientesCreate.TabIndex = 0;
             // 
             // tbTelefono1FrmPacientesCreate
             // 
-            tbTelefono1FrmPacientesCreate.Location = new Point(497, 16);
+            tbTelefono1FrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbTelefono1FrmPacientesCreate.Location = new Point(99, 183);
             tbTelefono1FrmPacientesCreate.Name = "tbTelefono1FrmPacientesCreate";
-            tbTelefono1FrmPacientesCreate.Size = new Size(291, 23);
-            tbTelefono1FrmPacientesCreate.TabIndex = 1;
+            tbTelefono1FrmPacientesCreate.Size = new Size(689, 23);
+            tbTelefono1FrmPacientesCreate.TabIndex = 2;
             // 
             // tbApellidosFrmPacientesCreate
             // 
-            tbApellidosFrmPacientesCreate.Location = new Point(72, 70);
+            tbApellidosFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbApellidosFrmPacientesCreate.Location = new Point(99, 127);
             tbApellidosFrmPacientesCreate.Name = "tbApellidosFrmPacientesCreate";
-            tbApellidosFrmPacientesCreate.Size = new Size(258, 23);
-            tbApellidosFrmPacientesCreate.TabIndex = 2;
+            tbApellidosFrmPacientesCreate.Size = new Size(689, 23);
+            tbApellidosFrmPacientesCreate.TabIndex = 1;
             // 
             // tbTelefono2FrmPacientesCreate
             // 
-            tbTelefono2FrmPacientesCreate.Location = new Point(497, 70);
+            tbTelefono2FrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbTelefono2FrmPacientesCreate.Location = new Point(99, 239);
             tbTelefono2FrmPacientesCreate.Name = "tbTelefono2FrmPacientesCreate";
-            tbTelefono2FrmPacientesCreate.Size = new Size(291, 23);
+            tbTelefono2FrmPacientesCreate.Size = new Size(689, 23);
             tbTelefono2FrmPacientesCreate.TabIndex = 3;
             // 
             // tbDireccionFrmPacientesCreate
             // 
-            tbDireccionFrmPacientesCreate.Location = new Point(72, 139);
+            tbDireccionFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbDireccionFrmPacientesCreate.Location = new Point(99, 292);
             tbDireccionFrmPacientesCreate.Name = "tbDireccionFrmPacientesCreate";
-            tbDireccionFrmPacientesCreate.Size = new Size(258, 23);
+            tbDireccionFrmPacientesCreate.Size = new Size(689, 23);
             tbDireccionFrmPacientesCreate.TabIndex = 4;
             // 
             // tbProvinciaFrmPacientesCreate
             // 
-            tbProvinciaFrmPacientesCreate.Location = new Point(497, 139);
+            tbProvinciaFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbProvinciaFrmPacientesCreate.Location = new Point(99, 406);
             tbProvinciaFrmPacientesCreate.Name = "tbProvinciaFrmPacientesCreate";
-            tbProvinciaFrmPacientesCreate.Size = new Size(291, 23);
-            tbProvinciaFrmPacientesCreate.TabIndex = 5;
+            tbProvinciaFrmPacientesCreate.Size = new Size(689, 23);
+            tbProvinciaFrmPacientesCreate.TabIndex = 6;
             // 
             // tbPoblacionFrmPacientesCreate
             // 
-            tbPoblacionFrmPacientesCreate.Location = new Point(72, 214);
+            tbPoblacionFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbPoblacionFrmPacientesCreate.Location = new Point(99, 351);
             tbPoblacionFrmPacientesCreate.Name = "tbPoblacionFrmPacientesCreate";
-            tbPoblacionFrmPacientesCreate.Size = new Size(258, 23);
-            tbPoblacionFrmPacientesCreate.TabIndex = 6;
+            tbPoblacionFrmPacientesCreate.Size = new Size(689, 23);
+            tbPoblacionFrmPacientesCreate.TabIndex = 5;
             // 
             // tbCodigoPostalFrmPacientesCreate
             // 
-            tbCodigoPostalFrmPacientesCreate.Location = new Point(497, 214);
+            tbCodigoPostalFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbCodigoPostalFrmPacientesCreate.Location = new Point(99, 459);
             tbCodigoPostalFrmPacientesCreate.Name = "tbCodigoPostalFrmPacientesCreate";
-            tbCodigoPostalFrmPacientesCreate.Size = new Size(291, 23);
+            tbCodigoPostalFrmPacientesCreate.Size = new Size(689, 23);
             tbCodigoPostalFrmPacientesCreate.TabIndex = 7;
             // 
             // lblApellidosFrmPacientesCreate
             // 
+            lblApellidosFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblApellidosFrmPacientesCreate.AutoSize = true;
-            lblApellidosFrmPacientesCreate.Location = new Point(10, 73);
+            lblApellidosFrmPacientesCreate.Location = new Point(37, 130);
             lblApellidosFrmPacientesCreate.Name = "lblApellidosFrmPacientesCreate";
             lblApellidosFrmPacientesCreate.Size = new Size(56, 15);
             lblApellidosFrmPacientesCreate.TabIndex = 11;
@@ -148,8 +158,9 @@
             // 
             // lblDireccionFrmPacientesCreate
             // 
+            lblDireccionFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblDireccionFrmPacientesCreate.AutoSize = true;
-            lblDireccionFrmPacientesCreate.Location = new Point(9, 142);
+            lblDireccionFrmPacientesCreate.Location = new Point(36, 295);
             lblDireccionFrmPacientesCreate.Name = "lblDireccionFrmPacientesCreate";
             lblDireccionFrmPacientesCreate.Size = new Size(57, 15);
             lblDireccionFrmPacientesCreate.TabIndex = 12;
@@ -157,8 +168,9 @@
             // 
             // lblPoblacionFrmPacientesCreate
             // 
+            lblPoblacionFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPoblacionFrmPacientesCreate.AutoSize = true;
-            lblPoblacionFrmPacientesCreate.Location = new Point(6, 217);
+            lblPoblacionFrmPacientesCreate.Location = new Point(33, 354);
             lblPoblacionFrmPacientesCreate.Name = "lblPoblacionFrmPacientesCreate";
             lblPoblacionFrmPacientesCreate.Size = new Size(60, 15);
             lblPoblacionFrmPacientesCreate.TabIndex = 13;
@@ -166,8 +178,9 @@
             // 
             // lblCodigoPostalFrmPacientesCreate
             // 
+            lblCodigoPostalFrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblCodigoPostalFrmPacientesCreate.AutoSize = true;
-            lblCodigoPostalFrmPacientesCreate.Location = new Point(410, 217);
+            lblCodigoPostalFrmPacientesCreate.Location = new Point(12, 462);
             lblCodigoPostalFrmPacientesCreate.Name = "lblCodigoPostalFrmPacientesCreate";
             lblCodigoPostalFrmPacientesCreate.Size = new Size(81, 15);
             lblCodigoPostalFrmPacientesCreate.TabIndex = 14;
@@ -175,8 +188,9 @@
             // 
             // lblPacientesProviciaFrmCreate
             // 
+            lblPacientesProviciaFrmCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPacientesProviciaFrmCreate.AutoSize = true;
-            lblPacientesProviciaFrmCreate.Location = new Point(435, 142);
+            lblPacientesProviciaFrmCreate.Location = new Point(37, 409);
             lblPacientesProviciaFrmCreate.Name = "lblPacientesProviciaFrmCreate";
             lblPacientesProviciaFrmCreate.Size = new Size(56, 15);
             lblPacientesProviciaFrmCreate.TabIndex = 15;
@@ -184,8 +198,9 @@
             // 
             // lblTelefono2FrmPacientesCreate
             // 
+            lblTelefono2FrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblTelefono2FrmPacientesCreate.AutoSize = true;
-            lblTelefono2FrmPacientesCreate.Location = new Point(430, 73);
+            lblTelefono2FrmPacientesCreate.Location = new Point(31, 242);
             lblTelefono2FrmPacientesCreate.Name = "lblTelefono2FrmPacientesCreate";
             lblTelefono2FrmPacientesCreate.Size = new Size(62, 15);
             lblTelefono2FrmPacientesCreate.TabIndex = 16;
@@ -193,8 +208,9 @@
             // 
             // lblTelefono1FrmPacientesCreate
             // 
+            lblTelefono1FrmPacientesCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblTelefono1FrmPacientesCreate.AutoSize = true;
-            lblTelefono1FrmPacientesCreate.Location = new Point(430, 19);
+            lblTelefono1FrmPacientesCreate.Location = new Point(31, 186);
             lblTelefono1FrmPacientesCreate.Name = "lblTelefono1FrmPacientesCreate";
             lblTelefono1FrmPacientesCreate.Size = new Size(62, 15);
             lblTelefono1FrmPacientesCreate.TabIndex = 17;
@@ -206,7 +222,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancelarPacientesCreate;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 629);
             Controls.Add(lblTelefono1FrmPacientesCreate);
             Controls.Add(lblTelefono2FrmPacientesCreate);
             Controls.Add(lblPacientesProviciaFrmCreate);
