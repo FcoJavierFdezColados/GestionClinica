@@ -29,7 +29,7 @@ namespace WinForm
                 Console.Error.WriteLine(ex.StackTrace);
             }
 
-            //Application.Run(new FrmSplash());
+            Application.Run(new FrmSplash());
             Application.Run(new FrmPpal());
         }
 
