@@ -171,7 +171,7 @@
             Controls.Add(DgvwDoctoresRead);
             Controls.Add(toolStripFrmDocRead);
             Name = "FrmDoctoresRead";
-            Text = "Lista de Doctores";
+            Text = "Lista de doctores";
             Load += FrmDoctoresRead_Load;
             toolStripFrmDocRead.ResumeLayout(false);
             toolStripFrmDocRead.PerformLayout();

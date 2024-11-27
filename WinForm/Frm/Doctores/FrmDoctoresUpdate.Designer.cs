@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnDoctoresUpdateAceptar = new Button();
-            btnDoctoresUpdateCancel = new Button();
+            btnAceptarDoctoresUpdate = new Button();
+            btnCancelarFrmDoctoresUpdate = new Button();
             lblNombreFrmDocUpdate = new Label();
             lblApellidosFrmDocUpdate = new Label();
             lblNumColegiadoFrmDocUpdate = new Label();
@@ -38,31 +38,33 @@
             tbNombreFrmDocUpdate = new TextBox();
             SuspendLayout();
             // 
-            // btnDoctoresUpdateAceptar
+            // btnAceptarDoctoresUpdate
             // 
-            btnDoctoresUpdateAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnDoctoresUpdateAceptar.DialogResult = DialogResult.OK;
-            btnDoctoresUpdateAceptar.Location = new Point(229, 348);
-            btnDoctoresUpdateAceptar.Name = "btnDoctoresUpdateAceptar";
-            btnDoctoresUpdateAceptar.Size = new Size(75, 23);
-            btnDoctoresUpdateAceptar.TabIndex = 0;
-            btnDoctoresUpdateAceptar.Text = "Aceptar";
-            btnDoctoresUpdateAceptar.UseVisualStyleBackColor = true;
-            btnDoctoresUpdateAceptar.Click += btnDoctoresUpdateAceptar_Click;
+            btnAceptarDoctoresUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAceptarDoctoresUpdate.DialogResult = DialogResult.OK;
+            btnAceptarDoctoresUpdate.Location = new Point(229, 348);
+            btnAceptarDoctoresUpdate.Name = "btnAceptarDoctoresUpdate";
+            btnAceptarDoctoresUpdate.Size = new Size(75, 23);
+            btnAceptarDoctoresUpdate.TabIndex = 3;
+            btnAceptarDoctoresUpdate.Text = "Aceptar";
+            btnAceptarDoctoresUpdate.UseVisualStyleBackColor = true;
+            btnAceptarDoctoresUpdate.Click += btnAceptarDoctoresUpdate_Click;
             // 
-            // btnDoctoresUpdateCancel
+            // btnCancelarFrmDoctoresUpdate
             // 
-            btnDoctoresUpdateCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDoctoresUpdateCancel.DialogResult = DialogResult.Cancel;
-            btnDoctoresUpdateCancel.Location = new Point(484, 348);
-            btnDoctoresUpdateCancel.Name = "btnDoctoresUpdateCancel";
-            btnDoctoresUpdateCancel.Size = new Size(75, 23);
-            btnDoctoresUpdateCancel.TabIndex = 1;
-            btnDoctoresUpdateCancel.Text = "Cancelar";
-            btnDoctoresUpdateCancel.UseVisualStyleBackColor = true;
+            btnCancelarFrmDoctoresUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelarFrmDoctoresUpdate.DialogResult = DialogResult.Cancel;
+            btnCancelarFrmDoctoresUpdate.Location = new Point(484, 348);
+            btnCancelarFrmDoctoresUpdate.Name = "btnCancelarFrmDoctoresUpdate";
+            btnCancelarFrmDoctoresUpdate.Size = new Size(75, 23);
+            btnCancelarFrmDoctoresUpdate.TabIndex = 4;
+            btnCancelarFrmDoctoresUpdate.Text = "Cancelar";
+            btnCancelarFrmDoctoresUpdate.UseVisualStyleBackColor = true;
+            btnCancelarFrmDoctoresUpdate.Click += btnCancelarFrmDoctoresUpdate_Click;
             // 
             // lblNombreFrmDocUpdate
             // 
+            lblNombreFrmDocUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblNombreFrmDocUpdate.AutoSize = true;
             lblNombreFrmDocUpdate.Location = new Point(85, 63);
             lblNombreFrmDocUpdate.Name = "lblNombreFrmDocUpdate";
@@ -72,6 +74,7 @@
             // 
             // lblApellidosFrmDocUpdate
             // 
+            lblApellidosFrmDocUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblApellidosFrmDocUpdate.AutoSize = true;
             lblApellidosFrmDocUpdate.Location = new Point(80, 123);
             lblApellidosFrmDocUpdate.Name = "lblApellidosFrmDocUpdate";
@@ -81,6 +84,7 @@
             // 
             // lblNumColegiadoFrmDocUpdate
             // 
+            lblNumColegiadoFrmDocUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblNumColegiadoFrmDocUpdate.AutoSize = true;
             lblNumColegiadoFrmDocUpdate.Location = new Point(12, 184);
             lblNumColegiadoFrmDocUpdate.Name = "lblNumColegiadoFrmDocUpdate";
@@ -90,31 +94,34 @@
             // 
             // tbNumColegiadoFrmDocUpdate
             // 
+            tbNumColegiadoFrmDocUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbNumColegiadoFrmDocUpdate.Location = new Point(142, 181);
             tbNumColegiadoFrmDocUpdate.Name = "tbNumColegiadoFrmDocUpdate";
             tbNumColegiadoFrmDocUpdate.Size = new Size(646, 23);
-            tbNumColegiadoFrmDocUpdate.TabIndex = 5;
+            tbNumColegiadoFrmDocUpdate.TabIndex = 2;
             // 
             // tbApellidosFrmDocUpdate
             // 
+            tbApellidosFrmDocUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbApellidosFrmDocUpdate.Location = new Point(142, 120);
             tbApellidosFrmDocUpdate.Name = "tbApellidosFrmDocUpdate";
             tbApellidosFrmDocUpdate.Size = new Size(646, 23);
-            tbApellidosFrmDocUpdate.TabIndex = 6;
+            tbApellidosFrmDocUpdate.TabIndex = 1;
             // 
             // tbNombreFrmDocUpdate
             // 
+            tbNombreFrmDocUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbNombreFrmDocUpdate.Location = new Point(142, 60);
             tbNombreFrmDocUpdate.Name = "tbNombreFrmDocUpdate";
             tbNombreFrmDocUpdate.Size = new Size(646, 23);
-            tbNombreFrmDocUpdate.TabIndex = 7;
+            tbNombreFrmDocUpdate.TabIndex = 0;
             // 
             // FrmDoctoresUpdate
             // 
-            AcceptButton = btnDoctoresUpdateAceptar;
+            AcceptButton = btnAceptarDoctoresUpdate;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnDoctoresUpdateCancel;
+            CancelButton = btnCancelarFrmDoctoresUpdate;
             ClientSize = new Size(800, 450);
             Controls.Add(tbNombreFrmDocUpdate);
             Controls.Add(tbApellidosFrmDocUpdate);
@@ -122,10 +129,10 @@
             Controls.Add(lblNumColegiadoFrmDocUpdate);
             Controls.Add(lblApellidosFrmDocUpdate);
             Controls.Add(lblNombreFrmDocUpdate);
-            Controls.Add(btnDoctoresUpdateCancel);
-            Controls.Add(btnDoctoresUpdateAceptar);
+            Controls.Add(btnCancelarFrmDoctoresUpdate);
+            Controls.Add(btnAceptarDoctoresUpdate);
             Name = "FrmDoctoresUpdate";
-            Text = "FrmDoctoresUpdate";
+            Text = "Actualizar doctor";
             Load += FrmDoctoresUpdate_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -133,8 +140,8 @@
 
         #endregion
 
-        private Button btnDoctoresUpdateAceptar;
-        private Button btnDoctoresUpdateCancel;
+        private Button btnAceptarDoctoresUpdate;
+        private Button btnCancelarFrmDoctoresUpdate;
         private Label lblNombreFrmDocUpdate;
         private Label lblApellidosFrmDocUpdate;
         private Label lblNumColegiadoFrmDocUpdate;

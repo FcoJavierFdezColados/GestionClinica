@@ -17,7 +17,7 @@ namespace WinForm.Frm
     {
         public FrmPpal()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)

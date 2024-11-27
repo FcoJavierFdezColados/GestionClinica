@@ -45,7 +45,7 @@
             btnAceptarFrmDoctoresCreate.Location = new Point(207, 353);
             btnAceptarFrmDoctoresCreate.Name = "btnAceptarFrmDoctoresCreate";
             btnAceptarFrmDoctoresCreate.Size = new Size(75, 23);
-            btnAceptarFrmDoctoresCreate.TabIndex = 0;
+            btnAceptarFrmDoctoresCreate.TabIndex = 3;
             btnAceptarFrmDoctoresCreate.Text = "Aceptar";
             btnAceptarFrmDoctoresCreate.UseVisualStyleBackColor = true;
             btnAceptarFrmDoctoresCreate.Click += btnAceptarFrmDoctoresCreate_Click;
@@ -57,12 +57,14 @@
             btnCancelFrmDoctoresCreate.Location = new Point(435, 353);
             btnCancelFrmDoctoresCreate.Name = "btnCancelFrmDoctoresCreate";
             btnCancelFrmDoctoresCreate.Size = new Size(75, 23);
-            btnCancelFrmDoctoresCreate.TabIndex = 1;
+            btnCancelFrmDoctoresCreate.TabIndex = 4;
             btnCancelFrmDoctoresCreate.Text = "Cancelar";
             btnCancelFrmDoctoresCreate.UseVisualStyleBackColor = true;
+            btnCancelFrmDoctoresCreate.Click += btnCancelFrmDoctoresCreate_Click;
             // 
             // lblNombrefrmDocCreate
             // 
+            lblNombrefrmDocCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblNombrefrmDocCreate.AutoSize = true;
             lblNombrefrmDocCreate.Location = new Point(67, 66);
             lblNombrefrmDocCreate.Name = "lblNombrefrmDocCreate";
@@ -72,6 +74,7 @@
             // 
             // lblApellidosFrmDocCreate
             // 
+            lblApellidosFrmDocCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblApellidosFrmDocCreate.AutoSize = true;
             lblApellidosFrmDocCreate.Location = new Point(62, 126);
             lblApellidosFrmDocCreate.Name = "lblApellidosFrmDocCreate";
@@ -81,6 +84,7 @@
             // 
             // lblNumColegiadoFrmDocCreate
             // 
+            lblNumColegiadoFrmDocCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblNumColegiadoFrmDocCreate.AutoSize = true;
             lblNumColegiadoFrmDocCreate.Location = new Point(12, 188);
             lblNumColegiadoFrmDocCreate.Name = "lblNumColegiadoFrmDocCreate";
@@ -90,24 +94,27 @@
             // 
             // tbNombreFrmDocCreate
             // 
+            tbNombreFrmDocCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbNombreFrmDocCreate.Location = new Point(124, 63);
             tbNombreFrmDocCreate.Name = "tbNombreFrmDocCreate";
             tbNombreFrmDocCreate.Size = new Size(664, 23);
-            tbNombreFrmDocCreate.TabIndex = 5;
+            tbNombreFrmDocCreate.TabIndex = 0;
             // 
             // tbApellidosFrmDocCreate
             // 
+            tbApellidosFrmDocCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbApellidosFrmDocCreate.Location = new Point(124, 123);
             tbApellidosFrmDocCreate.Name = "tbApellidosFrmDocCreate";
             tbApellidosFrmDocCreate.Size = new Size(664, 23);
-            tbApellidosFrmDocCreate.TabIndex = 6;
+            tbApellidosFrmDocCreate.TabIndex = 1;
             // 
             // tbNumColegiadoFrmDocCreate
             // 
+            tbNumColegiadoFrmDocCreate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbNumColegiadoFrmDocCreate.Location = new Point(124, 185);
             tbNumColegiadoFrmDocCreate.Name = "tbNumColegiadoFrmDocCreate";
             tbNumColegiadoFrmDocCreate.Size = new Size(664, 23);
-            tbNumColegiadoFrmDocCreate.TabIndex = 7;
+            tbNumColegiadoFrmDocCreate.TabIndex = 2;
             // 
             // FrmDoctoresCreate
             // 

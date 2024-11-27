@@ -25,6 +25,7 @@ namespace WinForm.Frm.Doctores
             if (frmDoctoresCreate.ShowDialog() == DialogResult.OK)
             {
                 CargarDatos();
+                LimpiarBuscador();
             }
         }
 
@@ -40,11 +41,12 @@ namespace WinForm.Frm.Doctores
                     if (frmDoctoresUpdate.ShowDialog() == DialogResult.OK)
                     {
                         CargarDatos();
+                        LimpiarBuscador();
                     }
                 }
                 catch (ArgumentException ex)
                 {
-                    MessageBox.Show("No se encontró la columna seleccionada.");
+                    MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto. Consulte con el servicio técnico de soporte.");
                     Console.Error.WriteLine(ex.StackTrace);
                 }
                 catch (Exception ex)
@@ -82,10 +84,11 @@ namespace WinForm.Frm.Doctores
                         Data.DataDoctor.GetInstance().BorrarDoctor(doctorId);
                         tstbBuscarFrmDocRead.Text = "";
                         CargarDatos();
+                        LimpiarBuscador();
                     }
                     catch (ArgumentException ex)
                     {
-                        MessageBox.Show("No se encontró la columna seleccionada.");
+                        MessageBox.Show("El nombre de columna que se recibe por argumento no es el correcto. Consulte con el servicio técnico de soporte.");
                         Console.Error.WriteLine(ex.StackTrace);
                     }
                     catch (Exception ex)
@@ -145,6 +148,11 @@ namespace WinForm.Frm.Doctores
             {
                 CargarDatos();
             }
+        }
+
+        private void LimpiarBuscador()
+        {
+            tstbBuscarFrmDocRead.Text = "";
         }
     }
 }

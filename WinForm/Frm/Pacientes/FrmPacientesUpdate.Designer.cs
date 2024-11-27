@@ -242,7 +242,7 @@
             Controls.Add(lblPoblacionFrmPacientesUpdate);
             Controls.Add(tbProvinciaFrmPacientesUpdate);
             Name = "FrmPacientesUpdate";
-            Text = "FrmPacientesUpdate";
+            Text = "Actualizar paciente";
             Load += FrmPacientesUpdate_Load;
             ResumeLayout(false);
             PerformLayout();

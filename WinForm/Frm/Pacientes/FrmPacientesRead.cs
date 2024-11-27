@@ -99,8 +99,7 @@ namespace WinForm.Frm.Pacientes
                     try
                     {
                         int pacienteId = (int)DgvwPacientesRead.SelectedRows[0].Cells["PacienteId"].Value;
-                        Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);
-                        tstbBuscarFrmPacientesRead.Text = "";
+                        Data.DataPaciente.GetInstance().BorrarPaciente(pacienteId);                        
                         CargarDatos();
                         LimpiarBusqueda();
                     }

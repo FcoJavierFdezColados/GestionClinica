@@ -39,9 +39,9 @@ namespace WinForm.Frm.Doctores
             CargarDatos(doctor);
         }
 
-        private void btnDoctoresUpdateAceptar_Click(object sender, EventArgs e)
+        private void btnAceptarDoctoresUpdate_Click(object sender, EventArgs e)
         {
-            if(ValidarDatos() && doctor != null)
+            if (ValidarDatos() && doctor != null)
             {
                 doctor.Nombre = tbNombreFrmDocUpdate.Text;
                 doctor.Apellidos = tbApellidosFrmDocUpdate.Text;
@@ -50,6 +50,7 @@ namespace WinForm.Frm.Doctores
                 Data.DataDoctor.GetInstance().ActualizarDoctor(_doctorId, doctor);
 
                 MessageBox.Show("Doctor editado correctamente");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -83,7 +84,7 @@ namespace WinForm.Frm.Doctores
 
         private void CargarDatos(Modelo.Doctor doctor)
         {
-            if(doctor != null)
+            if (doctor != null)
             {
                 tbNombreFrmDocUpdate.Text = doctor.Nombre;
                 tbApellidosFrmDocUpdate.Text = doctor.Apellidos;
@@ -93,6 +94,11 @@ namespace WinForm.Frm.Doctores
             {
                 MessageBox.Show("El doctor no se encontró en la base de datos");
             }
+        }
+
+        private void btnCancelarFrmDoctoresUpdate_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

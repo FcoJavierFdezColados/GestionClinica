@@ -166,7 +166,7 @@
             Controls.Add(btnCancelarFrmCitaCreate);
             Controls.Add(btnAceptarFrmCitaCreate);
             Name = "FrmCitaCreate";
-            Text = "FrmCitaCreate";
+            Text = "Reservar Cita";
             Load += FrmCitaCreate_Load;
             ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).EndInit();
             ResumeLayout(false);

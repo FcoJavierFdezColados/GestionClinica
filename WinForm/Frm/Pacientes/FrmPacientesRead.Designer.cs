@@ -39,7 +39,6 @@
             tstbBuscarFrmPacientesRead = new ToolStripTextBox();
             toolStripLabel1 = new ToolStripLabel();
             DgvwPacientesRead = new DataGridView();
-            pacienteBindingSource = new BindingSource(components);
             PacienteId = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -49,6 +48,7 @@
             Provincia = new DataGridViewTextBoxColumn();
             Telefono1 = new DataGridViewTextBoxColumn();
             Telefono2 = new DataGridViewTextBoxColumn();
+            pacienteBindingSource = new BindingSource(components);
             toolStripFrmPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvwPacientesRead).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pacienteBindingSource).BeginInit();
@@ -133,10 +133,6 @@
             DgvwPacientesRead.Size = new Size(443, 425);
             DgvwPacientesRead.TabIndex = 1;
             // 
-            // pacienteBindingSource
-            // 
-            pacienteBindingSource.DataSource = typeof(Modelo.Paciente);
-            // 
             // PacienteId
             // 
             PacienteId.DataPropertyName = "PacienteId";
@@ -204,6 +200,10 @@
             Telefono2.Name = "Telefono2";
             Telefono2.ToolTipText = "Telefono2";
             // 
+            // pacienteBindingSource
+            // 
+            pacienteBindingSource.DataSource = typeof(Modelo.Paciente);
+            // 
             // FrmPacientesRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -212,7 +212,7 @@
             Controls.Add(DgvwPacientesRead);
             Controls.Add(toolStripFrmPacientes);
             Name = "FrmPacientesRead";
-            Text = "Lista de Pacientes";
+            Text = "Lista de pacientes";
             Load += FrmPacientesRead_Load;
             toolStripFrmPacientes.ResumeLayout(false);
             toolStripFrmPacientes.PerformLayout();

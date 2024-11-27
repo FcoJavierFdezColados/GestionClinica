@@ -54,10 +54,10 @@
             // 
             btnAceptarFrmCitaUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnAceptarFrmCitaUpdate.DialogResult = DialogResult.OK;
-            btnAceptarFrmCitaUpdate.Location = new Point(240, 415);
+            btnAceptarFrmCitaUpdate.Location = new Point(240, 452);
             btnAceptarFrmCitaUpdate.Name = "btnAceptarFrmCitaUpdate";
             btnAceptarFrmCitaUpdate.Size = new Size(75, 23);
-            btnAceptarFrmCitaUpdate.TabIndex = 0;
+            btnAceptarFrmCitaUpdate.TabIndex = 1;
             btnAceptarFrmCitaUpdate.Text = "Aceptar";
             btnAceptarFrmCitaUpdate.UseVisualStyleBackColor = true;
             btnAceptarFrmCitaUpdate.Click += btnAceptarFrmCitaUpdate_Click;
@@ -66,10 +66,10 @@
             // 
             btnCancelarFrmCitaUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelarFrmCitaUpdate.DialogResult = DialogResult.Cancel;
-            btnCancelarFrmCitaUpdate.Location = new Point(461, 415);
+            btnCancelarFrmCitaUpdate.Location = new Point(455, 452);
             btnCancelarFrmCitaUpdate.Name = "btnCancelarFrmCitaUpdate";
             btnCancelarFrmCitaUpdate.Size = new Size(75, 23);
-            btnCancelarFrmCitaUpdate.TabIndex = 1;
+            btnCancelarFrmCitaUpdate.TabIndex = 2;
             btnCancelarFrmCitaUpdate.Text = "Cancelar";
             btnCancelarFrmCitaUpdate.UseVisualStyleBackColor = true;
             // 
@@ -83,9 +83,9 @@
             gbFrmCitaUpdateActualizar.Controls.Add(label3);
             gbFrmCitaUpdateActualizar.Controls.Add(label2);
             gbFrmCitaUpdateActualizar.Controls.Add(label1);
-            gbFrmCitaUpdateActualizar.Location = new Point(12, 12);
+            gbFrmCitaUpdateActualizar.Location = new Point(0, 0);
             gbFrmCitaUpdateActualizar.Name = "gbFrmCitaUpdateActualizar";
-            gbFrmCitaUpdateActualizar.Size = new Size(776, 214);
+            gbFrmCitaUpdateActualizar.Size = new Size(794, 214);
             gbFrmCitaUpdateActualizar.TabIndex = 2;
             gbFrmCitaUpdateActualizar.TabStop = false;
             gbFrmCitaUpdateActualizar.Text = "Datos de la cita";
@@ -167,9 +167,9 @@
             gbFrmCitaUpdateCancelar.Controls.Add(ckbEstaCanceladaFrmCitaUpdate);
             gbFrmCitaUpdateCancelar.Controls.Add(dtpFechaCancelFrmCitaUpdate);
             gbFrmCitaUpdateCancelar.Controls.Add(label5);
-            gbFrmCitaUpdateCancelar.Location = new Point(12, 232);
+            gbFrmCitaUpdateCancelar.Location = new Point(0, 220);
             gbFrmCitaUpdateCancelar.Name = "gbFrmCitaUpdateCancelar";
-            gbFrmCitaUpdateCancelar.Size = new Size(776, 163);
+            gbFrmCitaUpdateCancelar.Size = new Size(794, 208);
             gbFrmCitaUpdateCancelar.TabIndex = 3;
             gbFrmCitaUpdateCancelar.TabStop = false;
             gbFrmCitaUpdateCancelar.Text = "Cancelar Cita";
@@ -189,7 +189,7 @@
             tbMotivoCancelFrmCitaUpdate.Multiline = true;
             tbMotivoCancelFrmCitaUpdate.Name = "tbMotivoCancelFrmCitaUpdate";
             tbMotivoCancelFrmCitaUpdate.Size = new Size(321, 120);
-            tbMotivoCancelFrmCitaUpdate.TabIndex = 5;
+            tbMotivoCancelFrmCitaUpdate.TabIndex = 0;
             // 
             // label6
             // 
@@ -236,11 +236,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancelarFrmCitaUpdate;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(794, 487);
             Controls.Add(gbFrmCitaUpdateCancelar);
             Controls.Add(gbFrmCitaUpdateActualizar);
             Controls.Add(btnCancelarFrmCitaUpdate);
             Controls.Add(btnAceptarFrmCitaUpdate);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmCitaUpdate";
             Text = "Cancelar Cita";
             Load += FrmCitaUpdate_Load;

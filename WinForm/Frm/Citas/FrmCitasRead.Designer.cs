@@ -51,10 +51,10 @@
             toolStripLabel1 = new ToolStripLabel();
             tbBuscarCitaFrmCitasRead = new ToolStripTextBox();
             toolStripSeparator1 = new ToolStripSeparator();
+            tslBuscarCitas = new ToolStripLabel();
             statusStripFrmCitasRead = new StatusStrip();
             tsslFrmCitasRead = new ToolStripStatusLabel();
             citaBindingSource = new BindingSource(components);
-            tslBuscarCitas = new ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -247,6 +247,13 @@
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 25);
             // 
+            // tslBuscarCitas
+            // 
+            tslBuscarCitas.Alignment = ToolStripItemAlignment.Right;
+            tslBuscarCitas.Name = "tslBuscarCitas";
+            tslBuscarCitas.Size = new Size(141, 22);
+            tslBuscarCitas.Text = "Buscar citas por paciente:";
+            // 
             // statusStripFrmCitasRead
             // 
             statusStripFrmCitasRead.Items.AddRange(new ToolStripItem[] { tsslFrmCitasRead });
@@ -266,13 +273,6 @@
             // 
             citaBindingSource.DataSource = typeof(Modelo.Cita);
             // 
-            // tslBuscarCitas
-            // 
-            tslBuscarCitas.Alignment = ToolStripItemAlignment.Right;
-            tslBuscarCitas.Name = "tslBuscarCitas";
-            tslBuscarCitas.Size = new Size(141, 22);
-            tslBuscarCitas.Text = "Buscar citas por paciente:";
-            // 
             // FrmCitasRead
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -280,7 +280,7 @@
             ClientSize = new Size(445, 450);
             Controls.Add(splitContainer1);
             Name = "FrmCitasRead";
-            Text = "FrmCitasRead";
+            Text = "Lista de citas";
             Load += FrmCitasRead_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

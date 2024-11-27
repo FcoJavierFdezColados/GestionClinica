@@ -13,6 +13,13 @@ namespace WinForm.Frm.Citas
 {
     public partial class FrmCitaUpdate : Form
     {
+        /*
+         * Nota: Este es el único formulario que por su diseño he deshabilitado el que se pueda maximizar y redimensionar. Tal y como están colocados los elementos
+         * es difícil redimiensionarlo o reposicionarlos con las herramientas que da WinForms. Y tampoco quiero tener que rediseñarlo a última hora (27/11) como el
+         * de Pacientes que era más sencillo. El proyecto ya esta terminado y solo estoy haciendo un repaso general a elementos que pueden ser útiles, como el manejo
+         * del foco, revisar los try/catch de los read (ya que el resto se controlan en los Data de los crud), limpieza de búsquedas, revisión de la nomenclatura usada 
+         * para elementos, etc.
+         */
         private int _citaId;
         private Modelo.Cita cita;
         public FrmCitaUpdate(int citaId)
@@ -65,7 +72,7 @@ namespace WinForm.Frm.Citas
                         tbMotivoCancelFrmCitaUpdate.Enabled = true;
                         dtpFechaCancelFrmCitaUpdate.Value = DateTime.Now;
                     }
-                    
+
                 }
                 catch (SqlException ex)
                 {
@@ -86,7 +93,7 @@ namespace WinForm.Frm.Citas
             {
                 MessageBox.Show("Esta cita ya se canceló");
             }
-            else if(cita != null)
+            else if (cita != null)
             {
                 if (ValidarDatos())
                 {

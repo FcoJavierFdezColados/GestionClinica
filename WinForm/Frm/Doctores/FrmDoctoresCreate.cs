@@ -15,6 +15,7 @@ namespace WinForm.Frm.Doctores
         public FrmDoctoresCreate()
         {
             InitializeComponent();
+            tbNombreFrmDocCreate.Focus();
         }
 
         private void btnAceptarFrmDoctoresCreate_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace WinForm.Frm.Doctores
                 Data.DataDoctor.GetInstance().InsertarDoctor(doctor);
 
                 MessageBox.Show("Doctor añadido correctamente");
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -39,19 +41,19 @@ namespace WinForm.Frm.Doctores
 
         private bool ValidarDatos()
         {
-            if(tbNombreFrmDocCreate.Text == "")
+            if (tbNombreFrmDocCreate.Text == "")
             {
                 MessageBox.Show("El campo nombre debe estar relleno.");
                 tbNombreFrmDocCreate.Focus();
                 return false;
             }
-            else if(tbApellidosFrmDocCreate.Text == "")
+            else if (tbApellidosFrmDocCreate.Text == "")
             {
                 MessageBox.Show("El campo apellidos debe estar relleno.");
                 tbApellidosFrmDocCreate.Focus();
                 return false;
             }
-            else if(tbNumColegiadoFrmDocCreate.Text == "")
+            else if (tbNumColegiadoFrmDocCreate.Text == "")
             {
                 MessageBox.Show("El campo número de colegiado debe estar relleno.");
                 tbNumColegiadoFrmDocCreate.Focus();
@@ -59,6 +61,11 @@ namespace WinForm.Frm.Doctores
             }
 
             return true;
+        }
+
+        private void btnCancelFrmDoctoresCreate_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

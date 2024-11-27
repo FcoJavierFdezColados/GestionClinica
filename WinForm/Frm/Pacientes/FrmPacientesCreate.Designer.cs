@@ -242,7 +242,7 @@
             Controls.Add(btnCancelarPacientesCreate);
             Controls.Add(btnAceptarFrmPacientesCreate);
             Name = "FrmPacientesCreate";
-            Text = "Añadir Paciente";
+            Text = "Añadir paciente";
             ResumeLayout(false);
             PerformLayout();
         }
