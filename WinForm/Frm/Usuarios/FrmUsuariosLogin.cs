@@ -43,12 +43,12 @@ namespace WinForm.Frm.Usuarios
                 else
                 {
                     MessageBox.Show("El usuario o la contraseña no coinciden");
-                    DialogResult = DialogResult.Cancel;
+                    DialogResult = DialogResult.None;
                 }
 
                
             }
-            DialogResult = DialogResult.None;
+            
         }
 
         private bool ValidarCampos()
