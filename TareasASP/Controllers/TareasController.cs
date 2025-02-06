@@ -22,11 +22,12 @@ namespace TareasASP.Controllers
         // GET: Tareas
         public async Task<IActionResult> Index(int id)
         {
-            var tareasASPContext = await _context.Tarea.FirstOrDefaultAsync(t => t.ListaTareasId == id);
+            var tareasASPContext = await _context.ListaTareas.FirstOrDefaultAsync(t => t.Id == id);
 
             if (tareasASPContext != null)
             {
-                ViewData["NombreListaTares"] = tareasASPContext?.Name;
+                ViewData["NombreListaTareas"] = tareasASPContext?.Name;
+                ViewData["idListaTareas"] = tareasASPContext?.Id;
             }
             return View(await _context
                 .Tarea
@@ -55,9 +56,10 @@ namespace TareasASP.Controllers
         }
 
         // GET: Tareas/Create
-        public IActionResult Create()
+        public IActionResult Create(int listaId)
         {
             ViewData["ListaTareasId"] = new SelectList(_context.ListaTareas, "Id", "Name");
+            ViewData["ListaId"] = listaId;
             return View();
         }
 
@@ -127,30 +129,27 @@ namespace TareasASP.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { id = tarea.ListaTareasId });
             }
             ViewData["ListaTareasId"] = new SelectList(_context.ListaTareas, "Id", "Name", tarea.ListaTareasId);
             return View(tarea);
         }
 
-        // GET: Tareas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        // POST: Tareas/5 Desde Index con el Modal
+        //[HttpPost]
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    var tarea = await _context.Tarea.FindAsync(id);
+        //    var idListaTareas = tarea.ListaTareasId;
+        //    if (tarea != null)
+        //    {
+        //        _context.Tarea.Remove(tarea);
+        //    }
 
-            var tarea = await _context.Tarea
-                .Include(t => t.ListaTareas)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (tarea == null)
-            {
-                return NotFound();
-            }
+        //    await _context.SaveChangesAsync();
 
-            return View(tarea);
-        }
+        //    return RedirectToAction(nameof(Index), new { id = idListaTareas });
+        //}
 
         // POST: Tareas/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -164,7 +163,7 @@ namespace TareasASP.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { id = tarea.ListaTareasId }); ;
         }
 
         private bool TareaExists(int id)

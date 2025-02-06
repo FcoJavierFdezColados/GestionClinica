@@ -38,5 +38,31 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-id="@Model?.ListaTareas.Id">Back to List</a>
+    <a asp-action="Delete" asp-route-id="@Model=.Id" data-bs-toggle="modal" data-bs-target="#borrarTarea">
+        Borrar Tarea
+    </a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="borrarTarea" tabindex="-1" aria-labelledby="BorrarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BorrarModalLabel">Borrar Tarea</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro de querer borrar la tarea?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <form method="post" asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+
+                        <input type="submit" value="DeleteConfirmed" class="btn btn-danger" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
