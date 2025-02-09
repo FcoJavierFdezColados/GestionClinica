@@ -7,8 +7,12 @@
 <h1>@ViewData["NombreListaTareas"]</h1>
 
 <p>
-	<a asp-action="Create" asp-route-listaId="@ViewData["idListaTareas"]" class="btn btn-dark">Crear nueva tarea</a> | 
-	<a asp-controller="ListaTareas" asp-action="Index" class="btn btn-info">Volver a la lista de listas de tareas</a>
+	<a asp-action="Create" asp-route-listaId="@ViewData["idListaTareas"]" class="btn btn-dark">
+		<i class="fa-solid fa-plus"></i> Crear nueva tarea
+	</a> | 
+	<a asp-controller="ListaTareas" asp-action="Index" class="btn btn-info">
+		<i class="fa-solid fa-arrow-left"></i> Volver a la lista de listas de tareas
+	</a>
 </p>
 <form action="/" method="GET">
 	<div class="row mb-3">
@@ -32,7 +36,9 @@
 	</div>
 	<div class="row offset-11 mb-3">
 		<div class="col">
-			<button asp-controller="Tareas" asp-action="Index" type="submit" class="btn btn-primary">Filtrar</button>
+			<button asp-controller="Tareas" asp-action="Index" type="submit" class="btn btn-primary">
+				<i class="fa-solid fa-magnifying-glass"></i> Filtrar
+			</button>
 		</div>
 	</div>
 </form>
@@ -76,9 +82,9 @@
 					@{
 						string idModal = "borrarTarea" + item.Id;
 					}
-					<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
+					<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success"><i class="fa-regular fa-pen-to-square"></i> Editar</a> |
 					<a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="modal" data-bs-target="#@idModal" class="btn btn-danger">
-						Borrar
+						<i class="fa-solid fa-trash"></i> Borrar
 					</a>
 
 					<!-- Modal -->

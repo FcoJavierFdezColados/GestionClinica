@@ -7,7 +7,7 @@
 <h1>Listas de Tareas</h1>
 
 <p>
-	<a asp-action="Create" class="btn btn-dark">Crear nueva lista de tareas</a>
+	<a asp-action="Create" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Crear lista de tareas</a>
 </p>
 <table class="table table-secondary table-striped shadow p-3 mb-5 bg-body rounded">
 	<thead>
@@ -31,10 +31,12 @@
 					@{
 						string idListaModal = "BorrarListaTareas" + item.Id;
 					}
-					<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
+					<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">
+						<i class="fa-regular fa-pen-to-square"></i> Editar
+					</a> |
 
 					<a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="modal" data-bs-target="#@idListaModal" class="btn btn-danger">
-						Borrar
+						<i class="fa-solid fa-trash"></i> Borrar
 					</a>
 
 					<!-- Modal -->
