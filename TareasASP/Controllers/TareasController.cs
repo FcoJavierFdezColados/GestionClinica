@@ -20,20 +20,56 @@ namespace TareasASP.Controllers
         }
 
         // GET: Tareas
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(int? id, string ordenFecha, string filtroNombre)
         {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            if ( ordenFecha == null)
+            {
+                ordenFecha = "desc";
+            }
+
+            if (filtroNombre == null)
+            {
+                filtroNombre = "";
+            }
+
             var tareasASPContext = await _context.ListaTareas.FirstOrDefaultAsync(t => t.Id == id);
+
 
             if (tareasASPContext != null)
             {
                 ViewData["NombreListaTareas"] = tareasASPContext?.Name;
                 ViewData["idListaTareas"] = tareasASPContext?.Id;
             }
-            return View(await _context
+
+            var datos = await _context
                 .Tarea
                 .Where(model => model.ListaTareasId == id)
-                .ToListAsync()
-            );
+                .ToListAsync();
+
+            if(ordenFecha == "asc")
+            {
+                datos = datos.OrderBy(t => t.CreateDate).ToList();
+            }
+            else
+            {
+                datos = datos.OrderByDescending(t => t.CreateDate).ToList();
+            }
+
+            if(filtroNombre != "")
+            {
+                datos = datos.Where(t => t.Name.ToLower().Contains(filtroNombre.ToLower())).ToList();
+            }
+
+            ViewData["filtroNombre"] = filtroNombre;
+
+            ViewData["ordenFecha"] = ordenFecha;
+
+            return View(datos);
         }
 
         // GET: Tareas/Details/5
@@ -52,13 +88,18 @@ namespace TareasASP.Controllers
                 return NotFound();
             }
 
+            if(tarea != null)
+            {
+                ViewData["NombreTarea"] = tarea.Name;
+            }
+
             return View(tarea);
         }
 
         // GET: Tareas/Create
         public IActionResult Create(int listaId)
         {
-            ViewData["ListaTareasId"] = new SelectList(_context.ListaTareas, "Id", "Name");
+            ViewData["ListaTareasId"] = new SelectList(_context.ListaTareas, "Id", "Name", listaId);
             ViewData["ListaId"] = listaId;
             return View();
         }
@@ -96,6 +137,7 @@ namespace TareasASP.Controllers
                 return NotFound();
             }
             ViewData["ListaTareasId"] = new SelectList(_context.ListaTareas, "Id", "Name", tarea.ListaTareasId);
+            ViewData["NombreTarea"] = tarea.Name;
             return View(tarea);
         }
 
@@ -135,27 +177,16 @@ namespace TareasASP.Controllers
             return View(tarea);
         }
 
-        // POST: Tareas/5 Desde Index con el Modal
-        //[HttpPost]
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    var tarea = await _context.Tarea.FindAsync(id);
-        //    var idListaTareas = tarea.ListaTareasId;
-        //    if (tarea != null)
-        //    {
-        //        _context.Tarea.Remove(tarea);
-        //    }
-
-        //    await _context.SaveChangesAsync();
-
-        //    return RedirectToAction(nameof(Index), new { id = idListaTareas });
-        //}
-
         // POST: Tareas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             var tarea = await _context.Tarea.FindAsync(id);
             if (tarea != null)
             {
@@ -163,7 +194,7 @@ namespace TareasASP.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index), new { id = tarea.ListaTareasId }); ;
+            return RedirectToAction(nameof(Index), new { id = tarea?.ListaTareasId }); ;
         }
 
         private bool TareaExists(int id)

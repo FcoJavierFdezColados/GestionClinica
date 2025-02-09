@@ -36,7 +36,7 @@ namespace TareasASP.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ListaTareas");
+                    b.ToTable("ListaTareas", (string)null);
                 });
 
             modelBuilder.Entity("TareasASP.Models.Tarea", b =>
@@ -65,7 +65,7 @@ namespace TareasASP.Migrations
 
                     b.HasIndex("ListaTareasId");
 
-                    b.ToTable("Tarea");
+                    b.ToTable("Tarea", (string)null);
                 });
 
             modelBuilder.Entity("TareasASP.Models.Tarea", b =>

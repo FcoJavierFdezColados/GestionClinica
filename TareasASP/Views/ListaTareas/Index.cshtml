@@ -1,35 +1,83 @@
 ﻿@model IEnumerable<TareasASP.Models.ListaTareas>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Listas de Tareas";
 }
 
-<h1>Index</h1>
+<h1>Listas de Tareas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create" class="btn btn-dark">Crear nueva lista de tareas</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-controller="Tareas" asp-action="Index" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+<table class="table table-secondary table-striped shadow p-3 mb-5 bg-body rounded">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					<a asp-controller="Tareas" asp-action="Index" asp-route-id="@item.Id" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+						@Html.DisplayFor(modelItem => item.Name)
+					</a>
+				</td>
+				<td>
+					@{
+						string idListaModal = "BorrarListaTareas" + item.Id;
+					}
+					<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
+
+					<a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="modal" data-bs-target="#@idListaModal" class="btn btn-danger">
+						Borrar
+					</a>
+
+					<!-- Modal -->
+					<div class="modal fade" id="@idListaModal" tabindex="-1" aria-labelledby="BorrarListaModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="BorrarListaModalLabel">Borrar Lista de Tareas @item.Name</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<p>¿Está seguro de querer borrar la lista de tareas <strong>@item.Name</strong>?</p>
+									<p>También se borrarán todas las tareas asociadas a la lista:</p>
+									<ul>
+										@if (@item.Tareas != null)
+										{
+											if (item.Tareas.Count == 0)
+											{
+												<li>La lista no contiene ninguna tarea.</li>
+											}
+											else
+											{
+												@foreach (var tarea in item.Tareas)
+												{
+													<li>@tarea.Name</li>
+												}
+											}
+										}
+									</ul>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+									<form method="post" asp-action="Delete">
+										<input name="id" type="hidden" asp-for="@item.Id" value="@item.Id" />
+
+										<input type="submit" value="Delete" class="btn btn-danger" />
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>

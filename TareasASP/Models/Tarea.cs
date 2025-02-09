@@ -21,7 +21,10 @@ namespace TareasASP.Models
         public required DateTime CreateDate { get; set; }
 
         [ForeignKey("ListaTareasId")]
+        [Display(Name="Nombre de la lista")]
         public ListaTareas? ListaTareas { get; set; }
+
+        [Display(Name="Lista de tareas")]
         public int ListaTareasId { get; set; }
 
     }

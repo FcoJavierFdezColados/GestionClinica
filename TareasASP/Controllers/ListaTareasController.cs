@@ -21,27 +21,32 @@ namespace TareasASP.Controllers
 
         // GET: ListaTareas
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.ListaTareas.ToListAsync());
-        }
-
-        // GET: ListaTareas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+        {          
             var listaTareas = await _context.ListaTareas
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (listaTareas == null)
-            {
-                return NotFound();
-            }
+                .Include(x => x.Tareas)
+                .ToListAsync();
 
+            //return View(await _context.ListaTareas.ToListAsync());
             return View(listaTareas);
         }
+
+        //// GET: ListaTareas/Details/5
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var listaTareas = await _context.ListaTareas
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (listaTareas == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(listaTareas);
+        //}
 
         // GET: ListaTareas/Create
         public IActionResult Create()
@@ -78,6 +83,7 @@ namespace TareasASP.Controllers
             {
                 return NotFound();
             }
+            ViewData["NombreListaTareas"] = listaTareas.Name;
             return View(listaTareas);
         }
 
@@ -116,37 +122,46 @@ namespace TareasASP.Controllers
             return View(listaTareas);
         }
 
-        // GET: ListaTareas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: ListaTareas/Delete/5
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var listaTareas = await _context.ListaTareas
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (listaTareas == null)
-            {
-                return NotFound();
-            }
+        //    var listaTareas = await _context.ListaTareas
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (listaTareas == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(listaTareas);
-        }
+        //    return View(listaTareas);
+        //}
 
         // POST: ListaTareas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var listaTareas = await _context.ListaTareas.FindAsync(id);
-            if (listaTareas != null)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
+        {   
+            if(id == null)
             {
+                return NotFound();
+            }
+            
+            var listaTareas = await _context.ListaTareas
+                .Include(t => t.Tareas)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (listaTareas != null)            {
+                
                 _context.ListaTareas.Remove(listaTareas);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return View(listaTareas);
         }
 
         private bool ListaTareasExists(int id)
